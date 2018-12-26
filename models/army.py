@@ -1,4 +1,5 @@
 import random
+from .units.unit import Unit
 from .units.soldier import Soldier
 from .units.vehicle import Vehicle
 
@@ -32,15 +33,17 @@ class Squad:
     call_sign = ''
 
     def __init__(self, unit_quantity, call):
+        new_unit = Unit.register(Soldier)
+        #
         self.units = []
-        self.call_sign = 'Bravo ' + str(call)
-        for i in range(unit_quantity):
-            seed = random.randint(0, 10)
-            if not seed:
-                new_unit = Vehicle()
-            else:
-                new_unit = Soldier()
-            self.units.append(new_unit)
+        # self.call_sign = 'Bravo ' + str(call)
+        # for i in range(unit_quantity):
+        #     seed = random.randint(0, 10)
+        #     if not seed:
+        #         new_unit = Vehicle()
+        #     else:
+        #         new_unit = Soldier()
+        #     self.units.append(new_unit)
 
     def __repr__(self):
         print("i have this many units ", len(self.units))

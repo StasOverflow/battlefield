@@ -3,6 +3,14 @@ from .unit import Unit
 
 class Soldier(Unit):
 
+    @property
+    def health(self):
+        pass
+
+    @health.setter
+    def health(self):
+        pass
+
     def __init__(self):
         self.attack_success_prob = 3
         self.hp = 100
