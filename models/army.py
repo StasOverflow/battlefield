@@ -33,17 +33,8 @@ class Squad:
     call_sign = ''
 
     def __init__(self, unit_quantity, call):
-
-        self.units = [Unit.new_random() for _ in range(unit_quantity) ]
-
-        # self.call_sign = 'Bravo ' + str(call)
-        # for i in range(unit_quantity):
-        #     seed = random.randint(0, 10)
-        #     if not seed:
-        #         new_unit = Vehicle()
-        #     else:
-        #         new_unit = Soldier()
-        #     self.units.append(new_unit)
+        unit_types = list(Unit.UNIT)
+        self.units = [Unit.new() for _ in range(unit_quantity)]
 
     def __repr__(self):
         print("i have this many units ", len(self.units))

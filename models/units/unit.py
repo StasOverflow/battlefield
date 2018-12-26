@@ -50,13 +50,8 @@ class Unit(ABC):
         return decorator
 
     @classmethod
-    def new_specific(cls, name):
-        return cls.UNIT[name]()
-
-    @classmethod
-    def new_random(cls):
-        name = choice(list(cls.UNIT.keys()))
-        return cls.UNIT[name]()
+    def new(cls, name, **kwargs):
+        return cls.UNIT[name](**kwargs)
 
     def __repr__(self):
         type_of = self.__class__.__name__
