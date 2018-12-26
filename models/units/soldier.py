@@ -1,6 +1,7 @@
 from .unit import Unit
 
 
+@Unit.register('soldier')
 class Soldier(Unit):
 
     @property
@@ -12,6 +13,7 @@ class Soldier(Unit):
         pass
 
     def __init__(self):
+        print('ima soldier')
         self.attack_success_prob = 3
         self.hp = 100
         self.recharge_time = 1

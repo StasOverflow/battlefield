@@ -33,9 +33,9 @@ class Squad:
     call_sign = ''
 
     def __init__(self, unit_quantity, call):
-        new_unit = Unit.register(Soldier)
-        #
-        self.units = []
+
+        self.units = [Unit.new_random() for _ in range(unit_quantity) ]
+
         # self.call_sign = 'Bravo ' + str(call)
         # for i in range(unit_quantity):
         #     seed = random.randint(0, 10)

@@ -2,11 +2,13 @@ from .unit import Unit
 from .soldier import Soldier
 
 
+@Unit.register('vehicle')
 class Vehicle(Unit):
     operators = []
     vehicle_hp = 0
 
     def __init__(self):
+        print('ima vehicle')
         self.attack_success_prob = 3
         self.recharge_time = 5
         self.operators = [Soldier() for _ in range(3)]

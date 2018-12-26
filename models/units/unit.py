@@ -1,4 +1,5 @@
 from abc import ABC, abstractmethod
+from random import choice
 
 
 class Unit(ABC):
@@ -19,37 +20,42 @@ class Unit(ABC):
         self._hp = value
         return
 
-    @property
-    @abstractmethod
-    def damage(self):
-        pass
-
-    @abstractmethod
-    @damage.setter
-    def damage(self, value):
-        pass
-
-    @property
-    @abstractmethod
-    def atk_success(self):
-        pass
-
-    @abstractmethod
-    @atk_success.setter
-    def atk_success(self, value):
-        pass
+    # @property
+    # @abstractmethod
+    # def damage(self):
+    #     pass
+    #
+    # @damage.setter
+    # @abstractmethod
+    # def damage(self, value):
+    #     pass
+    #
+    # @property
+    # @abstractmethod
+    # def atk_success(self):
+    #     pass
+    #
+    # @atk_success.setter
+    # @abstractmethod
+    # def atk_success(self, value):
+    #     pass
 
     UNIT = {}
 
     @classmethod
     def register(cls, name):
-        def dec(unit_cls):
+        def decorator(unit_cls):
             cls.UNIT[name] = unit_cls
             return unit_cls
-        return dec
+        return decorator
 
     @classmethod
-    def new(cls, name):
+    def new_specific(cls, name):
+        return cls.UNIT[name]()
+
+    @classmethod
+    def new_random(cls):
+        name = choice(list(cls.UNIT.keys()))
         return cls.UNIT[name]()
 
     def __repr__(self):
