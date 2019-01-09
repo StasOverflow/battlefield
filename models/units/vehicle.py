@@ -7,6 +7,18 @@ class Vehicle(Unit):
     operators = []
     vehicle_hp = 0
 
+    base_hp = 100
+    recharge_time = 200
+
+    @property
+    def base_health(self):
+        return self.base_hp
+
+    @property
+    def base_recharge_time(self):
+        return self.recharge_time
+
+
     def __init__(self, **kwargs):
         print(kwargs)
         for inst in kwargs:

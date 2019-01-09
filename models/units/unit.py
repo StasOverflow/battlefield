@@ -1,15 +1,19 @@
 from abc import ABC, abstractmethod
-from random import choice
 
 
 class Unit(ABC):
 
+    _base_hp = 0
+
+    @classmethod
+    def base_hp(cls):
+        return cls._base_hp
+
     @abstractmethod
-    def __init__(self, hp, damage, recharge, attack_success_prob):
+    def __init__(self, hp, cooldown_time):
         self._hp = hp
-        self._damage = damage
-        self._base_cd = recharge
-        self._atk_success = attack_success_prob
+        self._base_cd = cooldown_time
+        self._cd_status = self._base_cd
 
     @property
     def hp(self):

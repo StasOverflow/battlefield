@@ -1,8 +1,11 @@
 from models.army import Army
+from models.battle import Battle
 
 
 def main():
-    new_army = Army(0, 3, 3)
+    Battle("battle_config.json")
+
+    # new_army = Army(0, 3, 3)
     # print(new_army)
     # print("heeey")
 

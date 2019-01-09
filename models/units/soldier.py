@@ -4,6 +4,13 @@ from .unit import Unit
 @Unit.register('soldier')
 class Soldier(Unit):
 
+    _base_hp = 100
+    recharge_time = 200
+
+    @property
+    def base_recharge_time(self):
+        return self.recharge_time
+
     @property
     def health(self):
         pass
@@ -13,10 +20,9 @@ class Soldier(Unit):
         pass
 
     def __init__(self):
+        super().__init__(BASE_HP, BASE_RECHARGE_TIME)
         print('ima soldier')
-        self.attack_success_prob = 3
-        self.hp = 100
-        self.recharge_time = 1
+        self._xp = 0
 
     def hp_get(self):
         return self.hp

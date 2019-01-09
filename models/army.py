@@ -34,6 +34,7 @@ class Squad:
 
     def __init__(self, unit_quantity, call):
         unit_types = list(Unit.UNIT)
+        print(unit_types)
         self.units = [Unit.new() for _ in range(unit_quantity)]
 
     def __repr__(self):

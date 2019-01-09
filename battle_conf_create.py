@@ -1,9 +1,12 @@
-import os
 import json
 
-import ..models
-from models.units.unit import Unit
+from models.units import *
+# from models.units import unit
+# import models.units as units
+
 import random
+
+from models.units.unit import Unit
 
 
 def random_config_create():
@@ -27,15 +30,15 @@ def random_config_create():
         return squad_string
 
     def random_army_config(army_name):
-        army_string = {'name': army_name}
+        army_string = {'name': army_name, 'strategy': random.randint(0, 2)}
         squad_name = str(army_name) + '.'
         army_string['squads'] = [random_squad_config(squad_name + str(x+1)) for x in range(squads_per_army)]
         return army_string
 
-    battle_setup = { 'armies' : [random_army_config(x) for x in range(army_count)]}
+    battle_setup = {'armies': [random_army_config(x) for x in range(army_count)]}
 
     with open('battle_config.json', 'w') as outfile:
-        json.dump(battle_setup, outfile)
+        json.dump(battle_setup, outfile, indent=4)
 
 
 if __name__ == '__main__':
