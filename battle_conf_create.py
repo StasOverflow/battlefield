@@ -1,14 +1,14 @@
 import json
-import random
+from random import randint, choice
 from models.units.unit import Unit
 import models.units.soldier
 import models.units.vehicle
 
 
 def random_config_create():
-    army_count = random.randint(2, 5)
-    squads_per_army = random.randint(4, 15)
-    units_per_squad = random.randint(5, 12)
+    army_count = randint(2, 5)
+    squads_per_army = randint(4, 15)
+    units_per_squad = randint(5, 12)
 
     def default_unit_config(unit_type):
         some_unit_stats = {'type': unit_type}
@@ -19,14 +19,14 @@ def random_config_create():
         return some_unit_stats
 
     def random_string_unit():
-        return default_unit_config(random.choice(list(Unit.UNIT.keys())))
+        return default_unit_config(choice(list(Unit.UNIT.keys())))
 
     def random_squad_config(squad_name):
         squad_string = {'name': squad_name, 'units': [random_string_unit() for _ in range(units_per_squad)]}
         return squad_string
 
     def random_army_config(army_name):
-        army_string = {'name': army_name, 'strategy': random.randint(0, 2)}
+        army_string = {'name': army_name, 'strategy': randint(0, 2)}
         squad_name = str(army_name) + '.'
         army_string['squads'] = [random_squad_config(squad_name + str(x+1)) for x in range(squads_per_army)]
         return army_string

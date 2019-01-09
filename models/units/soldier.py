@@ -1,3 +1,4 @@
+import random
 from .unit import Unit
 
 
@@ -8,21 +9,31 @@ class Soldier(Unit):
     recharge_time = 200
 
     @property
+    def is_alive(self):
+        return True if self._hp > 0 else False
+
+    @property
     def base_recharge_time(self):
         return self.recharge_time
 
     @property
-    def health(self):
-        pass
+    def hp(self):
+        return self._hp
 
-    @health.setter
-    def health(self):
-        pass
+    @hp.setter
+    def hp(self, value):
+        self._hp = value
 
     def __init__(self):
-        super().__init__(BASE_HP, BASE_RECHARGE_TIME)
-        print('ima soldier')
+        super().__init__(hp=100, cooldown_time=3)
         self._xp = 0
+
+    def random_value(self):
+        value = random.randint(1, 6)
+        if value > 3:
+            print('x')
+        else:
+            print('y')
 
     def hp_get(self):
         return self.hp
