@@ -49,6 +49,7 @@ class Unit(ABC):
     @classmethod
     def register(cls, name):
         def decorator(unit_cls):
+            print("INSTANCE OF ", unit_cls)
             cls.UNIT[name] = unit_cls
             return unit_cls
         return decorator

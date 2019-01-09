@@ -2,7 +2,7 @@
     "armies": [
         {
             "name": 0,
-            "strategy": 0,
+            "strategy": 1,
             "squads": [
                 {
                     "name": "0.1",
@@ -25,20 +25,42 @@
                             ]
                         },
                         {
-                            "type": "soldier",
-                            "hp": 100
+                            "type": "vehicle",
+                            "operators": [
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                }
+                            ]
                         },
                         {
                             "type": "soldier",
                             "hp": 100
                         },
                         {
-                            "type": "soldier",
-                            "hp": 100
-                        },
-                        {
-                            "type": "soldier",
-                            "hp": 100
+                            "type": "vehicle",
+                            "operators": [
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                }
+                            ]
                         },
                         {
                             "type": "soldier",
@@ -50,27 +72,6 @@
                     "name": "0.2",
                     "units": [
                         {
-                            "type": "vehicle",
-                            "operators": [
-                                {
-                                    "type": "soldier",
-                                    "hp": 100
-                                },
-                                {
-                                    "type": "soldier",
-                                    "hp": 100
-                                },
-                                {
-                                    "type": "soldier",
-                                    "hp": 100
-                                }
-                            ]
-                        },
-                        {
-                            "type": "soldier",
-                            "hp": 100
-                        },
-                        {
                             "type": "soldier",
                             "hp": 100
                         },
@@ -124,6 +125,10 @@
                                     "hp": 100
                                 }
                             ]
+                        },
+                        {
+                            "type": "soldier",
+                            "hp": 100
                         }
                     ]
                 },
@@ -156,6 +161,91 @@
                             "hp": 100
                         },
                         {
+                            "type": "vehicle",
+                            "operators": [
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                }
+                            ]
+                        },
+                        {
+                            "type": "soldier",
+                            "hp": 100
+                        }
+                    ]
+                },
+                {
+                    "name": "0.4",
+                    "units": [
+                        {
+                            "type": "soldier",
+                            "hp": 100
+                        },
+                        {
+                            "type": "soldier",
+                            "hp": 100
+                        },
+                        {
+                            "type": "soldier",
+                            "hp": 100
+                        },
+                        {
+                            "type": "vehicle",
+                            "operators": [
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                }
+                            ]
+                        },
+                        {
+                            "type": "vehicle",
+                            "operators": [
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "0.5",
+                    "units": [
+                        {
+                            "type": "soldier",
+                            "hp": 100
+                        },
+                        {
+                            "type": "soldier",
+                            "hp": 100
+                        },
+                        {
                             "type": "soldier",
                             "hp": 100
                         },
@@ -183,24 +273,11 @@
                     ]
                 },
                 {
-                    "name": "0.4",
+                    "name": "0.6",
                     "units": [
                         {
-                            "type": "vehicle",
-                            "operators": [
-                                {
-                                    "type": "soldier",
-                                    "hp": 100
-                                },
-                                {
-                                    "type": "soldier",
-                                    "hp": 100
-                                },
-                                {
-                                    "type": "soldier",
-                                    "hp": 100
-                                }
-                            ]
+                            "type": "soldier",
+                            "hp": 100
                         },
                         {
                             "type": "soldier",
@@ -230,10 +307,249 @@
                         {
                             "type": "soldier",
                             "hp": 100
+                        }
+                    ]
+                },
+                {
+                    "name": "0.7",
+                    "units": [
+                        {
+                            "type": "soldier",
+                            "hp": 100
+                        },
+                        {
+                            "type": "vehicle",
+                            "operators": [
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                }
+                            ]
+                        },
+                        {
+                            "type": "vehicle",
+                            "operators": [
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                }
+                            ]
                         },
                         {
                             "type": "soldier",
                             "hp": 100
+                        },
+                        {
+                            "type": "vehicle",
+                            "operators": [
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "0.8",
+                    "units": [
+                        {
+                            "type": "soldier",
+                            "hp": 100
+                        },
+                        {
+                            "type": "vehicle",
+                            "operators": [
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                }
+                            ]
+                        },
+                        {
+                            "type": "vehicle",
+                            "operators": [
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                }
+                            ]
+                        },
+                        {
+                            "type": "soldier",
+                            "hp": 100
+                        },
+                        {
+                            "type": "vehicle",
+                            "operators": [
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "0.9",
+                    "units": [
+                        {
+                            "type": "soldier",
+                            "hp": 100
+                        },
+                        {
+                            "type": "vehicle",
+                            "operators": [
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                }
+                            ]
+                        },
+                        {
+                            "type": "soldier",
+                            "hp": 100
+                        },
+                        {
+                            "type": "vehicle",
+                            "operators": [
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                }
+                            ]
+                        },
+                        {
+                            "type": "soldier",
+                            "hp": 100
+                        }
+                    ]
+                },
+                {
+                    "name": "0.10",
+                    "units": [
+                        {
+                            "type": "soldier",
+                            "hp": 100
+                        },
+                        {
+                            "type": "vehicle",
+                            "operators": [
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                }
+                            ]
+                        },
+                        {
+                            "type": "soldier",
+                            "hp": 100
+                        },
+                        {
+                            "type": "vehicle",
+                            "operators": [
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                }
+                            ]
+                        },
+                        {
+                            "type": "vehicle",
+                            "operators": [
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                }
+                            ]
                         }
                     ]
                 }
@@ -241,29 +557,12 @@
         },
         {
             "name": 1,
-            "strategy": 2,
+            "strategy": 0,
             "squads": [
                 {
                     "name": "1.1",
                     "units": [
                         {
-                            "type": "vehicle",
-                            "operators": [
-                                {
-                                    "type": "soldier",
-                                    "hp": 100
-                                },
-                                {
-                                    "type": "soldier",
-                                    "hp": 100
-                                },
-                                {
-                                    "type": "soldier",
-                                    "hp": 100
-                                }
-                            ]
-                        },
-                        {
                             "type": "soldier",
                             "hp": 100
                         },
@@ -285,10 +584,6 @@
                             ]
                         },
                         {
-                            "type": "soldier",
-                            "hp": 100
-                        },
-                        {
                             "type": "vehicle",
                             "operators": [
                                 {
@@ -304,6 +599,10 @@
                                     "hp": 100
                                 }
                             ]
+                        },
+                        {
+                            "type": "soldier",
+                            "hp": 100
                         },
                         {
                             "type": "vehicle",
@@ -362,6 +661,10 @@
                             ]
                         },
                         {
+                            "type": "soldier",
+                            "hp": 100
+                        },
+                        {
                             "type": "vehicle",
                             "operators": [
                                 {
@@ -377,14 +680,6 @@
                                     "hp": 100
                                 }
                             ]
-                        },
-                        {
-                            "type": "soldier",
-                            "hp": 100
-                        },
-                        {
-                            "type": "soldier",
-                            "hp": 100
                         },
                         {
                             "type": "vehicle",
@@ -409,16 +704,21 @@
                     "name": "1.3",
                     "units": [
                         {
-                            "type": "soldier",
-                            "hp": 100
-                        },
-                        {
-                            "type": "soldier",
-                            "hp": 100
-                        },
-                        {
-                            "type": "soldier",
-                            "hp": 100
+                            "type": "vehicle",
+                            "operators": [
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                }
+                            ]
                         },
                         {
                             "type": "vehicle",
@@ -436,6 +736,10 @@
                                     "hp": 100
                                 }
                             ]
+                        },
+                        {
+                            "type": "soldier",
+                            "hp": 100
                         },
                         {
                             "type": "soldier",
@@ -485,6 +789,23 @@
                             ]
                         },
                         {
+                            "type": "vehicle",
+                            "operators": [
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                }
+                            ]
+                        },
+                        {
                             "type": "soldier",
                             "hp": 100
                         },
@@ -504,6 +825,356 @@
                                     "hp": 100
                                 }
                             ]
+                        }
+                    ]
+                },
+                {
+                    "name": "1.5",
+                    "units": [
+                        {
+                            "type": "vehicle",
+                            "operators": [
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                }
+                            ]
+                        },
+                        {
+                            "type": "vehicle",
+                            "operators": [
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                }
+                            ]
+                        },
+                        {
+                            "type": "vehicle",
+                            "operators": [
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                }
+                            ]
+                        },
+                        {
+                            "type": "vehicle",
+                            "operators": [
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                }
+                            ]
+                        },
+                        {
+                            "type": "vehicle",
+                            "operators": [
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "1.6",
+                    "units": [
+                        {
+                            "type": "soldier",
+                            "hp": 100
+                        },
+                        {
+                            "type": "soldier",
+                            "hp": 100
+                        },
+                        {
+                            "type": "soldier",
+                            "hp": 100
+                        },
+                        {
+                            "type": "vehicle",
+                            "operators": [
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                }
+                            ]
+                        },
+                        {
+                            "type": "vehicle",
+                            "operators": [
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "1.7",
+                    "units": [
+                        {
+                            "type": "vehicle",
+                            "operators": [
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                }
+                            ]
+                        },
+                        {
+                            "type": "soldier",
+                            "hp": 100
+                        },
+                        {
+                            "type": "vehicle",
+                            "operators": [
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                }
+                            ]
+                        },
+                        {
+                            "type": "vehicle",
+                            "operators": [
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                }
+                            ]
+                        },
+                        {
+                            "type": "vehicle",
+                            "operators": [
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "1.8",
+                    "units": [
+                        {
+                            "type": "soldier",
+                            "hp": 100
+                        },
+                        {
+                            "type": "vehicle",
+                            "operators": [
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                }
+                            ]
+                        },
+                        {
+                            "type": "vehicle",
+                            "operators": [
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                }
+                            ]
+                        },
+                        {
+                            "type": "soldier",
+                            "hp": 100
+                        },
+                        {
+                            "type": "soldier",
+                            "hp": 100
+                        }
+                    ]
+                },
+                {
+                    "name": "1.9",
+                    "units": [
+                        {
+                            "type": "vehicle",
+                            "operators": [
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                }
+                            ]
+                        },
+                        {
+                            "type": "soldier",
+                            "hp": 100
+                        },
+                        {
+                            "type": "soldier",
+                            "hp": 100
+                        },
+                        {
+                            "type": "vehicle",
+                            "operators": [
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                }
+                            ]
+                        },
+                        {
+                            "type": "vehicle",
+                            "operators": [
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "1.10",
+                    "units": [
+                        {
+                            "type": "soldier",
+                            "hp": 100
+                        },
+                        {
+                            "type": "soldier",
+                            "hp": 100
+                        },
+                        {
+                            "type": "soldier",
+                            "hp": 100
                         },
                         {
                             "type": "soldier",
@@ -555,21 +1226,12 @@
                             ]
                         },
                         {
-                            "type": "vehicle",
-                            "operators": [
-                                {
-                                    "type": "soldier",
-                                    "hp": 100
-                                },
-                                {
-                                    "type": "soldier",
-                                    "hp": 100
-                                },
-                                {
-                                    "type": "soldier",
-                                    "hp": 100
-                                }
-                            ]
+                            "type": "soldier",
+                            "hp": 100
+                        },
+                        {
+                            "type": "soldier",
+                            "hp": 100
                         },
                         {
                             "type": "soldier",
@@ -591,27 +1253,6 @@
                                     "hp": 100
                                 }
                             ]
-                        },
-                        {
-                            "type": "vehicle",
-                            "operators": [
-                                {
-                                    "type": "soldier",
-                                    "hp": 100
-                                },
-                                {
-                                    "type": "soldier",
-                                    "hp": 100
-                                },
-                                {
-                                    "type": "soldier",
-                                    "hp": 100
-                                }
-                            ]
-                        },
-                        {
-                            "type": "soldier",
-                            "hp": 100
                         }
                     ]
                 },
@@ -623,8 +1264,21 @@
                             "hp": 100
                         },
                         {
-                            "type": "soldier",
-                            "hp": 100
+                            "type": "vehicle",
+                            "operators": [
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                }
+                            ]
                         },
                         {
                             "type": "vehicle",
@@ -650,23 +1304,6 @@
                         {
                             "type": "soldier",
                             "hp": 100
-                        },
-                        {
-                            "type": "vehicle",
-                            "operators": [
-                                {
-                                    "type": "soldier",
-                                    "hp": 100
-                                },
-                                {
-                                    "type": "soldier",
-                                    "hp": 100
-                                },
-                                {
-                                    "type": "soldier",
-                                    "hp": 100
-                                }
-                            ]
                         }
                     ]
                 },
@@ -674,21 +1311,8 @@
                     "name": "2.3",
                     "units": [
                         {
-                            "type": "vehicle",
-                            "operators": [
-                                {
-                                    "type": "soldier",
-                                    "hp": 100
-                                },
-                                {
-                                    "type": "soldier",
-                                    "hp": 100
-                                },
-                                {
-                                    "type": "soldier",
-                                    "hp": 100
-                                }
-                            ]
+                            "type": "soldier",
+                            "hp": 100
                         },
                         {
                             "type": "vehicle",
@@ -714,23 +1338,6 @@
                         {
                             "type": "soldier",
                             "hp": 100
-                        },
-                        {
-                            "type": "vehicle",
-                            "operators": [
-                                {
-                                    "type": "soldier",
-                                    "hp": 100
-                                },
-                                {
-                                    "type": "soldier",
-                                    "hp": 100
-                                },
-                                {
-                                    "type": "soldier",
-                                    "hp": 100
-                                }
-                            ]
                         },
                         {
                             "type": "soldier",
@@ -742,6 +1349,741 @@
                     "name": "2.4",
                     "units": [
                         {
+                            "type": "vehicle",
+                            "operators": [
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                }
+                            ]
+                        },
+                        {
+                            "type": "vehicle",
+                            "operators": [
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                }
+                            ]
+                        },
+                        {
+                            "type": "soldier",
+                            "hp": 100
+                        },
+                        {
+                            "type": "vehicle",
+                            "operators": [
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                }
+                            ]
+                        },
+                        {
+                            "type": "soldier",
+                            "hp": 100
+                        }
+                    ]
+                },
+                {
+                    "name": "2.5",
+                    "units": [
+                        {
+                            "type": "vehicle",
+                            "operators": [
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                }
+                            ]
+                        },
+                        {
+                            "type": "soldier",
+                            "hp": 100
+                        },
+                        {
+                            "type": "soldier",
+                            "hp": 100
+                        },
+                        {
+                            "type": "vehicle",
+                            "operators": [
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                }
+                            ]
+                        },
+                        {
+                            "type": "vehicle",
+                            "operators": [
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "2.6",
+                    "units": [
+                        {
+                            "type": "vehicle",
+                            "operators": [
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                }
+                            ]
+                        },
+                        {
+                            "type": "vehicle",
+                            "operators": [
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                }
+                            ]
+                        },
+                        {
+                            "type": "vehicle",
+                            "operators": [
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                }
+                            ]
+                        },
+                        {
+                            "type": "vehicle",
+                            "operators": [
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                }
+                            ]
+                        },
+                        {
+                            "type": "soldier",
+                            "hp": 100
+                        }
+                    ]
+                },
+                {
+                    "name": "2.7",
+                    "units": [
+                        {
+                            "type": "vehicle",
+                            "operators": [
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                }
+                            ]
+                        },
+                        {
+                            "type": "vehicle",
+                            "operators": [
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                }
+                            ]
+                        },
+                        {
+                            "type": "vehicle",
+                            "operators": [
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                }
+                            ]
+                        },
+                        {
+                            "type": "vehicle",
+                            "operators": [
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                }
+                            ]
+                        },
+                        {
+                            "type": "soldier",
+                            "hp": 100
+                        }
+                    ]
+                },
+                {
+                    "name": "2.8",
+                    "units": [
+                        {
+                            "type": "soldier",
+                            "hp": 100
+                        },
+                        {
+                            "type": "soldier",
+                            "hp": 100
+                        },
+                        {
+                            "type": "soldier",
+                            "hp": 100
+                        },
+                        {
+                            "type": "vehicle",
+                            "operators": [
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                }
+                            ]
+                        },
+                        {
+                            "type": "vehicle",
+                            "operators": [
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "2.9",
+                    "units": [
+                        {
+                            "type": "vehicle",
+                            "operators": [
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                }
+                            ]
+                        },
+                        {
+                            "type": "soldier",
+                            "hp": 100
+                        },
+                        {
+                            "type": "soldier",
+                            "hp": 100
+                        },
+                        {
+                            "type": "vehicle",
+                            "operators": [
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                }
+                            ]
+                        },
+                        {
+                            "type": "soldier",
+                            "hp": 100
+                        }
+                    ]
+                },
+                {
+                    "name": "2.10",
+                    "units": [
+                        {
+                            "type": "vehicle",
+                            "operators": [
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                }
+                            ]
+                        },
+                        {
+                            "type": "vehicle",
+                            "operators": [
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                }
+                            ]
+                        },
+                        {
+                            "type": "vehicle",
+                            "operators": [
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                }
+                            ]
+                        },
+                        {
+                            "type": "soldier",
+                            "hp": 100
+                        },
+                        {
+                            "type": "soldier",
+                            "hp": 100
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": 3,
+            "strategy": 2,
+            "squads": [
+                {
+                    "name": "3.1",
+                    "units": [
+                        {
+                            "type": "vehicle",
+                            "operators": [
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                }
+                            ]
+                        },
+                        {
+                            "type": "soldier",
+                            "hp": 100
+                        },
+                        {
+                            "type": "vehicle",
+                            "operators": [
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                }
+                            ]
+                        },
+                        {
+                            "type": "soldier",
+                            "hp": 100
+                        },
+                        {
+                            "type": "soldier",
+                            "hp": 100
+                        }
+                    ]
+                },
+                {
+                    "name": "3.2",
+                    "units": [
+                        {
+                            "type": "soldier",
+                            "hp": 100
+                        },
+                        {
+                            "type": "soldier",
+                            "hp": 100
+                        },
+                        {
+                            "type": "vehicle",
+                            "operators": [
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                }
+                            ]
+                        },
+                        {
+                            "type": "soldier",
+                            "hp": 100
+                        },
+                        {
+                            "type": "vehicle",
+                            "operators": [
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "3.3",
+                    "units": [
+                        {
+                            "type": "soldier",
+                            "hp": 100
+                        },
+                        {
+                            "type": "soldier",
+                            "hp": 100
+                        },
+                        {
+                            "type": "soldier",
+                            "hp": 100
+                        },
+                        {
+                            "type": "vehicle",
+                            "operators": [
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                }
+                            ]
+                        },
+                        {
+                            "type": "soldier",
+                            "hp": 100
+                        }
+                    ]
+                },
+                {
+                    "name": "3.4",
+                    "units": [
+                        {
+                            "type": "vehicle",
+                            "operators": [
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                }
+                            ]
+                        },
+                        {
+                            "type": "vehicle",
+                            "operators": [
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                }
+                            ]
+                        },
+                        {
+                            "type": "vehicle",
+                            "operators": [
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                }
+                            ]
+                        },
+                        {
+                            "type": "soldier",
+                            "hp": 100
+                        },
+                        {
+                            "type": "soldier",
+                            "hp": 100
+                        }
+                    ]
+                },
+                {
+                    "name": "3.5",
+                    "units": [
+                        {
+                            "type": "vehicle",
+                            "operators": [
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                }
+                            ]
+                        },
+                        {
+                            "type": "vehicle",
+                            "operators": [
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                }
+                            ]
+                        },
+                        {
+                            "type": "vehicle",
+                            "operators": [
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                }
+                            ]
+                        },
+                        {
+                            "type": "soldier",
+                            "hp": 100
+                        },
+                        {
+                            "type": "vehicle",
+                            "operators": [
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "3.6",
+                    "units": [
+                        {
                             "type": "soldier",
                             "hp": 100
                         },
@@ -799,6 +2141,284 @@
                                     "hp": 100
                                 }
                             ]
+                        }
+                    ]
+                },
+                {
+                    "name": "3.7",
+                    "units": [
+                        {
+                            "type": "soldier",
+                            "hp": 100
+                        },
+                        {
+                            "type": "vehicle",
+                            "operators": [
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                }
+                            ]
+                        },
+                        {
+                            "type": "soldier",
+                            "hp": 100
+                        },
+                        {
+                            "type": "vehicle",
+                            "operators": [
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                }
+                            ]
+                        },
+                        {
+                            "type": "vehicle",
+                            "operators": [
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "3.8",
+                    "units": [
+                        {
+                            "type": "vehicle",
+                            "operators": [
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                }
+                            ]
+                        },
+                        {
+                            "type": "vehicle",
+                            "operators": [
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                }
+                            ]
+                        },
+                        {
+                            "type": "vehicle",
+                            "operators": [
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                }
+                            ]
+                        },
+                        {
+                            "type": "vehicle",
+                            "operators": [
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                }
+                            ]
+                        },
+                        {
+                            "type": "vehicle",
+                            "operators": [
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "3.9",
+                    "units": [
+                        {
+                            "type": "vehicle",
+                            "operators": [
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                }
+                            ]
+                        },
+                        {
+                            "type": "vehicle",
+                            "operators": [
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                }
+                            ]
+                        },
+                        {
+                            "type": "soldier",
+                            "hp": 100
+                        },
+                        {
+                            "type": "vehicle",
+                            "operators": [
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                }
+                            ]
+                        },
+                        {
+                            "type": "soldier",
+                            "hp": 100
+                        }
+                    ]
+                },
+                {
+                    "name": "3.10",
+                    "units": [
+                        {
+                            "type": "vehicle",
+                            "operators": [
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                }
+                            ]
+                        },
+                        {
+                            "type": "vehicle",
+                            "operators": [
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                }
+                            ]
+                        },
+                        {
+                            "type": "vehicle",
+                            "operators": [
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                },
+                                {
+                                    "type": "soldier",
+                                    "hp": 100
+                                }
+                            ]
+                        },
+                        {
+                            "type": "soldier",
+                            "hp": 100
                         },
                         {
                             "type": "soldier",

@@ -19,6 +19,16 @@ class Battle:
         else:
             with open(incoming_config) as conf:
                 data = json.load(conf)
+                print("json parsed")
+                for x in range(len(data['armies'])):
+                    army = data['armies'][x]
+                    for y in range(len(army['squads'])):
+                        squad = army['squads'][y]
+                        for z in range(len(squad['units'])):
+                            unit = squad['units'][z]
+                            print(unit)
+
+                print(len(data))
                 print(data)
 
     def setup_set(self, setup):

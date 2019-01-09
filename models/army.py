@@ -1,7 +1,6 @@
-import random
-from .units.unit import Unit
-from .units.soldier import Soldier
-from .units.vehicle import Vehicle
+from models.units.unit import Unit
+import models.units.soldier
+import models.units.vehicle
 
 
 class Army:

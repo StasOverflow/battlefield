@@ -18,7 +18,6 @@ class Vehicle(Unit):
     def base_recharge_time(self):
         return self.recharge_time
 
-
     def __init__(self, **kwargs):
         print(kwargs)
         for inst in kwargs:
@@ -44,4 +43,4 @@ class Vehicle(Unit):
 
     def damage_receive(self):
         self.hp = self.hp - 100
-        
+

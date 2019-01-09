@@ -1,12 +1,8 @@
 import json
-
-from models.units import *
-# from models.units import unit
-# import models.units as units
-
 import random
-
 from models.units.unit import Unit
+import models.units.soldier
+import models.units.vehicle
 
 
 def random_config_create():
