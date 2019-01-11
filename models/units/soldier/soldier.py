@@ -1,5 +1,5 @@
 import random
-from .unit import Unit
+from models.units.unit import Unit
 
 
 @Unit.register('soldier')

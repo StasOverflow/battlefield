@@ -3,7 +3,7 @@ from abc import ABC, abstractmethod
 
 class Unit(ABC):
 
-    _base_hp = 0
+    # _base_hp = 0
 
     @classmethod
     def base_hp(cls):
@@ -15,6 +15,14 @@ class Unit(ABC):
         self._base_cd = cooldown_time
         self._cd_status = self._base_cd
 
+    @abstractmethod
+    def attack(self, sample_text):
+        pass
+
+    @abstractmethod
+    def damage_take(self, damage):
+        pass
+
     @property
     def hp(self):
         return self._hp
@@ -23,6 +31,10 @@ class Unit(ABC):
     def hp(self, value):
         self._hp = value
         return
+
+    @property
+    def attack_damage(self):
+        return self._attack_damage
 
     # @property
     # @abstractmethod

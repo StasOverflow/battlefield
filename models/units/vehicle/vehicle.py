@@ -1,5 +1,5 @@
-from .unit import Unit
-from .soldier import Soldier
+from models.units.unit import Unit
+from models.units.soldier.soldier import Soldier
 
 
 @Unit.register('vehicle')
@@ -7,12 +7,12 @@ class Vehicle(Unit):
     operators = []
     vehicle_hp = 0
 
-    base_hp = 100
+    _base_hp = 200
     recharge_time = 200
 
     @property
     def base_health(self):
-        return self.base_hp
+        return self._base_hp
 
     @property
     def base_recharge_time(self):

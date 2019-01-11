@@ -1,8 +1,8 @@
 import json
 from random import randint, choice
 from models.units.unit import Unit
-import models.units.soldier
-import models.units.vehicle
+import models.units.soldier.soldier
+import models.units.vehicle.vehicle
 
 
 def random_config_create():
@@ -11,10 +11,8 @@ def random_config_create():
     units_per_squad = randint(5, 12)
 
     def default_unit_config(unit_type):
-        some_unit_stats = {'type': unit_type}
-        if unit_type == 'soldier':
-            some_unit_stats['hp'] = Unit.UNIT[unit_type].base_hp()
-        else:
+        some_unit_stats = {'type': unit_type, 'hp': Unit.UNIT[unit_type].base_hp()}
+        if unit_type == 'vehicle':
             some_unit_stats['operators'] = [default_unit_config('soldier') for _ in range(3)]
         return some_unit_stats
 
@@ -22,11 +20,11 @@ def random_config_create():
         return default_unit_config(choice(list(Unit.UNIT.keys())))
 
     def random_squad_config(squad_name):
-        squad_string = {'name': squad_name, 'units': [random_string_unit() for _ in range(units_per_squad)]}
+        squad_string = {'type': 'squad', 'name': squad_name, 'units': [random_string_unit() for _ in range(units_per_squad)]}
         return squad_string
 
     def random_army_config(army_name):
-        army_string = {'name': army_name, 'strategy': randint(0, 2)}
+        army_string = {'type': 'army', 'name': army_name, 'strategy': randint(0, 2)}
         squad_name = str(army_name) + '.'
         army_string['squads'] = [random_squad_config(squad_name + str(x+1)) for x in range(squads_per_army)]
         return army_string

@@ -1,4 +1,3 @@
-from models.army import Army
 from models.battle import Battle
 
 
