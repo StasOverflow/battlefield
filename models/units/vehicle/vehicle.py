@@ -4,11 +4,19 @@ from models.units.soldier.soldier import Soldier
 
 @Unit.register('vehicle')
 class Vehicle(Unit):
-    operators = []
     vehicle_hp = 0
 
     _base_hp = 200
     recharge_time = 200
+
+    def damage(self):
+        pass
+
+    def damage_receive(self, damage):
+        pass
+
+    def attack_chance(self):
+        pass
 
     @property
     def base_health(self):
@@ -22,14 +30,10 @@ class Vehicle(Unit):
         self._name = addit_dict.pop('name')
         hp = addit_dict.pop('hp')
         super().__init__(self._name, hp=100)
-        main_key = list(addit_dict.keys())[0]
-        print("main key is", main_key)
-        for units in addit_dict[main_key]:
-            self.operators.append(Unit.new(units.pop('type'), units))
 
     def hp_get(self):
         hp = 0
-        for soldier in self.operators:
+        for soldier in self.sub_units:
             hp = hp + soldier.hp_get()
         hp = hp + self.vehicle_hp
         return hp
@@ -43,3 +47,5 @@ class Vehicle(Unit):
     def damage_receive(self):
         self.hp = self.hp - 100
 
+    def __repr__(self):
+        return self.call_name + ' ' + str(self.hp) + 'hp'

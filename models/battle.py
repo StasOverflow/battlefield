@@ -18,7 +18,6 @@ class Battle:
         self.units_per_squad_count = 1
 
     def __init__(self, incoming_config=None):
-        print("Preparing armies")
         self._participants = list()
         if incoming_config is None:
             raise Exception('No incoming config file')
@@ -28,6 +27,10 @@ class Battle:
                 main_key = list(data.keys())[0]
                 for units in data[main_key]:
                     self._participants.append(Unit.new(units.pop('type'), units))
+                    army_count = len(data[main_key])
+                print("initiating battle with", army_count, 'armies')
+        for army in self._participants:
+            print(army)
 
     def setup_set(self, setup):
         data = json.load(setup)

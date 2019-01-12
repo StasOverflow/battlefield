@@ -10,7 +10,6 @@ class Strategy:
 class Army(Unit):
     hp = 0
     attack = 0
-    squad_units = list()
     strategy_list = {
         0: 'Attack Random',
         1: 'Attack Weakest',
@@ -18,20 +17,27 @@ class Army(Unit):
     }
     strategy_chosen = None
 
+    def damage(self):
+        pass
+
+    def damage_receive(self, damage):
+        pass
+    
+    def attack_chance(self):
+        pass
+
     def __init__(self, addit_dict=None):
         self._name = addit_dict.pop('name')
         self._strategy = addit_dict.pop('strategy')
-        super().__init__(self._name, hp=100)
-        main_key = list(addit_dict.keys())[0]
-        print(main_key)
-        for units in addit_dict[main_key]:
-            self.squad_units.append(Unit.new(units.pop('type'), units))
+        super().__init__(self._name, units=addit_dict)
 
     def __repr__(self):
-        for x in self.squads:
-            print(x)
-        # string_repr = '\n'.join(self.squads)
-        return ''
-
+        string = 'Brave army num ' + str(self.call_name) + ' consists of:\n'
+        for x in self.sub_units:
+            string += str(x)
+        # string_repr = '\n'.join(list(self.squad_units))
+        # print(string_repr)
+        # return ''
+        return string
 
 
