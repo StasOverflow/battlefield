@@ -11,6 +11,8 @@ class Unit(ABC):
 
     @abstractmethod
     def __init__(self, hp, cooldown_time):
+        print("Tis called")
+
         self._hp = hp
         self._base_cd = cooldown_time
         self._cd_status = self._base_cd
@@ -19,9 +21,9 @@ class Unit(ABC):
     def attack(self, sample_text):
         pass
 
-    @abstractmethod
-    def damage_take(self, damage):
-        pass
+    # @abstractmethod
+    # def damage_take(self, damage):
+    #     pass
 
     @property
     def hp(self):
@@ -67,8 +69,8 @@ class Unit(ABC):
         return decorator
 
     @classmethod
-    def new(cls, name, **kwargs):
-        return cls.UNIT[name](**kwargs)
+    def new(cls, name, addit_dict=None, **kwargs):
+        return cls.UNIT[name](addit_dict, **kwargs)
 
     def __repr__(self):
         type_of = self.__class__.__name__

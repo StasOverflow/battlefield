@@ -18,26 +18,15 @@ class Battle:
         self.units_per_squad_count = 1
 
     def __init__(self, incoming_config=None):
+        print("Preparing armies")
         if incoming_config is None:
             raise Exception('No incoming config file')
         else:
             with open(incoming_config) as conf:
                 data = json.load(conf)
-                print("json parsed")
-                for x in range(len(data['armies'])):
-                    army = data['armies'][x]
-
-                    self._participants = Army(army['name'], army['strategy'], )
-                    for y in range(len(army['squads'])):
-                        squad = army['squads'][y]
-                        squad_list = squad['name']
-                        print(squad_list)
-                        for z in range(len(squad['units'])):
-                            unit = squad['units'][z]
-                            # print(unit)
-
-                # print(len(data))
-                # print(data)
+                main_key = list(data.keys())[0]
+                for units in data[main_key]:
+                    Soldja = Unit.new('army', units)
 
     def setup_set(self, setup):
         data = json.load(setup)

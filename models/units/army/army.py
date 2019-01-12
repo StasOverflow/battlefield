@@ -2,7 +2,7 @@ from models.units.unit import Unit
 
 
 @Unit.register('army')
-class Army:
+class Army(Unit):
     hp = 0
     attack = 0
     squads = []
@@ -13,10 +13,11 @@ class Army:
     }
     strategy_chosen = None
 
-    def __init__(self, name, strategy, **kwargs):
-        self._name = name
-        self._strategy = strategy
-        print(kwargs)
+    def __init__(self, addit_dict=None):
+        # self._name = name
+        # self._strategy = strategy
+        print("da")
+        print(addit_dict)
         # self.strategy_chosen = self.strategy_list[strategy_type]
         # self.squads = [Squad(units_per_squad, x) for x in range(squad_quantity)]
 
