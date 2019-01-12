@@ -18,15 +18,14 @@ class Vehicle(Unit):
     def base_recharge_time(self):
         return self.recharge_time
 
-    def __init__(self, **kwargs):
-        print(kwargs)
-        for inst in kwargs:
-            print(inst)
-        # self.attack_success_prob = 3
-        # self.recharge_time = 5
-        # self.operators = [Soldier() for _ in range(3)]
-        # self.vehicle_hp = 500
-        # self.hp = self.hp_get()
+    def __init__(self, addit_dict=None):
+        self._name = addit_dict.pop('name')
+        hp = addit_dict.pop('hp')
+        super().__init__(self._name, hp=100)
+        main_key = list(addit_dict.keys())[0]
+        print("main key is", main_key)
+        for units in addit_dict[main_key]:
+            self.operators.append(Unit.new(units.pop('type'), units))
 
     def hp_get(self):
         hp = 0

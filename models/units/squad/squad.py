@@ -2,16 +2,22 @@ from models.units.unit import Unit
 
 
 @Unit.register('squad')
-class Squad:
+class Squad(Unit):
     hp = 0
     attack = 0
     damage = 0
     call_sign = ''
+    battle_units = list()
 
-    def __init__(self, unit_quantity, call):
-        unit_types = list(Unit.UNIT)
-        print(unit_types)
-        self.units = [Unit.new() for _ in range(unit_quantity)]
+    def __init__(self, addit_dict=None):
+        self._name = addit_dict.pop('name')
+        super().__init__(self._name, hp=100)
+        main_key = list(addit_dict.keys())[0]
+        print(main_key)
+        for units in addit_dict[main_key]:
+            self.battle_units.append(Unit.new(units.pop('type'), units))
+
+
 
     def __repr__(self):
         print("i have this many units ", len(self.units))

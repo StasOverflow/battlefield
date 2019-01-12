@@ -19,6 +19,7 @@ class Battle:
 
     def __init__(self, incoming_config=None):
         print("Preparing armies")
+        self._participants = list()
         if incoming_config is None:
             raise Exception('No incoming config file')
         else:
@@ -26,7 +27,7 @@ class Battle:
                 data = json.load(conf)
                 main_key = list(data.keys())[0]
                 for units in data[main_key]:
-                    Soldja = Unit.new('army', units)
+                    self._participants.append(Unit.new(units.pop('type'), units))
 
     def setup_set(self, setup):
         data = json.load(setup)

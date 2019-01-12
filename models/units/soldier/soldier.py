@@ -24,9 +24,9 @@ class Soldier(Unit):
     def hp(self, value):
         self._hp = value
 
-    def __init__(self):
-        super().__init__(hp=100, cooldown_time=3)
-        self._xp = 0
+    def __init__(self, addit_dict=None):
+        self._name = addit_dict.pop('name')
+        super().__init__(self._name, hp=100)
 
     def random_value(self):
         value = random.randint(1, 6)
