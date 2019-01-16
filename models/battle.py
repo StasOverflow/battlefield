@@ -4,6 +4,21 @@ from models.units.soldier.soldier import Soldier
 from models.units.vehicle.vehicle import Vehicle
 from models.units.squad.squad import Squad
 import json
+import time
+import math
+
+
+class BattleTimer:
+
+    def __init__(self, multiplier, battle_timer_getter_func=time.monotonic):
+        print(battle_timer_getter_func)
+        self._start_time = battle_timer_getter_func()
+        self._timer_func = battle_timer_getter_func
+        self._timer_multiplier = multiplier
+
+    @property
+    def time(self):
+        return round((self._timer_func() - self._start_time)*self._timer_multiplier, 3)
 
 
 class Battle:

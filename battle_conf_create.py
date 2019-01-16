@@ -13,9 +13,11 @@ def random_config_create():
     def default_unit_config(unit_type):
         some_unit_stats = {'type': unit_type, 'hp': Unit.UNIT[unit_type].base_hp()}
         if unit_type == 'vehicle':
+            some_unit_stats['cd'] = randint(1001, 2000)
             some_unit_stats['name'] = 'Pepelats'
             some_unit_stats['operators'] = [default_unit_config('soldier') for _ in range(3)]
         elif unit_type == 'soldier':
+            some_unit_stats['cd'] = randint(100, 1000)
             some_unit_stats['name'] = 'Steve'
         return some_unit_stats
 

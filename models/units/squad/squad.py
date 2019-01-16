@@ -7,12 +7,14 @@ class Squad(Unit):
     attack = 0
     damage = 0
 
-    def damage(self):
-        pass
-
     def damage_receive(self, damage):
         pass
 
+    @property
+    def damage(self):
+        pass
+
+    @property
     def attack_chance(self):
         pass
 
@@ -21,8 +23,8 @@ class Squad(Unit):
         super().__init__(self.call_name, units=addit_dict)
 
     def __repr__(self):
-        string = '\nsquad' + ' num ' + self.call_name + '\n_____________'
+        string = '\n--------------\nsquad' + ' num ' + self.call_name + ':\n'
         for unit in self.sub_units:
             string = string + '\n' + str(unit)
-        string = string + '\n_____________'
+        string = string + '\n--------------\n'
         return string

@@ -21,13 +21,15 @@ class Soldier(Unit):
         if success:
             self.experience += 1
 
-    def attack_chance(self):
+    def damage_receive(self, damage):
         pass
 
+    @property
     def damage(self):
         pass
 
-    def damage_receive(self, damage):
+    @property
+    def attack_chance(self):
         pass
 
     @property

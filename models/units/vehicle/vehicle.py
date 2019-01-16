@@ -9,12 +9,14 @@ class Vehicle(Unit):
     _base_hp = 200
     recharge_time = 200
 
-    def damage(self):
-        pass
-
     def damage_receive(self, damage):
         pass
 
+    @property
+    def damage(self):
+        pass
+
+    @property
     def attack_chance(self):
         pass
 

@@ -75,6 +75,10 @@ class Unit(ABC):
     def is_alive(self):
         return True if self.hp > 0 else False
 
+    @property
+    def is_ready_to_attack(self):
+        return True if self.hp > 0 else False
+
     # @property
     # @abstractmethod
     # def damage(self):

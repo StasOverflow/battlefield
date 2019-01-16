@@ -17,12 +17,14 @@ class Army(Unit):
     }
     strategy_chosen = None
 
+    def damage_receive(self, damage):
+        pass
+
+    @property
     def damage(self):
         pass
 
-    def damage_receive(self, damage):
-        pass
-    
+    @property
     def attack_chance(self):
         pass
 
