@@ -12,6 +12,9 @@ class Soldier(Unit):
         self._name = addit_dict.pop('name')
         super().__init__(self._name, hp=100)
 
+    def cd_update(self, time):
+        if time -
+
     @property
     def experience(self):
         return self._experience

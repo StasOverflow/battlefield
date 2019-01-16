@@ -17,6 +17,10 @@ class Army(Unit):
     }
     strategy_chosen = None
 
+    def cd_update(self):
+        pass
+
+
     def damage_receive(self, damage):
         pass
 

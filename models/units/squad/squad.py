@@ -7,6 +7,10 @@ class Squad(Unit):
     attack = 0
     damage = 0
 
+    def cd_update(self):
+        pass
+
+
     def damage_receive(self, damage):
         pass
 

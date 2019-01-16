@@ -9,6 +9,10 @@ class Vehicle(Unit):
     _base_hp = 200
     recharge_time = 200
 
+    def cd_update(self):
+        pass
+
+
     def damage_receive(self, damage):
         pass
 

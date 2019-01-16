@@ -26,6 +26,14 @@ class Unit(ABC):
     # def damage_take(self, damage):
     #     pass
 
+    @abstractmethod
+    def cd_update(self, time):
+        pass
+
+    @property
+    def cd_update(self, time):
+        pass
+
     @property
     def sub_units(self):
         return self._sub_units
