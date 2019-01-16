@@ -3,18 +3,18 @@ from abc import ABC, abstractmethod
 
 class Unit(ABC):
 
-    _base_hp = 0
-    _base_cooldown = 0
-
-    @classmethod
-    def base_hp(cls):
-        return cls._base_hp
+    @property
+    @abstractmethod
+    def base_hp(self):
+        pass
 
     @abstractmethod
     def __init__(self, call_name, hp=0, cooldown=0, units=None):
         self.hp = hp
         self.call_name = call_name
         self._base_cooldown = cooldown
+        self._last_attack_time = 0
+        self._time_left_to_attack = 0
         if units is not None:
             self.sub_units = units
 

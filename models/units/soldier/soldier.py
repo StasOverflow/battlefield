@@ -5,15 +5,18 @@ from models.units.unit import Unit
 @Unit.register('soldier')
 class Soldier(Unit):
 
-    _base_hp = 100
-    recharge_time = 200
+    BASE_HP = 100
 
     def __init__(self, addit_dict=None):
         self._name = addit_dict.pop('name')
         super().__init__(self._name, hp=100)
 
-    def cd_update(self, time):
-        if time -
+    def base_hp(self):
+        return self.BASE_HP
+
+    @classmethod
+    def cd_update(cls, time):
+        cls._time_left_to_attack = cls._base_cooldown - (time - cls._last_attack_time)
 
     @property
     def experience(self):

@@ -6,12 +6,18 @@ from models.units.soldier.soldier import Soldier
 class Vehicle(Unit):
     vehicle_hp = 0
 
-    _base_hp = 200
-    recharge_time = 200
+    BASE_HP = 200
+
+    def __init__(self, addit_dict=None):
+        self._name = addit_dict.pop('name')
+        hp = addit_dict.pop('hp')
+        super().__init__(self._name, hp=100)
+
+    def base_hp(self):
+        return self.BASE_HP
 
     def cd_update(self):
         pass
-
 
     def damage_receive(self, damage):
         pass
@@ -31,11 +37,6 @@ class Vehicle(Unit):
     @property
     def base_recharge_time(self):
         return self.recharge_time
-
-    def __init__(self, addit_dict=None):
-        self._name = addit_dict.pop('name')
-        hp = addit_dict.pop('hp')
-        super().__init__(self._name, hp=100)
 
     def hp_get(self):
         hp = 0

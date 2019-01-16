@@ -11,7 +11,7 @@ def random_config_create():
     units_per_squad = randint(5, 12)
 
     def default_unit_config(unit_type):
-        some_unit_stats = {'type': unit_type, 'hp': Unit.UNIT[unit_type].base_hp()}
+        some_unit_stats = {'type': unit_type, 'hp': Unit.UNIT[unit_type].base_hp}
         if unit_type == 'vehicle':
             some_unit_stats['cd'] = randint(1001, 2000)
             some_unit_stats['name'] = 'Pepelats'

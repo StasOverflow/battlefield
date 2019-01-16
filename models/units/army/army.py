@@ -17,6 +17,9 @@ class Army(Unit):
     }
     strategy_chosen = None
 
+    def base_hp(self):
+        pass
+
     def cd_update(self):
         pass
 
