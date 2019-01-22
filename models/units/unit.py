@@ -4,7 +4,8 @@ from abc import ABC, abstractmethod
 class Unit(ABC):
 
     _base_hp = 0
-    _base_cooldown = 0
+
+    UNIT = {}
 
     @classmethod
     def base_hp(cls):
@@ -14,25 +15,20 @@ class Unit(ABC):
     def __init__(self, call_name, hp=0, cooldown=0, units=None):
         self.hp = hp
         self.call_name = call_name
-        self._base_cooldown = cooldown
+        self._recharge_time = cooldown
+        self._last_attack_timestamp = -self.recharge_time  # very cool workaround to attack instantly (kostil')
+        self._is_ready_to_attack = 0
         if units is not None:
             self.sub_units = units
 
-    # @abstractmethod
-    # def attack(self, sample_text):
-    #     pass
-
-    # @abstractmethod
-    # def damage_take(self, damage):
-    #     pass
-
-    @abstractmethod
-    def cd_update(self, time):
-        pass
-
     @property
-    def cd_update(self, time):
-        pass
+    def last_attack_timestamp(self):
+        return self._last_attack_timestamp
+
+    @last_attack_timestamp.setter
+    def last_attack_timestamp(self, time):
+        self._last_attack_timestamp = time
+        return
 
     @property
     def sub_units(self):
@@ -71,7 +67,7 @@ class Unit(ABC):
 
     @property
     @abstractmethod
-    def damage(self):
+    def attack_damage(self):
         pass
 
     @property
@@ -84,30 +80,18 @@ class Unit(ABC):
         return True if self.hp > 0 else False
 
     @property
+    @abstractmethod
     def is_ready_to_attack(self):
-        return True if self.hp > 0 else False
+        pass
 
-    # @property
-    # @abstractmethod
-    # def damage(self):
-    #     pass
-    #
-    # @damage.setter
-    # @abstractmethod
-    # def damage(self, value):
-    #     pass
-    #
-    # @property
-    # @abstractmethod
-    # def atk_success(self):
-    #     pass
-    #
-    # @atk_success.setter
-    # @abstractmethod
-    # def atk_success(self, value):
-    #     pass
+    @is_ready_to_attack.setter
+    @abstractmethod
+    def is_ready_to_attack(self, time):
+        pass
 
-    UNIT = {}
+    @property
+    def recharge_time(self):
+        return self._recharge_time
 
     @classmethod
     def register(cls, name):
@@ -124,8 +108,8 @@ class Unit(ABC):
     def __repr__(self):
         type_of = self.__class__.__name__
         repr_string = type_of + ' | HP: ' + str(self.hp) \
-                              + ' | DMG: ' + str(self.damage) \
-                              + ' | cd: ' + str(self.cooldown) + ' |'
+                              + ' | DMG: ' + str(self.attack_damage) \
+                              + ' | cd: ' + str(self.recharge_time) + ' |'
         # print(repr_string)
         return repr_string
 

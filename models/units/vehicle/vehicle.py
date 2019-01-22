@@ -12,6 +12,14 @@ class Vehicle(Unit):
     def cd_update(self):
         pass
 
+    @property
+    def is_ready_to_attack(self):
+        return self._is_ready_to_attack
+
+    @is_ready_to_attack.setter
+    def is_ready_to_attack(self, time):
+        self._is_ready_to_attack = True if time - self.last_attack_timestamp >= self._base_cooldown else False
+        return
 
     def damage_receive(self, damage):
         pass
@@ -35,7 +43,7 @@ class Vehicle(Unit):
     def __init__(self, addit_dict=None):
         self._name = addit_dict.pop('name')
         hp = addit_dict.pop('hp')
-        super().__init__(self._name, hp=100)
+        super().__init__(self._name, hp=self._base_hp)
 
     def hp_get(self):
         hp = 0

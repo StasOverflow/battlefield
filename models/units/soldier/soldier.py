@@ -10,10 +10,16 @@ class Soldier(Unit):
 
     def __init__(self, addit_dict=None):
         self._name = addit_dict.pop('name')
-        super().__init__(self._name, hp=100)
+        super().__init__(self._name, hp=self._base_hp)
 
-    def cd_update(self, time):
-        if time -
+    @property
+    def is_ready_to_attack(self):
+        return self._is_ready_to_attack
+
+    @is_ready_to_attack.setter
+    def is_ready_to_attack(self, time):
+        self._is_ready_to_attack = True if time - self.last_attack_timestamp >= self._base_cooldown else False
+        return
 
     @property
     def experience(self):
