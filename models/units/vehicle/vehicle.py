@@ -4,10 +4,8 @@ from models.units.soldier.soldier import Soldier
 
 @Unit.register('vehicle')
 class Vehicle(Unit):
-    vehicle_hp = 0
 
-    _base_hp = 200
-    recharge_time = 200
+    base_hp = 200
 
     def cd_update(self):
         pass
@@ -15,6 +13,10 @@ class Vehicle(Unit):
     @property
     def is_ready_to_attack(self):
         return self._is_ready_to_attack
+
+    # @property
+    # def base_hp(self):
+    #     return self._base_hp
 
     @is_ready_to_attack.setter
     def is_ready_to_attack(self, time):
@@ -43,7 +45,7 @@ class Vehicle(Unit):
     def __init__(self, addit_dict=None):
         self._name = addit_dict.pop('name')
         hp = addit_dict.pop('hp')
-        super().__init__(self._name, hp=self._base_hp)
+        super().__init__(self._name, hp=200)
 
     def hp_get(self):
         hp = 0

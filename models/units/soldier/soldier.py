@@ -5,12 +5,17 @@ from models.units.unit import Unit
 @Unit.register('soldier')
 class Soldier(Unit):
 
-    _base_hp = 100
-    recharge_time = 200
+    base_hp = 100
 
     def __init__(self, addit_dict=None):
-        self._name = addit_dict.pop('name')
-        super().__init__(self._name, hp=self._base_hp)
+        if addit_dict is None:
+            self._name = "Test George"
+        else:
+            self._name = addit_dict.pop('name')
+        super().__init__(self._name, hp=100)
+
+    def __repr__(self):
+        return self.call_name + ' ' + str(self.hp) + 'hp'
 
     @property
     def is_ready_to_attack(self):
@@ -51,6 +56,3 @@ class Soldier(Unit):
             print('x')
         else:
             print('y')
-
-    def __repr__(self):
-        return self.call_name + ' ' + str(self.hp) + 'hp'

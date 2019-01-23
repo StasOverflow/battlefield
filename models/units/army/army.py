@@ -5,7 +5,6 @@ class Strategy:
     pass
 
 
-
 @Unit.register('army')
 class Army(Unit):
     hp = 0
