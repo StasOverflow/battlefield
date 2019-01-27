@@ -38,6 +38,7 @@ class Battle:
             raise Exception('No incoming config file')
         else:
             with open(incoming_config) as conf:
+                army_count = 0
                 data = json.load(conf)
                 main_key = list(data.keys())[0]
                 for units in data[main_key]:

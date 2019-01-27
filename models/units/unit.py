@@ -19,13 +19,15 @@ class Unit(ABC):
 
     @abstractmethod
     def __init__(self, call_name, hp=0, cooldown=0, units=None):
-        self.hp = hp
-        self.call_name = call_name
-        self._recharge_time = cooldown
-        self._last_attack_timestamp = -self.recharge_time  # very cool workaround to attack instantly (kostil')
-        self._is_ready_to_attack = 0
+        self._hp = 0
+
+        self._sub_units = list()
         if units is not None:
             self.sub_units = units
+        self.hp = hp
+        self._call_name = call_name
+        self._recharge_time = cooldown
+        self._last_attack_timestamp = -self.recharge_time  # very cool workaround to attack instantly (kostil')
 
     def __repr__(self):
         type_of = self.__class__.__name__
@@ -35,16 +37,6 @@ class Unit(ABC):
         return repr_string
 
     """Abstract methods and properties goes here"""
-    # determines if unit is ready to attack
-    @property
-    def recharge_time(self):
-        return self._recharge_time
-
-    @recharge_time.setter
-    @abstractmethod
-    def recharge_time(self, time):
-        pass
-
     # calculate attack damage of a unit, return 0 if attack chance fails
     @property
     @abstractmethod
@@ -63,14 +55,8 @@ class Unit(ABC):
         pass
 
     # return either true or false, based on different parameters (unit-specific)
-    @property
     @abstractmethod
-    def is_ready_to_attack(self):
-        pass
-
-    @is_ready_to_attack.setter
-    @abstractmethod
-    def is_ready_to_attack(self, time):
+    def is_ready_to_attack_at_the_moment(self, time):
         pass
 
     """Other unit properties, applied to all subclasses"""
@@ -81,10 +67,19 @@ class Unit(ABC):
     @sub_units.setter
     def sub_units(self, units):
         # print(units)
-        self._sub_units = list()
         main_key = list(units.keys())[0]
         for unit in units[main_key]:
             self._sub_units.append(Unit.new(unit.pop('type'), unit))
+        return
+
+    # determines if unit is ready to attack
+    @property
+    def recharge_time(self):
+        return self._recharge_time
+
+    @recharge_time.setter
+    def recharge_time(self, time):
+        self._recharge_time = time
         return
 
     @property
@@ -110,10 +105,11 @@ class Unit(ABC):
         return self._hp
 
     @hp.setter
+    @abstractmethod
     def hp(self, value):
-        self._hp = value
-        return
+        pass
 
     @property
+    @abstractmethod
     def is_alive(self):
-        return True if self.hp > 0 else False
+        pass

@@ -16,11 +16,19 @@ class Army(Unit):
     }
     strategy_chosen = None
 
+    @property
+    def attack_damage(self):
+        pass
+
     def damage_receive(self, damage):
         pass
 
     @property
-    def damage(self):
+    def is_ready_to_attack(self):
+        pass
+
+    @is_ready_to_attack.setter
+    def is_ready_to_attack(self, time):
         pass
 
     @property
@@ -40,5 +48,10 @@ class Army(Unit):
         # print(string_repr)
         # return ''
         return string
+
+    @property
+    def is_alive(self):
+        pass
+        # return True if self.hp > 0 else False
 
 

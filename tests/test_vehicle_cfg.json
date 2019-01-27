@@ -1,0 +1,26 @@
+{
+    "type": "vehicle",
+    "hp": 100,
+    "cd": 1757,
+    "name": "Pepelats",
+    "operators": [
+        {
+            "type": "soldier",
+            "hp": 100,
+            "cd": 881,
+            "name": "Steve"
+        },
+        {
+            "type": "soldier",
+            "hp": 100,
+            "cd": 963,
+            "name": "Steve"
+        },
+        {
+            "type": "soldier",
+            "hp": 100,
+            "cd": 783,
+            "name": "Steve"
+        }
+    ]
+}

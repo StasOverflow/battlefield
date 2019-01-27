@@ -1,67 +1,105 @@
 from models.units.unit import Unit
-from models.units.soldier.soldier import Soldier
+import random
 
 
 @Unit.register('vehicle')
 class Vehicle(Unit):
 
-    base_hp = 200
+    base_hp = 100
+    base_recharge_time = 1000
 
-    def cd_update(self):
-        pass
+    def __init__(self, addit_dict=None):
+        self._vehicle_hp = 0
+        if addit_dict is None:
+            initial_call_name = "Test Machine"
+            initial_hp = self.base_hp
+            initial_cd = self.base_recharge_time
+        else:
+            initial_call_name = addit_dict.pop('name')
+            initial_hp = addit_dict.pop('hp')
+            initial_cd = addit_dict.pop('cd')
+        super().__init__(call_name=initial_call_name, hp=initial_hp, cooldown=initial_cd, units=addit_dict)
+
+    def __repr__(self):
+        return self.call_name + ' ' + str(self.hp) + '+' + str(self.operator_hp_avg) + 'hp'
 
     @property
-    def is_ready_to_attack(self):
-        return self._is_ready_to_attack
-
-    # @property
-    # def base_hp(self):
-    #     return self._base_hp
-
-    @is_ready_to_attack.setter
-    def is_ready_to_attack(self, time):
-        self._is_ready_to_attack = True if time - self.last_attack_timestamp >= self._base_cooldown else False
-        return
+    def attack_damage(self):
+        damage = 0
+        for operator_index in range(len(self.sub_units)):
+            operator_dmg = self.operator_xp_get(operator_index) / 100
+            damage += operator_dmg
+        return 0.1 + damage
 
     def damage_receive(self, damage):
-        pass
+        self.hp = self.hp - damage * 0.6
+        for operator in self.sub_units:
+            operator.hp = operator.hp - damage * 0.1
 
-    @property
-    def damage(self):
-        pass
+        lucky_one = random.choice(self.sub_units)
+        lucky_one.hp = lucky_one.hp - damage * 0.1
 
     @property
     def attack_chance(self):
-        pass
+        average_atk_success = 1
+        for operator in self.sub_units:
+            average_atk_success = average_atk_success * operator.attack_chance
+        average_atk_success = average_atk_success / len(self.sub_units)
+        return 0.5 * (1 + self.hp / 100) * average_atk_success
+
+    def is_ready_to_attack_at_the_moment(self, time):
+        return True if time - self.last_attack_timestamp >= self.recharge_time else False
+
+    def operator_xp_get(self, operator_index):
+        return self.sub_units[operator_index].experience
 
     @property
-    def base_health(self):
-        return self._base_hp
+    def operator_xp_total(self):
+        total_xp = 0
+        for operator_index, operator in enumerate(self.sub_units):
+            if operator.is_alive:
+                total_xp += self.operator_xp_get(operator_index)
+        return total_xp
+
+    def operator_hp_get(self, operator_index):
+        return self.sub_units[operator_index].hp
+
+    def operator_hp_set(self, operator_index, value):
+        self.sub_units[operator_index].hp = value
+        return
 
     @property
-    def base_recharge_time(self):
-        return self.recharge_time
+    def operator_hp_avg(self):
+        oper_avg_hp = 0
+        for oper_index in range(len(self.sub_units)):
+            oper_avg_hp += self.operator_hp_get(oper_index)
+        if oper_avg_hp is not 0:
+            oper_avg_hp = oper_avg_hp / len(self.sub_units)
+        return oper_avg_hp
 
-    def __init__(self, addit_dict=None):
-        self._name = addit_dict.pop('name')
-        hp = addit_dict.pop('hp')
-        super().__init__(self._name, hp=200)
+    @property
+    def vehicle_hp(self):
+        return self._vehicle_hp
 
-    def hp_get(self):
-        hp = 0
-        for soldier in self.sub_units:
-            hp = hp + soldier.hp_get()
-        hp = hp + self.vehicle_hp
-        return hp
+    @vehicle_hp.setter
+    def vehicle_hp(self, value):
+        self._vehicle_hp = value
+        if self.vehicle_hp < 0:
+            self._vehicle_hp = 0
+        return
 
-    def successful_attack_chance(self):
-        return True
+    @property
+    def hp(self):
+        return self.vehicle_hp
 
-    def damage_deal(self):
-        return self.damage
+    @hp.setter
+    def hp(self, value):
+        self.vehicle_hp = value
+        return
 
-    def damage_receive(self):
-        self.hp = self.hp - 100
-
-    def __repr__(self):
-        return self.call_name + ' ' + str(self.hp) + 'hp'
+    @property
+    def is_alive(self):
+        alive_indicator = False
+        if self.hp > 0 and self.operator_hp_avg > 0:
+            alive_indicator = True
+        return alive_indicator

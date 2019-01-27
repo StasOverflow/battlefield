@@ -7,17 +7,19 @@ class Squad(Unit):
     attack = 0
     damage = 0
 
-    def base_hp(self):
-        pass
-
-    def cd_update(self):
+    @property
+    def attack_damage(self):
         pass
 
     def damage_receive(self, damage):
         pass
 
     @property
-    def damage(self):
+    def is_ready_to_attack(self):
+        pass
+
+    @is_ready_to_attack.setter
+    def is_ready_to_attack(self, time):
         pass
 
     @property
@@ -34,3 +36,7 @@ class Squad(Unit):
             string = string + '\n' + str(unit)
         string = string + '\n--------------\n'
         return string
+
+    @property
+    def is_alive(self):
+        pass
