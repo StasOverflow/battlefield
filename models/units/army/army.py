@@ -54,4 +54,7 @@ class Army(Unit):
         pass
         # return True if self.hp > 0 else False
 
+    def is_ready_to_attack_at_the_moment(self, time):
+        pass
+
 
