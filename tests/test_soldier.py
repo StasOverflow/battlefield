@@ -1,7 +1,5 @@
 import unittest
-from unittest.mock import patch
-from unittest.mock import call
-from models.units.soldier.soldier import Soldier
+from models.units.infantry import Soldier
 
 
 class TestSoldierMethods(unittest.TestCase):

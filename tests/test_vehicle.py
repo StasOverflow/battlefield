@@ -1,7 +1,5 @@
 import unittest
-from models.units.vehicle.vehicle import Vehicle
-from models.units.soldier.soldier import Soldier
-from models.units.unit import Unit
+from models.units.base_unit import Unit
 import json
 
 

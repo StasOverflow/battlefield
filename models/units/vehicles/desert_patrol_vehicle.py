@@ -1,10 +1,12 @@
-from models.units.unit import Unit
+from models.units.base_unit import Unit
 import random
 
 
-@Unit.register('vehicle')
-class Vehicle(Unit):
-
+@Unit.register('dpv')
+class DPV(Unit):
+    """
+    Stands for "desert patrol vehicle"
+    """
     base_hp = 100
     base_recharge_time = 1000
 
