@@ -1,5 +1,5 @@
 import unittest
-from models.units.infantry import Soldier
+from models.units.infantry.soldier import Soldier
 
 
 class TestSoldierMethods(unittest.TestCase):

@@ -13,6 +13,7 @@ class TestVehicleMethods(unittest.TestCase):
         else:
             with open(config_data_file) as conf:
                 data = json.load(conf)
+                print(data)
                 unit_instance = Unit.new(data.pop('type'), data)
         return unit_instance
 

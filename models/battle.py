@@ -1,24 +1,8 @@
-
 from models.units.base_unit import Unit
-from models.units.armies.army import Army
-from models.units.infantry.soldier import Soldier
-from models.units.vehicles.desert_patrol_vehicle import DPV
-from models.units.formations.squad import Squad
 import json
 import time
 import math
 
-
-def _workaround():
-    """
-    Prevents pycharm from deleting imports on refactor
-    (silly as it is)
-    """
-    DPV()
-    Soldier()
-    Squad()
-    Army()
-    return None
 
 class BattleTimer:
 
