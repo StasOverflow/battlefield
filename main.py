@@ -1,14 +1,13 @@
-from models.battle import Battle
-from models.battle import BattleTimer
-import time
+from models.combat.battle import Battle
+from models.combat.battle import BattleTimer
 
 
 def main():
+    config_file = '/models/combat/battle_setup.json'
     timer = BattleTimer(100)
 
     print(timer.time)
-    Battle("battle_config.json")
-
+    battle = Battle(config_file)
 
     print(timer.time)
     # new_army = Army(0, 3, 3)

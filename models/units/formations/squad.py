@@ -1,20 +1,15 @@
-from models.units.base_unit import Unit
+from models.units.base_unit import BaseUnit
 
 
-@Unit.register('squad')
-class Squad(Unit):
+# @BaseUnit.register('squad')
+class Squad(BaseUnit):
 
     def __init__(self, addit_dict=None):
-        if addit_dict is None:
-            initial_call_name = "Test Squad"
-        else:
-            initial_call_name = addit_dict.pop('name')
-        super().__init__(call_name=initial_call_name, units=addit_dict)
+        super().__init__(units=addit_dict)
 
     def __repr__(self):
         string = '\n--------------\nsquad'  \
                  + ' num '                  \
-                 + self.call_name           \
                  + ':\n'
         for unit in self.sub_units:
             string = string + '\n' + str(unit)

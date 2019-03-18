@@ -1,5 +1,5 @@
 import unittest
-from models.units.base_unit import Unit
+from models.units.base_unit import BaseUnit
 import json
 
 
@@ -14,7 +14,7 @@ class TestVehicleMethods(unittest.TestCase):
             with open(config_data_file) as conf:
                 data = json.load(conf)
                 print(data)
-                unit_instance = Unit.new(data.pop('type'), data)
+                unit_instance = BaseUnit.new(data.pop('type'), data)
         return unit_instance
 
     def test_is_alive(self):

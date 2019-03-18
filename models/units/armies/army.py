@@ -1,12 +1,12 @@
-from models.units.base_unit import Unit
+from models.units.base_unit import BaseUnit
 
 
 class Strategy:
     pass
 
 
-@Unit.register('army')
-class Army(Unit):
+# @BaseUnit.register('army')
+class Army(BaseUnit):
     hp = 0
     attack = 0
     strategy_list = {
@@ -36,12 +36,11 @@ class Army(Unit):
         pass
 
     def __init__(self, addit_dict=None):
-        self._name = addit_dict.pop('name')
         self._strategy = addit_dict.pop('strategy')
-        super().__init__(self._name, units=addit_dict)
+        super().__init__(units=addit_dict)
 
     def __repr__(self):
-        string = 'Brave army num ' + str(self.call_name) + ' consists of:\n'
+        string = 'Brave army num ' + ' consists of:\n'
         for x in self.sub_units:
             string += str(x)
         # string_repr = '\n'.join(list(self.squad_units))

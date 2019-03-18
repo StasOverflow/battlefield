@@ -1,9 +1,9 @@
-from models.units.base_unit import Unit
+from models.units.base_unit import BaseUnit
 import random
 
 
-@Unit.register('dpv')
-class DPV(Unit):
+# @BaseUnit.register('dpv')
+class DPV(BaseUnit):
     """
     Stands for "desert patrol vehicle"
     """
@@ -13,17 +13,15 @@ class DPV(Unit):
     def __init__(self, addit_dict=None):
         self._vehicle_hp = 0
         if addit_dict is None:
-            initial_call_name = "Test Machine"
             initial_hp = self.base_hp
             initial_cd = self.base_recharge_time
         else:
-            initial_call_name = addit_dict.pop('name')
             initial_hp = addit_dict.pop('hp')
             initial_cd = addit_dict.pop('cd')
-        super().__init__(call_name=initial_call_name, hp=initial_hp, cooldown=initial_cd, units=addit_dict)
+        super().__init__(hp=initial_hp, cd=initial_cd, units=addit_dict)
 
     def __repr__(self):
-        return self.call_name + ' ' + str(self.hp) + '+' + str(self.operator_hp_avg) + 'hp'
+        return str(self.hp) + '+' + str(self.operator_hp_avg) + 'hp'
 
     @property
     def attack_damage(self):

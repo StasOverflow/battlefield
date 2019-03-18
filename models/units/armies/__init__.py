@@ -1,1 +1,1 @@
-from .army import Army
+print('imported army')
