@@ -81,8 +81,7 @@ class BaseInfantry(BaseUnit):
         'ready_to_attack_property' should be set to false explicitly, after calling this method
         (except if called in __init__)
 
-        Note: Method has a slight malfunctioning, because attacking side calls it twice
-        on the first turn (first in __init__ method, second - before attack)
+        calculated by formula: 0.5 * (1 + health/100) * random(50 + experience, 100) / 100
 
         :param initial:
         :return:
@@ -120,11 +119,10 @@ class BaseInfantry(BaseUnit):
         if success:
             exp = self.experience
             self.experience = exp + 1
-            print(self.experience)
 
     @property
     def hp(self):
-        return super().hp
+        return self._hp
 
     @hp.setter
     def hp(self, value):

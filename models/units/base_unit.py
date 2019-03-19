@@ -31,6 +31,7 @@ class BaseUnit(ABC):
 
     scheduler = time.monotonic
     infantry_id = 0
+    vehicle_id = 0
 
     @classmethod
     def register_group(cls, group_name, unit_type, depth):
@@ -44,6 +45,7 @@ class BaseUnit(ABC):
                             cant attack units with 8k depth, and so on
         """
         def decorator(unit_cls):
+            print(unit_cls)
             cls.GROUPS[group_name] = dict()
             cls.GROUPS[group_name][unit_type] = unit_cls
             cls.GROUPS[group_name]['depth'] = depth
@@ -60,26 +62,32 @@ class BaseUnit(ABC):
         """
         factory_class = None
         depth = None
+        aydi = 0
         for key, group_dict in cls.GROUPS.items():
             for sub_key, item in group_dict.items():
                 if inspect.isclass(item) and issubclass(item, cls):
                     if sub_key == unit_type:
                         factory_class = item
                         depth = group_dict['depth']
+                        if key == 'infantry':
+                            cls.infantry_id += 1
+                            aydi = cls.infantry_id
+                        elif key == 'vehicle':
+                            cls.vehicle_id += 1
+                            aydi = cls.vehicle_id
                         break
         if factory_class is None:
             raise AttributeError
-        cls.infantry_id += 1
-        return factory_class(depth=depth, aydi=cls.infantry_id, **kwargs)
+        return factory_class(depth=depth, aydi=aydi, **kwargs)
 
     @abstractmethod
     def __init__(self, hp=0, cd=0, aydi=None, units=None, depth=None):
         self.id = aydi
         self._hp = 0
         self.depth = depth
+        self.sub_units = None
         self._sub_units = list()
-        if units is not None:
-            self.sub_units = units
+        self.sub_units = units
         self.initial_hp = hp
         self.hp = self.initial_hp
         self._recharge_time = cd
@@ -90,14 +98,14 @@ class BaseUnit(ABC):
 
     def __repr__(self):
         type_of = self.__class__.__name__
-        stats_string = ' | DMG: ' + str(self.attack_damage) \
-                       + ' | cd: ' + str(self.recharge_time) \
-                       + ' | atk: ' + str(self.attack_chance) \
-                       + ' | rdy: ' + str(self.ready_to_attack(self.scheduler()))
+        stats_string = ' | DMG: ' + '{0:.3f}'.format(self.attack_damage) \
+                       + ' | cd: ' + '{0:.3f}'.format(self.recharge_time) \
+                       + ' | atk: ' + '{0:.3f}'.format(self.attack_chance) \
+                       + ' | rdy: ' + '{0:.3f}'.format(self.ready_to_attack(self.scheduler()))
         if not self.is_alive:
             stats_string = ' | DECEASED '
         repr_string = type_of + ' | ID :' + str(self.id) \
-                              + ' | HP: ' + str(self.hp) \
+                              + ' | HP: ' + '{0:.3f}'.format(self.hp) \
                               + stats_string
         return repr_string
 
@@ -255,10 +263,22 @@ class BaseUnit(ABC):
                     },
         """
         # print(units)
-        main_key = list(units.keys())[0]
-        print(main_key)
-        for unit in units[main_key]:
-            self._sub_units.append(BaseUnit.new(unit.pop('type'), unit))
+        if units is not None:
+            if isinstance(units, dict):
+                main_key = list(units.keys())[0]
+                print(main_key)
+                for unit in units[main_key]:
+                    self._sub_units.append(BaseUnit.new(unit.pop('type'), unit))
+            else:
+                for unit in units:
+                    self._sub_units.append(unit)
+
+    def sub_units_insert(self, explicit_array, json=False):
+        if json:
+            self.sub_units = explicit_array
+        if explicit_array is not None:
+            for unit in explicit_array:
+                self._sub_units.append(unit)
 
     @property
     def recharge_time(self):

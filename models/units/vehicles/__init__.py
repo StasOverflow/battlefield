@@ -1,1 +1,1 @@
-from .desert_patrol_vehicle import DPV
+from .base_vehicle_unit import BaseVehicle
