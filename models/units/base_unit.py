@@ -127,7 +127,7 @@ class BaseUnit(ABC):
         stats_string = ' | DMG: ' + '{0:.3f}'.format(self.attack_damage) \
                        + ' | cd: ' + '{0:.3f}'.format(self.recharge_time) \
                        + ' | atk: ' + '{0:.3f}'.format(self.attack_chance) \
-                       + ' | rdy: ' + '{0:.3f}'.format(self.ready_to_attack(self.scheduler()))
+                       + ' | rdy: ' + str(self.ready_to_attack())
         if not self.is_alive:
             stats_string = ' | DECEASED '
         repr_string = type_of + ' | ID :' + str(self.id) \
@@ -153,17 +153,16 @@ class BaseUnit(ABC):
         :return: True if attack performed, False otherwise
         """
         if self.ready_to_attack():
-            print('ready to attack')
             defending_unit = self.opponent_select(defending_unit)
             self.attack_chance_calculate()
             defending_unit.attack_chance_calculate()
-            self.is_prepared = False
+            self.reload()
             atk_side_chance = self.attack_chance
             def_side_chance = defending_unit.attack_chance
             if atk_side_chance > def_side_chance:
                 self.attack_won()
                 defending_unit.attack_lost(self.attack_damage)
-            self.reload()
+            self.is_prepared = False
             return True
         else:
             return False
@@ -243,7 +242,7 @@ class BaseUnit(ABC):
         pass
 
     @abstractmethod
-    def ready_to_attack(self, current_time=None):
+    def ready_to_attack(self):
         """
         Determines if unit is ready to attack
         """

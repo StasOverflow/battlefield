@@ -101,7 +101,8 @@ class BaseVehicle(BaseUnit):
         :param initial:
         :return:
         """
-        if self.ready_to_attack or initial and not self.is_prepared:
+        if self.ready_to_attack() or (initial and not self.is_prepared):
+            self.is_prepared = True
             average_atk_success = 1
             # print(self.sub_units)
             for operator in self.sub_units:
@@ -110,11 +111,10 @@ class BaseVehicle(BaseUnit):
             average_atk_success = average_atk_success ** (1/len(self.sub_units))
             self.attack_chance = 0.5 * (1 + self.hp / 100) * average_atk_success
 
-    def ready_to_attack(self, current_time=None):
-        if current_time is None:
-            current_time = self.scheduler()
-        # print(current_time - self.last_attack_timestamp)
-        return True if current_time - self.last_attack_timestamp >= self.recharge_time else False
+    def ready_to_attack(self):
+        current_time = self.scheduler()
+        is_ready = True if current_time - self.last_attack_timestamp >= self.recharge_time else False
+        return is_ready
 
     @property
     def hp(self):

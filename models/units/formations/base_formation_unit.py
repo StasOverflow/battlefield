@@ -102,6 +102,7 @@ class BaseFormation(BaseUnit):
 
     def damage_receive(self, damage):
         """
+        Deal equal damage to all subunits of a squad
         """
         damage_to_each = damage / len(self.sub_units)
         for unit in self.sub_units:
