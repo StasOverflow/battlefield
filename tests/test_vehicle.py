@@ -1,7 +1,5 @@
 import unittest
-from models.units.base_unit import BaseUnit
-from models.combat.battle import get_unit_from_json
-import json
+from models.combat import get_unit_from_json
 
 
 class TestVehicleMethods(unittest.TestCase):
@@ -12,6 +10,9 @@ class TestVehicleMethods(unittest.TestCase):
 
     def setUp(self):
         self.vehicle = self.vehicle_init()
+
+    def test_operators_exits(self):
+        self.assertEqual(len(self.vehicle.sub_units), 3)
 
     def test_is_alive(self):
         self.vehicle.damage_receive(500)

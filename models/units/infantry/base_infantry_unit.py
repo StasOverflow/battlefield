@@ -14,7 +14,7 @@ class BaseInfantry(BaseUnit):
     """
 
     base_hp = 100
-    base_recharge_time = .200
+    base_recharge_time = .002
 
     def __init__(self, **kwargs):
         """

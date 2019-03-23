@@ -15,7 +15,7 @@ class BaseVehicle(BaseUnit):
     """
 
     base_hp = 500
-    base_recharge_time = 1
+    base_recharge_time = 0.1
 
     def __init__(self, **kwargs):
         """
@@ -28,7 +28,6 @@ class BaseVehicle(BaseUnit):
         string = super().__repr__()
         oper_hp = ' | '
         for operator in self.sub_units:
-            print('oper hp is', operator.hp)
             oper_hp += '{0:.3f}'.format(operator.hp) + ' | '
         return string + oper_hp
 
@@ -49,7 +48,7 @@ class BaseVehicle(BaseUnit):
         But operators receive exp as a default infantry unit
         """
         for operator in self.sub_units:
-            operator.experience_increase()
+            operator.attack_won()
 
     def attack_lost(self, damage):
         self.damage_receive(damage)
@@ -106,6 +105,7 @@ class BaseVehicle(BaseUnit):
             average_atk_success = 1
             # print(self.sub_units)
             for operator in self.sub_units:
+                operator.attack_chance_calculate()
                 average_atk_success = average_atk_success * operator.attack_chance
             average_atk_success = average_atk_success ** (1/len(self.sub_units))
             self.attack_chance = 0.5 * (1 + self.hp / 100) * average_atk_success

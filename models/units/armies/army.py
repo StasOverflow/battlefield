@@ -1,4 +1,4 @@
-from models.units.base_unit import BaseUnit
+from models.units import BaseUnit
 
 
 class Strategy:

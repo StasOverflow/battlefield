@@ -1,7 +1,6 @@
 from models.units.base_unit import BaseUnit
 import json
 import time
-import math
 
 
 def get_unit_from_json(json_file):
@@ -10,7 +9,7 @@ def get_unit_from_json(json_file):
     else:
         with open(json_file) as conf:
             data = json.load(conf)
-            print(data)
+            # print(data)
             # type_of = data.pop('type')
             unit_instance = BaseUnit.new(**data)
     return unit_instance
@@ -51,14 +50,17 @@ class Battle:
         soldja_uno = get_unit_from_json('tests/test_soldier.json')
         soldja_two = get_unit_from_json('tests/test_soldier.json')
 
+        unit1 = vehicle_1
+        unit2 = vehicle_2
+
         for i in range(5000000):
             if self.vice_versa:
-                attack = soldja_uno.engage(soldja_two)
+                attack = unit1.engage(unit2)
             else:
-                attack = soldja_two.engage(soldja_uno)
+                attack = unit2.engage(unit1)
             self.vice_versa = not self.vice_versa
             if attack:
-                print('round result: \n', str(soldja_uno), '\n', str(soldja_two), '\n', '_'*80)
+                print('round result: \n', str(unit1), '\n', str(unit2), '\n', '_'*80)
 
     # def battle_vehicles(self):
 

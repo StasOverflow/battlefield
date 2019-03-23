@@ -1,7 +1,5 @@
 import unittest
-from models.units.base_unit import BaseUnit
-from models.combat.battle import get_unit_from_json
-import json
+from models.combat import get_unit_from_json
 
 
 class TestSoldierMethods(unittest.TestCase):

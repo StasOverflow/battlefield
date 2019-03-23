@@ -47,6 +47,13 @@ class BaseUnit(ABC):
         (unit with lower (say 2000) depth can contain a unit, which belongs to a
         deeper group (say 2001)).
     """
+
+    STRATEGIES = {
+        0: 'Attack Random',
+        1: 'Attack Weakest',
+        2: 'Attack Strongest',
+    }
+
     GROUPS = {}
 
     scheduler = time.monotonic
@@ -289,9 +296,6 @@ class BaseUnit(ABC):
             if isinstance(units, list):
                 for unit_data in units:
                     self._sub_units.append(BaseUnit.new(**unit_data))
-            # else:
-            #     for unit in units:
-            #         self._sub_units.append(unit)
 
     def sub_units_insert(self, explicit_array, json=False):
         if json:
@@ -305,8 +309,8 @@ class BaseUnit(ABC):
         return self._recharge_time
 
     @recharge_time.setter
-    def recharge_time(self, time):
-        self._recharge_time = time
+    def recharge_time(self, rec_time):
+        self._recharge_time = rec_time
         return
 
     @property
