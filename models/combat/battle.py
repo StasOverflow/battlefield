@@ -4,6 +4,18 @@ import time
 import math
 
 
+def get_unit_from_json(json_file):
+    if json_file is None:
+        raise Exception('Missing config file for soldier!')
+    else:
+        with open(json_file) as conf:
+            data = json.load(conf)
+            print(data)
+            # type_of = data.pop('type')
+            unit_instance = BaseUnit.new(**data)
+    return unit_instance
+
+
 class BattleTimer:
 
     def __init__(self, multiplier, battle_timer_getter_func=time.monotonic):
@@ -33,11 +45,11 @@ class Battle:
 
         self.vice_versa = False
 
-        # vehicle_1 = BaseUnit.new('dpv')
-        # vehicle_2 = BaseUnit.new('dpv')
+        vehicle_1 = get_unit_from_json('tests/test_vehicle.json')
+        vehicle_2 = get_unit_from_json('tests/test_vehicle.json')
 
-        soldja_uno = BaseUnit.new('soldier')
-        soldja_two = BaseUnit.new('soldier')
+        soldja_uno = get_unit_from_json('tests/test_soldier.json')
+        soldja_two = get_unit_from_json('tests/test_soldier.json')
 
         for i in range(5000000):
             if self.vice_versa:

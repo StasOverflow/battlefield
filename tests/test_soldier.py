@@ -1,5 +1,6 @@
 import unittest
 from models.units.base_unit import BaseUnit
+from models.combat.battle import get_unit_from_json
 import json
 
 
@@ -7,15 +8,7 @@ class TestSoldierMethods(unittest.TestCase):
 
     @staticmethod
     def soldier_init():
-        config_data_file = "tests/test_soldier.json"
-        if config_data_file is None:
-            raise Exception('Missing config file for soldier!')
-        else:
-            with open(config_data_file) as conf:
-                data = json.load(conf)
-                # type_of = data.pop('type')
-                unit_instance = BaseUnit.new(**data)
-        return unit_instance
+        return get_unit_from_json("tests/test_soldier.json")
 
     def setUp(self):
         self.soldier = self.soldier_init()

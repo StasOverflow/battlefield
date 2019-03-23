@@ -136,8 +136,3 @@ class BaseVehicle(BaseUnit):
             return False
         else:
             return True
-
-
-if __name__ == '__main__':
-    vehicle_1 = BaseUnit.new('dpv')
-    vehicle_2 = BaseUnit.new('dpv')

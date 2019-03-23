@@ -146,7 +146,10 @@ class BaseUnit(ABC):
         :return: True if attack performed, False otherwise
         """
         if self.ready_to_attack():
+            print('ready to attack')
             defending_unit = self.opponent_select(defending_unit)
+            self.attack_chance_calculate()
+            defending_unit.attack_chance_calculate()
             self.is_prepared = False
             atk_side_chance = self.attack_chance
             def_side_chance = defending_unit.attack_chance

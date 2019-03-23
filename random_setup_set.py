@@ -52,9 +52,11 @@ class ConfigSetup:
         battle_setup = {'armies': [self.random_army_config() for _ in range(self.army_count)]}
         return battle_setup
 
-    def setup_create(self, setup=None, path_to_output_file='combat_setup.json'):
+    def setup_create(self, setup=None, to_json=True, path_to_output_file='combat_setup.json'):
         with open(path_to_output_file, 'w') as outfile:
+            data = json.dumps(setup, indent=4)
             json.dump(setup, outfile, indent=4)
+        return data
 
 
 if __name__ == '__main__':
