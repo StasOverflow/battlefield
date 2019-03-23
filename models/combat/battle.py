@@ -32,12 +32,12 @@ class Battle:
         self._participants = list()
 
         self.vice_versa = False
-        # print(BaseUnit.GROUPS)
-        soldja_uno = BaseUnit.new('soldier')
-        soldja_two = BaseUnit.new('soldier')
 
         # vehicle_1 = BaseUnit.new('dpv')
         # vehicle_2 = BaseUnit.new('dpv')
+
+        soldja_uno = BaseUnit.new('soldier')
+        soldja_two = BaseUnit.new('soldier')
 
         for i in range(5000000):
             if self.vice_versa:
@@ -47,6 +47,8 @@ class Battle:
             self.vice_versa = not self.vice_versa
             if attack:
                 print('round result: \n', str(soldja_uno), '\n', str(soldja_two), '\n', '_'*80)
+
+    # def battle_vehicles(self):
 
     def setup_set(self, setup):
         data = json.load(setup)

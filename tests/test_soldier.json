@@ -1,0 +1,6 @@
+{
+    "klass": "infantry",
+    "type": "soldier",
+    "hp": 100,
+    "cd": 0.18
+}

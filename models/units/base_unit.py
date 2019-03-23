@@ -73,16 +73,15 @@ class BaseUnit(ABC):
         return decorator
 
     @classmethod
-    def new(cls, unit_type, **kwargs):
+    def new(cls, **kwargs):
         """
         Method that returns a class instance via its unit_type
-        :param unit_type: code name of a class, defined via '@register_group(gn, unit_type, 300)'
         :param kwargs: params, passed to class
         :return: class instance
         """
         factory_class = None
-        depth = None
         aydi = 0
+        unit_type = kwargs.pop('type')
         for key, group_dict in cls.GROUPS.items():
             if unit_type in group_dict['units']:
                 unit = group_dict['units'][unit_type]
@@ -97,13 +96,13 @@ class BaseUnit(ABC):
                     break
         if factory_class is None:
             raise AttributeError
-        return factory_class(depth=depth, aydi=aydi, **kwargs)
+        return factory_class(aydi=aydi, **kwargs)
 
     @abstractmethod
-    def __init__(self, hp=0, cd=0, aydi=None, units=None, depth=None):
+    def __init__(self, hp=0, cd=0, aydi=None, units=None, klass=None):
         self.id = aydi
         self._hp = 0
-        self.depth = depth
+        # self.depth = depth
         self.sub_units = None
         self._sub_units = list()
         self.sub_units = units
@@ -284,14 +283,12 @@ class BaseUnit(ABC):
         """
         # print(units)
         if units is not None:
-            if isinstance(units, dict):
-                main_key = list(units.keys())[0]
-                print(main_key)
-                for unit in units[main_key]:
-                    self._sub_units.append(BaseUnit.new(unit.pop('type'), unit))
-            else:
-                for unit in units:
-                    self._sub_units.append(unit)
+            if isinstance(units, list):
+                for unit_data in units:
+                    self._sub_units.append(BaseUnit.new(**unit_data))
+            # else:
+            #     for unit in units:
+            #         self._sub_units.append(unit)
 
     def sub_units_insert(self, explicit_array, json=False):
         if json:

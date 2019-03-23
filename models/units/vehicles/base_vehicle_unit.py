@@ -22,18 +22,7 @@ class BaseVehicle(BaseUnit):
         Get params from kwargs, and call to base unit __init__ method
         """
         self.hp = 0
-        stats = kwargs.get('stats')
-        if stats is None:
-            initial_hp = self.base_hp
-            initial_cd = self.base_recharge_time
-        else:
-            initial_hp = stats.pop('hp')
-            initial_cd = stats.pop('cd')
-        sub_units = kwargs.get('sub_units')
-        if sub_units is None:
-            sub_units = [BaseUnit.new('soldier') for _ in range(3)]
-        super().__init__(hp=initial_hp, cd=initial_cd, units=sub_units, **kwargs)
-        self.experience = 0
+        super().__init__(**kwargs)
 
     def __repr__(self):
         string = super().__repr__()
@@ -115,6 +104,7 @@ class BaseVehicle(BaseUnit):
         """
         if self.ready_to_attack or initial and not self.is_prepared:
             average_atk_success = 1
+            # print(self.sub_units)
             for operator in self.sub_units:
                 average_atk_success = average_atk_success * operator.attack_chance
             average_atk_success = average_atk_success ** (1/len(self.sub_units))

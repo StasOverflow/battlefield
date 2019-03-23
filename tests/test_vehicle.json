@@ -1,26 +1,26 @@
 {
-    "class": "vehicle",
+    "klass": "vehicle",
     "type": "dpv",
     "hp": 500,
-    "cd": 0.689,
-    "operators": [
+    "cd": 1.32,
+    "units": [
         {
-            "class": "infantry",
+            "klass": "infantry",
             "type": "soldier",
             "hp": 100,
-            "cd": 0.205
+            "cd": 0.167
         },
         {
-            "class": "infantry",
+            "klass": "infantry",
             "type": "soldier",
             "hp": 100,
-            "cd": 0.162
+            "cd": 0.109
         },
         {
-            "class": "infantry",
+            "klass": "infantry",
             "type": "soldier",
             "hp": 100,
-            "cd": 0.156
+            "cd": 0.133
         }
     ]
 }

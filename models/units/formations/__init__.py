@@ -1,1 +1,1 @@
-from .squad import Squad
+from .base_formation_unit import BaseFormation

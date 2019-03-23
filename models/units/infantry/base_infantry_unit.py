@@ -20,16 +20,8 @@ class BaseInfantry(BaseUnit):
         """
         Get params from kwargs, and call to base unit __init__ method
         """
-        self.hp = 0
-        stats = kwargs.get('stats')
-        if stats is None:
-            initial_hp = self.base_hp
-            initial_cd = self.base_recharge_time
-        else:
-            initial_hp = stats.pop('hp')
-            initial_cd = stats.pop('cd')
         self.experience = 0
-        super().__init__(hp=initial_hp, cd=initial_cd, **kwargs)
+        super().__init__(**kwargs)
 
     def __repr__(self):
         string = super().__repr__()

@@ -15,17 +15,20 @@ class ConfigSetup:
         Used to get randomish new value, from a given, by selecting a random point
         between 50% and 150% of a given value
         """
-        btm_border = value * 0.5
-        top_border = value * 1.5
-        return float("{0:.3f}".format(uniform(btm_border, top_border)))
+        if value is not None:
+            btm_border = value * 0.5
+            top_border = value * 1.5
+            return float("{0:.3f}".format(uniform(btm_border, top_border)))
+        else:
+            return None
 
     def default_unit_config(self, unit_type, unit_subtype):
         unit = BaseUnit.GROUPS[unit_type]['units'][unit_subtype]
-        some_unit_stats = {'class': unit_type, 'type': unit_subtype,
+        some_unit_stats = {'klass': unit_type, 'type': unit_subtype,
                            'hp': unit.base_hp, 'cd': self.randomize_value(unit.base_recharge_time)}
         if unit_type == 'vehicle':
-            some_unit_stats['operators'] = [self.default_unit_config(unit_type='infantry',
-                                                                     unit_subtype='soldier') for _ in range(3)]
+            some_unit_stats['units'] = [self.default_unit_config(unit_type='infantry',
+                                                                 unit_subtype='soldier') for _ in range(3)]
         return some_unit_stats
 
     def random_unit_config(self):
@@ -49,7 +52,7 @@ class ConfigSetup:
         battle_setup = {'armies': [self.random_army_config() for _ in range(self.army_count)]}
         return battle_setup
 
-    def setup_create(self, path_to_output_file='combat_setup.json', setup=None):
+    def setup_create(self, setup=None, path_to_output_file='combat_setup.json'):
         with open(path_to_output_file, 'w') as outfile:
             json.dump(setup, outfile, indent=4)
 
@@ -57,4 +60,4 @@ class ConfigSetup:
 if __name__ == '__main__':
     configurator = ConfigSetup()
     setup = configurator.random_battle_config()
-    configurator.setup_create(setup)
+    configurator.setup_create(setup=setup)

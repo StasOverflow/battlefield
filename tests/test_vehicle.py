@@ -13,8 +13,8 @@ class TestVehicleMethods(unittest.TestCase):
         else:
             with open(config_data_file) as conf:
                 data = json.load(conf)
-                type_of = data.pop('type')
-                unit_instance = BaseUnit.new(type_of)
+                # type_of = data.pop('type')
+                unit_instance = BaseUnit.new(**data)
         return unit_instance
 
     def setUp(self):
