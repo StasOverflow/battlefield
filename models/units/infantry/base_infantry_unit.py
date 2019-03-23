@@ -64,8 +64,8 @@ class BaseInfantry(BaseUnit):
     def attack_chance(self, value):
         self._attack_chance = value
 
-    def opponent_select(self, given_oponent=None):
-        return given_oponent
+    def opponent_select(self, given_opponent=None):
+        return given_opponent
 
     def attack_chance_calculate(self, initial=False):
         """

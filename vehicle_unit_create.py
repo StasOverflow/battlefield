@@ -1,4 +1,4 @@
-from random_setup_set import ConfigSetup
+from battle_setup_set import ConfigSetup
 
 
 if __name__ == '__main__':

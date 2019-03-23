@@ -31,14 +31,20 @@ class ConfigSetup:
                                                                  unit_subtype='soldier') for _ in range(3)]
         return some_unit_stats
 
-    def random_unit_config(self):
-        random_group = choice(list(BaseUnit.GROUPS.keys()))
+    def random_unit_config(self, depth=None):
+        if depth is None:
+            raise AttributeError
+        else:
+            new_groups = [key for key, group in BaseUnit.GROUPS.items()
+                          if group['depth'] > depth]
+            random_group = choice(new_groups)
         random_unit = choice(list(BaseUnit.GROUPS[random_group]['units'].keys()))
         return self.default_unit_config(unit_type=random_group, unit_subtype=random_unit)
 
     def random_squad_config(self):
+        depth = BaseUnit.GROUPS['formation']['depth']
         squad_string = {'type': 'squad',
-                        'units': [self.random_unit_config() for _ in range(self.units_per_squad)]}
+                        'units': [self.random_unit_config(depth) for _ in range(self.units_per_squad)]}
         return squad_string
 
     def random_army_config(self):

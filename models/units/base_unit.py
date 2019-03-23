@@ -19,9 +19,9 @@ class BaseUnit(ABC):
     :param: is_prepared - A flag, that indicates if Unit's attack_chance
             has already been calculated;
             Note: should be set to False explicitly after every attack event**
-    :param: ready_to_attack(time) - Determine if unit's last attack was performed
-            certain amount of time ago (where amount of time is value of current
-            time minus CD)
+    :param: ready_to_attack() - Determine if unit's last attack was performed
+            certain amount of time ago (where amount of time ago is even or more
+            of unit's CD time)
     And more
 
     Unit group (formation for example) can be represented as follows:
@@ -109,7 +109,7 @@ class BaseUnit(ABC):
     def __init__(self, hp=0, cd=0, aydi=None, units=None, klass=None):
         self.id = aydi
         self._hp = 0
-        # self.depth = depth
+        self.depth = self.GROUPS[klass]['depth']
         self.sub_units = None
         self._sub_units = list()
         self.sub_units = units
@@ -168,7 +168,7 @@ class BaseUnit(ABC):
             return False
 
     @abstractmethod
-    def opponent_select(self, given_oponent=None):
+    def opponent_select(self, given_opponent=None):
         """
         Selects an opponent, according to chosen tactics
         :return:

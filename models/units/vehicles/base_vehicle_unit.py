@@ -86,8 +86,8 @@ class BaseVehicle(BaseUnit):
     def attack_chance(self, value):
         self._attack_chance = value
 
-    def opponent_select(self, given_oponent=None):
-        return given_oponent
+    def opponent_select(self, given_opponent=None):
+        return given_opponent
 
     def attack_chance_calculate(self, initial=False):
         """
@@ -129,10 +129,11 @@ class BaseVehicle(BaseUnit):
 
     @property
     def is_alive(self):
+        operators_dead = 0
         for operator in self.sub_units:
             if not operator.is_alive:
-                return False
-        if self.hp <= 0:
+                operators_dead += 1
+        if self.hp <= 0 or operators_dead == len(self.sub_units):
             return False
         else:
             return True

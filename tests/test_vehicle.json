@@ -2,7 +2,7 @@
     "klass": "vehicle",
     "type": "dpv",
     "hp": 500,
-    "cd": 0.093,
+    "cd": 0.125,
     "units": [
         {
             "klass": "infantry",
@@ -20,7 +20,7 @@
             "klass": "infantry",
             "type": "soldier",
             "hp": 100,
-            "cd": 0.003
+            "cd": 0.002
         }
     ]
 }
