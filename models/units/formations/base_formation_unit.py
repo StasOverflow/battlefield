@@ -76,11 +76,10 @@ class BaseFormation(BaseUnit):
 
     def __repr__(self):
         string = super().__repr__()
-        oper_hp = ' | '
+        sub_unit_hp = ' | '
         for unit in self.sub_units:
-            # print('sub_unit hp is', unit.hp)
-            oper_hp += '{0:.3f}'.format(unit.hp) + ' | '
-        return string + oper_hp
+            sub_unit_hp += '{0:.3f}'.format(unit.hp) + ' | '
+        return string + sub_unit_hp
 
     def engage(self, defending_unit):
         return super().engage(defending_unit)
@@ -128,12 +127,24 @@ class BaseFormation(BaseUnit):
 
     def attack_chance_calculate(self, initial=False):
         """
+        Calculate a chance of a successful attack for a particular turn.
+        'ready_to_attack_property' should be set to false explicitly, after calling this method
+        (except if called in __init__)
+
+        calculated by formula: gavg(sub_unit.attack_success),
+                where gavg is geometric mean ((x1*x2..xN)^(1/N))
+
+        :param initial:
+        :return:
         """
-        if self.ready_to_attack or initial and not self.is_prepared:
+        if self.ready_to_attack() or (initial and not self.is_prepared):
+            self.is_prepared = True
             average_atk_success = 1
+            # print(self.sub_units)
             for operator in self.sub_units:
+                operator.attack_chance_calculate()
                 average_atk_success = average_atk_success * operator.attack_chance
-            average_atk_success = average_atk_success ** (1 / len(self.sub_units))
+            average_atk_success = average_atk_success ** (1/len(self.sub_units))
             self.attack_chance = 0.5 * (1 + self.hp / 100) * average_atk_success
 
     def ready_to_attack(self, current_time=None):

@@ -21,7 +21,6 @@ class BaseVehicle(BaseUnit):
         """
         Get params from kwargs, and call to base unit __init__ method
         """
-        self.hp = 0
         super().__init__(**kwargs)
 
     def __repr__(self):
@@ -62,8 +61,8 @@ class BaseVehicle(BaseUnit):
         Other operators takes 10% of total damage
         """
         self.hp = self.hp - damage * 0.6
-        for operator in self.sub_units:
-            operator.damage_receive(damage * 0.1)
+        for unit in self.sub_units:
+            unit.damage_receive(damage * 0.1)
 
         lucky_one = random.choice(self.sub_units)
         lucky_one.damage_receive(damage * 0.1)
@@ -80,7 +79,7 @@ class BaseVehicle(BaseUnit):
         Note: because every unit has cooldown on attack, calculations performs only
         once per move
         """
-        return self._attack_chance
+        return self._attack_chance if self.is_alive else False
 
     @attack_chance.setter
     def attack_chance(self, value):
@@ -123,8 +122,10 @@ class BaseVehicle(BaseUnit):
     @hp.setter
     def hp(self, value):
         self._hp = value
-        if self.hp < 0:
+        if self.hp <= 0:
             self._hp = 0
+            for unit in self.sub_units:
+                unit.hp = 0
         return
 
     @property

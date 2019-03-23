@@ -58,7 +58,7 @@ class BaseInfantry(BaseUnit):
         Note: because every unit has cooldown on attack, calculations performs only
         once per move
         """
-        return self._attack_chance
+        return self._attack_chance if self.is_alive else False
 
     @attack_chance.setter
     def attack_chance(self, value):

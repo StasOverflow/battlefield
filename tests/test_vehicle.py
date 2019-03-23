@@ -14,6 +14,11 @@ class TestVehicleMethods(unittest.TestCase):
     def test_operators_exits(self):
         self.assertEqual(len(self.vehicle.sub_units), 3)
 
+    def test_operators_dead_when_vehicle_damaged(self):
+        self.vehicle.hp = 0
+        for unit in self.vehicle.sub_units:
+            self.assertFalse(unit.is_alive)
+
     def test_is_not_alive(self):
         self.vehicle.damage_receive(5000)
         self.assertFalse(self.vehicle.is_alive)
@@ -34,13 +39,19 @@ class TestVehicleMethods(unittest.TestCase):
         self.vehicle.sub_units[2].hp = 0
         self.assertFalse(self.vehicle.is_alive)
 
-    def test_soldier_on_cooldown(self):
+    def test_vehicle_on_cooldown(self):
         enemy = self.vehicle_init()
         self.assertTrue(self.vehicle.ready_to_attack())
         self.assertTrue(enemy.ready_to_attack())
         self.vehicle.engage(enemy)
         self.assertFalse(self.vehicle.ready_to_attack())
         self.assertTrue(enemy.ready_to_attack())
+
+    def test_vehicle_attack_chance_when_dead(self):
+        self.vehicle.hp = 0
+        self.vehicle.attack_chance_calculate()
+        self.assertFalse(self.vehicle.is_alive)
+        self.assertEqual(self.vehicle.attack_chance, 0)
 
 
 if __name__ == '__main__':
