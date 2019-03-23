@@ -109,10 +109,10 @@ class BaseInfantry(BaseUnit):
 
     @experience.setter
     def experience(self, exp_value):
-        if self.experience >= 50:
-            self._experience = 50
-        elif self.experience <= 0:
-            self._experience = 0
+        if exp_value >= 50:
+            exp_value = 50
+        elif exp_value <= 0:
+            exp_value = 0
         self._experience = exp_value
 
     def experience_increase(self, success=True):

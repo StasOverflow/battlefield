@@ -1,58 +1,40 @@
 import unittest
-from models.units.infantry.soldier import Soldier
+from models.units.infantry.base_infantry_unit import BaseInfantry
 
 
 class TestSoldierMethods(unittest.TestCase):
 
+    def setUp(self):
+        self.soldier = BaseInfantry()
+
     def test_is_alive(self):
-        soldier = Soldier()
-        self.assertTrue(soldier.is_alive)
+        self.assertTrue(self.soldier.is_alive)
 
     def test_is_not_alive(self):
-        soldier = Soldier()
-        soldier.hp = 0
-        self.assertFalse(soldier.is_alive)
+        self.soldier.damage_receive(9000)
+        self.assertFalse(self.soldier.is_alive)
+        self.assertEqual(self.soldier.attack_damage, 0)
 
-    def test_damage_received_overwhelming(self):
-        soldier = Soldier()
-        soldier.damage_receive(400)
-        self.assertEqual(soldier.hp, 0)
+    def test_damage_received(self):
+        self.assertEqual(self.soldier.hp, 100)
+        self.soldier.damage_receive(400)
+        self.assertNotEqual(self.soldier.hp, 100)
 
-    def test_soldier_experience_overwhelming(self):
-        soldier = Soldier()
-        soldier.experience = 500
-        self.assertEqual(soldier.experience, 50)
+    def test_soldier_experience_overflow(self):
+        self.soldier.experience = 500
+        self.assertEqual(self.soldier.experience, 50)
 
-    def test_soldier_experience_negative(self):
-        soldier = Soldier()
-        soldier.experience = -400
-        self.assertEqual(soldier.experience, 0)
+    def test_soldier_experience_underflow(self):
+        self.soldier.experience = -400
+        self.assertEqual(self.soldier.experience, 0)
 
-
-    # @patch('builtins.print')
-    # @patch('models.units.soldier.random')
-    # def test_x(self, mock_random, p):
-    #     soldier = Soldier()
-        # mock_random.return_value = 6
-        # soldier.random_value()
-        # mock_random.return_value = 2
-        # soldier.random_value()
-
-        # mock_random.randint.side_effect = [1, 10, RuntimeError('da'), 20]
-        # soldier.random_value()
-        # soldier.random_value()
-        # with self.assertRaises(RuntimeError):
-        #     soldier.random_value()
-        # soldier.random_value()
-        # mock_random.randint.return_value = 1
-        # soldier.random_value()
-        # p.assert_called_once_with('y')
-        # p.mock_calls
-
-        # self.assertListEqual(p.mock_calls, [call('x')])
-    # def test_is_value_less(self):
-    #     soldier = Soldier()
-    #     soldier.random_value()
+    def test_soldier_on_cooldown(self):
+        enemy = BaseInfantry()
+        self.assertTrue(self.soldier.ready_to_attack())
+        self.assertTrue(enemy.ready_to_attack())
+        self.soldier.engage(enemy)
+        self.assertFalse(self.soldier.ready_to_attack())
+        self.assertTrue(enemy.ready_to_attack())
 
 
 if __name__ == '__main__':

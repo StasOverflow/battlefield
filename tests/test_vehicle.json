@@ -1,26 +1,26 @@
 {
+    "class": "vehicle",
     "type": "dpv",
-    "hp": 100,
-    "cd": 1757,
-    "name": "Pepelats",
+    "hp": 500,
+    "cd": 0.689,
     "operators": [
         {
+            "class": "infantry",
             "type": "soldier",
             "hp": 100,
-            "cd": 881,
-            "name": "Steve"
+            "cd": 0.205
         },
         {
+            "class": "infantry",
             "type": "soldier",
             "hp": 100,
-            "cd": 963,
-            "name": "Steve"
+            "cd": 0.162
         },
         {
+            "class": "infantry",
             "type": "soldier",
             "hp": 100,
-            "cd": 783,
-            "name": "Steve"
+            "cd": 0.156
         }
     ]
 }

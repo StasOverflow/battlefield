@@ -6,7 +6,8 @@ import random
 class BaseVehicle(BaseUnit):
     """
     Can possibly extend unit's class with additional methods and properties,
-    which can be applied only to vehicle-type unit (like armor-type, bow-gun-type, etc)
+    which can be applied only to vehicle-type unit (like vehicle type,
+    bow-gun-type, etc)
     Defined as desert patrol vehicle
 
     :param base_hp: base hp of a default vehicle unit, used it none specified
@@ -14,14 +15,12 @@ class BaseVehicle(BaseUnit):
     """
 
     base_hp = 500
-    base_recharge_time = .1000
+    base_recharge_time = 1
 
     def __init__(self, **kwargs):
         """
         Get params from kwargs, and call to base unit __init__ method
         """
-        # self._vehicle_hp = 0
-
         self.hp = 0
         stats = kwargs.get('stats')
         if stats is None:
@@ -152,4 +151,3 @@ class BaseVehicle(BaseUnit):
 if __name__ == '__main__':
     vehicle_1 = BaseUnit.new('dpv')
     vehicle_2 = BaseUnit.new('dpv')
-    # print(vehicle_1, vehicle_2)

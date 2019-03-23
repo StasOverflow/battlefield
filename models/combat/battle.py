@@ -33,20 +33,20 @@ class Battle:
 
         self.vice_versa = False
         # print(BaseUnit.GROUPS)
-        # soldja_uno = BaseUnit.new('soldier')
-        # soldja_two = BaseUnit.new('soldier')
+        soldja_uno = BaseUnit.new('soldier')
+        soldja_two = BaseUnit.new('soldier')
 
-        vehicle_1 = BaseUnit.new('dpv')
-        vehicle_2 = BaseUnit.new('dpv')
+        # vehicle_1 = BaseUnit.new('dpv')
+        # vehicle_2 = BaseUnit.new('dpv')
 
         for i in range(5000000):
             if self.vice_versa:
-                attack = vehicle_1.engage(vehicle_2)
+                attack = soldja_uno.engage(soldja_two)
             else:
-                attack = vehicle_2.engage(vehicle_1)
+                attack = soldja_two.engage(soldja_uno)
             self.vice_versa = not self.vice_versa
             if attack:
-                print('round result: \n', str(vehicle_1), '\n', str(vehicle_2), '\n', '_'*80)
+                print('round result: \n', str(soldja_uno), '\n', str(soldja_two), '\n', '_'*80)
 
     def setup_set(self, setup):
         data = json.load(setup)

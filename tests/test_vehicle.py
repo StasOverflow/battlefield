@@ -7,41 +7,34 @@ class TestVehicleMethods(unittest.TestCase):
 
     @staticmethod
     def vehicle_init():
-        config_data_file = "tests/test_vehicle_cfg.json"
+        config_data_file = "tests/test_vehicle.json"
         if config_data_file is None:
-            raise Exception('Something went wrong')
+            raise Exception('Missing config file for vehicle!')
         else:
             with open(config_data_file) as conf:
                 data = json.load(conf)
-                print(data)
-                unit_instance = BaseUnit.new(data.pop('type'), data)
+                type_of = data.pop('type')
+                unit_instance = BaseUnit.new(type_of)
         return unit_instance
 
+    def setUp(self):
+        self.vehicle = self.vehicle_init()
+
     def test_is_alive(self):
-        vehicle = self.vehicle_init()
-        vehicle.damage_receive(400)
-        self.assertFalse(vehicle.is_alive)
+        self.vehicle.damage_receive(500)
+        self.assertFalse(self.vehicle.is_alive)
 
     def test_is_not_alive(self):
-        vehicle = self.vehicle_init()
-        vehicle.damage_receive(166.66666666666666666666667)
-        print(vehicle)
-        self.assertTrue(vehicle.is_alive)
-    #
-    # def test_damage_received_overwhelming(self):
-    #     soldier = Soldier()
-    #     soldier.damage_receive(400)
-    #     self.assertEqual(soldier.hp, 0)
-    #
-    # def test_soldier_experience_overwhelming(self):
-    #     soldier = Soldier()
-    #     soldier.experience = 500
-    #     self.assertEqual(soldier.experience, 50)
-    #
-    # def test_soldier_experience_negative(self):
-    #     soldier = Soldier()
-    #     soldier.experience = -400
-    #     self.assertEqual(soldier.experience, 0)
+        self.vehicle.damage_receive(166.66666666666666666666667)
+        self.assertTrue(self.vehicle.is_alive)
+
+    def test_soldier_on_cooldown(self):
+        enemy = self.vehicle_init()
+        self.assertTrue(self.vehicle.ready_to_attack())
+        self.assertTrue(enemy.ready_to_attack())
+        self.vehicle.engage(enemy)
+        self.assertFalse(self.vehicle.ready_to_attack())
+        self.assertTrue(enemy.ready_to_attack())
 
 
 if __name__ == '__main__':

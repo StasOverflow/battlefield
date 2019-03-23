@@ -23,9 +23,29 @@ class BaseUnit(ABC):
             certain amount of time ago (where amount of time is value of current
             time minus CD)
     And more
+
+    Unit group (formation for example) can be represented as follows:
+        'formation***': {
+            'units': (
+                'unit_of_type_say_squad',
+                'unit_of_type_say_medical_squad',
+            )
+            'depth': 3000
+            TODO:
+                'possible_subgroups': (
+                    'infantry',
+                    'vehicle',
+                )
+        }
     _____
-    ** An event is considered as attack event if unit's attack damage was called
-       with purpose to participate in a battle
+    **
+        An event is considered as attack event if unit's attack damage was called
+        with purpose to participate in a battle
+    ***
+        Depth - depth is a value, determining a possibility of a certain unit-group
+        to contain another units
+        (unit with lower (say 2000) depth can contain a unit, which belongs to a
+        deeper group (say 2001)).
     """
     GROUPS = {}
 
@@ -41,13 +61,13 @@ class BaseUnit(ABC):
         :param group_name: A common name for group of alike units
         :param unit_type: Type of a unit
         :param depth: Value used to determine if unit can contain more units
-                      e.g.: unit with 9k depth can't contain unit with 8k depth,
-                            cant attack units with 8k depth, and so on
+            e.g.: unit with 9k depth can't contain unit with 8k depth,
         """
         def decorator(unit_cls):
-            print(unit_cls)
+            # print(unit_cls)
             cls.GROUPS[group_name] = dict()
-            cls.GROUPS[group_name][unit_type] = unit_cls
+            cls.GROUPS[group_name]['units'] = dict()
+            cls.GROUPS[group_name]['units'][unit_type] = unit_cls
             cls.GROUPS[group_name]['depth'] = depth
             return unit_cls
         return decorator
@@ -64,18 +84,17 @@ class BaseUnit(ABC):
         depth = None
         aydi = 0
         for key, group_dict in cls.GROUPS.items():
-            for sub_key, item in group_dict.items():
-                if inspect.isclass(item) and issubclass(item, cls):
-                    if sub_key == unit_type:
-                        factory_class = item
-                        depth = group_dict['depth']
-                        if key == 'infantry':
-                            cls.infantry_id += 1
-                            aydi = cls.infantry_id
-                        elif key == 'vehicle':
-                            cls.vehicle_id += 1
-                            aydi = cls.vehicle_id
-                        break
+            if unit_type in group_dict['units']:
+                unit = group_dict['units'][unit_type]
+                if inspect.isclass(unit) and issubclass(unit, cls):
+                    factory_class = unit
+                    if key == 'infantry':
+                        cls.infantry_id += 1
+                        aydi = cls.infantry_id
+                    elif key == 'vehicle':
+                        cls.vehicle_id += 1
+                        aydi = cls.vehicle_id
+                    break
         if factory_class is None:
             raise AttributeError
         return factory_class(depth=depth, aydi=aydi, **kwargs)
@@ -91,7 +110,8 @@ class BaseUnit(ABC):
         self.initial_hp = hp
         self.hp = self.initial_hp
         self._recharge_time = cd
-        self._last_attack_timestamp = self.scheduler()-self.recharge_time  # very cool workaround to attack instantly (kostil')
+        # very cool workaround to attack instantly (kostil')
+        self._last_attack_timestamp = self.scheduler()-self.recharge_time
         self.attack_chance = None
         self.is_prepared = False
         self.attack_chance_calculate(initial=True)

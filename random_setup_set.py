@@ -1,42 +1,60 @@
 import json
-from random import randint, choice
+from random import randint, choice, uniform
 from models.units.base_unit import BaseUnit
 
 
-def random_config_create():
-    army_count = randint(2, 5)
-    squads_per_army = randint(4, 15)
-    units_per_squad = randint(5, 12)
+class ConfigSetup:
 
-    def default_unit_config(unit_type):
-        some_unit_stats = {'type': unit_type, 'hp': BaseUnit.UNIT[unit_type].base_hp}
-        if unit_type == 'dpv':
-            some_unit_stats['cd'] = randint(1001, 2000)
-            some_unit_stats['operators'] = [default_unit_config('soldier') for _ in range(3)]
-        elif unit_type == 'soldier':
-            some_unit_stats['cd'] = randint(100, 1000)
+    def __init__(self, random=True, armies=None, formations=None, units_per_formation=None):
+        self.army_count = randint(2, 5) if random else armies
+        self.squads_per_army = randint(4, 15) if random else formations
+        self.units_per_squad = randint(5, 12) if random else units_per_formation
+
+    def randomize_value(self, value):
+        """
+        Used to get randomish new value, from a given, by selecting a random point
+        between 50% and 150% of a given value
+        """
+        btm_border = value * 0.5
+        top_border = value * 1.5
+        return float("{0:.3f}".format(uniform(btm_border, top_border)))
+
+    def default_unit_config(self, unit_type, unit_subtype):
+        unit = BaseUnit.GROUPS[unit_type]['units'][unit_subtype]
+        some_unit_stats = {'class': unit_type, 'type': unit_subtype,
+                           'hp': unit.base_hp, 'cd': self.randomize_value(unit.base_recharge_time)}
+        if unit_type == 'vehicle':
+            some_unit_stats['operators'] = [self.default_unit_config(unit_type='infantry',
+                                                                     unit_subtype='soldier') for _ in range(3)]
         return some_unit_stats
 
-    def random_string_unit():
-        return default_unit_config(choice(list(BaseUnit.UNIT.keys())))
+    def random_unit_config(self):
+        random_group = choice(list(BaseUnit.GROUPS.keys()))
+        random_unit = choice(list(BaseUnit.GROUPS[random_group]['units'].keys()))
+        return self.default_unit_config(unit_type=random_group, unit_subtype=random_unit)
 
-    def random_squad_config():
+    def random_squad_config(self):
         squad_string = {'type': 'squad',
-                        'units': [random_string_unit() for _ in range(units_per_squad)]}
+                        'units': [self.random_unit_config() for _ in range(self.units_per_squad)]}
         return squad_string
 
-    def random_army_config():
+    def random_army_config(self):
         army_string = dict()
         army_string['type'] = 'army'
         army_string['strategy'] = randint(0, 2)
-        army_string['squads'] = [random_squad_config() for _ in range(squads_per_army)]
+        army_string['squads'] = [self.random_squad_config() for _ in range(self.squads_per_army)]
         return army_string
 
-    battle_setup = {'armies': [random_army_config() for _ in range(army_count)]}
+    def random_battle_config(self):
+        battle_setup = {'armies': [self.random_army_config() for _ in range(self.army_count)]}
+        return battle_setup
 
-    with open('combat_setup.json', 'w') as outfile:
-        json.dump(battle_setup, outfile, indent=4)
+    def setup_create(self, path_to_output_file='combat_setup.json', setup=None):
+        with open(path_to_output_file, 'w') as outfile:
+            json.dump(setup, outfile, indent=4)
 
 
 if __name__ == '__main__':
-    random_config_create()
+    configurator = ConfigSetup()
+    setup = configurator.random_battle_config()
+    configurator.setup_create(setup)
