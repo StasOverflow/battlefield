@@ -1,4 +1,6 @@
 from models.units.base_unit import BaseUnit
+import time
+from models.combat.logging_cfg import battle_logger
 
 
 @BaseUnit.register_group('army', 'squad_army', 1000)
@@ -46,12 +48,14 @@ class BaseArmy(BaseUnit):
 
     def engage(self, defending_unit):
         if self.ready_to_attack():
+            battle_logger.info(time.monotonic(), self, 'is ready to attack')
             alive_sub_units = [unit for unit in self.sub_units if unit.is_alive]
             successful_atks = 0
             for unit in alive_sub_units:
                 chosen_unit = self.opponent_select(defending_unit.sub_units)
                 if defending_unit:
                     if unit.ready_to_attack():
+                        battle_logger.info(time.monotonic(), self, 'delaing damage')
                         # print('Attacker:', unit.id, unit.attack_chance,
                         #       'deffender ', chosen_unit.id, chosen_unit.attack_chance)
                         successful_atks += unit.engage(chosen_unit)
@@ -88,6 +92,7 @@ class BaseArmy(BaseUnit):
         Squad units operates as coherent group, so losing a battle affects all units inside
         of a formation (with a same amount of damage)
         """
+        battle_logger.info(time.monotonic(), self, 'receiving damage')
         alive_units = [unit for unit in self.sub_units if unit.is_alive]
         if len(alive_units):
             damage_to_each = damage / len(alive_units)

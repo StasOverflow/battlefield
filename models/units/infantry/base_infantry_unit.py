@@ -1,5 +1,7 @@
 from models.units.base_unit import BaseUnit
 import random
+from models.combat.logging_cfg import battle_logger
+import time
 
 
 @BaseUnit.register_group('infantry', 'soldier', 9000)
@@ -44,6 +46,7 @@ class BaseInfantry(BaseUnit):
         self.damage_receive(damage)
 
     def damage_receive(self, damage):
+        battle_logger.info(time.monotonic(), self, 'receiving damage')
         self.hp = self.hp - damage
 
     def reload(self):
@@ -126,7 +129,3 @@ class BaseInfantry(BaseUnit):
     def is_alive(self):
         return True if self.hp > 0 else False
 
-
-if __name__ == '__main__':
-    soldja = get_unit_from_json('tests/test_soldier.json')
-    print(soldja)
