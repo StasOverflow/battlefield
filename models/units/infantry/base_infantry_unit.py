@@ -85,7 +85,7 @@ class BaseInfantry(BaseUnit):
     def ready_to_attack(self):
         current_time = self.scheduler()
         is_ready = True if current_time - self.last_attack_timestamp >= self.recharge_time else False
-        return is_ready
+        return is_ready if self.is_alive else False
 
     @property
     def experience(self):
@@ -125,3 +125,8 @@ class BaseInfantry(BaseUnit):
     @property
     def is_alive(self):
         return True if self.hp > 0 else False
+
+
+if __name__ == '__main__':
+    soldja = get_unit_from_json('tests/test_soldier.json')
+    print(soldja)

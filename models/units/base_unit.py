@@ -59,6 +59,7 @@ class BaseUnit(ABC):
     scheduler = time.monotonic
     infantry_id = 0
     vehicle_id = 0
+    squad_id = 0
 
     @classmethod
     def register_group(cls, group_name, unit_type, depth):
@@ -71,7 +72,7 @@ class BaseUnit(ABC):
             e.g.: unit with 9k depth can't contain unit with 8k depth,
         """
         def decorator(unit_cls):
-            # print(unit_cls)
+            print(unit_cls)
             cls.GROUPS[group_name] = dict()
             cls.GROUPS[group_name]['units'] = dict()
             cls.GROUPS[group_name]['units'][unit_type] = unit_cls
@@ -100,6 +101,9 @@ class BaseUnit(ABC):
                     elif key == 'vehicle':
                         cls.vehicle_id += 1
                         aydi = cls.vehicle_id
+                    elif key == 'formation':
+                        cls.squad_id += 1
+                        aydi = cls.squad_id
                     break
         if factory_class is None:
             raise AttributeError
@@ -124,10 +128,14 @@ class BaseUnit(ABC):
 
     def __repr__(self):
         type_of = self.__class__.__name__
-        stats_string = ' | DMG: ' + '{0:.3f}'.format(self.attack_damage) \
-                       + ' | cd: ' + '{0:.3f}'.format(self.recharge_time) \
-                       + ' | atk: ' + '{0:.3f}'.format(self.attack_chance) \
-                       + ' | rdy: ' + str(self.ready_to_attack())
+        dmg = '{0:.3f}'.format(self.attack_damage) if self.attack_damage is not None else 'None'
+        cd = '{0:.3f}'.format(self.recharge_time) if self.recharge_time is not None else 'None'
+        chance = '{0:.3f}'.format(self.attack_chance) if self.attack_chance is not None else '0'
+        ready_to_attack = str(self.ready_to_attack()) if self.ready_to_attack() is not None else '0'
+        stats_string = ' | DMG: ' + dmg \
+                       + ' | cd: ' + cd \
+                       + ' | atk: ' + chance \
+                       + ' | rdy: ' + ready_to_attack
         if not self.is_alive:
             stats_string = ' | DECEASED '
         repr_string = type_of + ' | ID :' + str(self.id) \
@@ -159,11 +167,13 @@ class BaseUnit(ABC):
             self.reload()
             atk_side_chance = self.attack_chance
             def_side_chance = defending_unit.attack_chance
+            self.is_prepared = False
             if atk_side_chance > def_side_chance:
                 self.attack_won()
                 defending_unit.attack_lost(self.attack_damage)
-            self.is_prepared = False
-            return True
+                return True
+            else:
+                return False
         else:
             return False
 

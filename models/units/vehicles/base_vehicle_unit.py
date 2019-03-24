@@ -36,8 +36,9 @@ class BaseVehicle(BaseUnit):
     @property
     def attack_damage(self):
         damage = 0
-        for operator in self.sub_units:
-            operator_dmg = operator.experience / 100
+        alive_units = [unit for unit in self.sub_units if unit.is_alive]
+        for unit in alive_units:
+            operator_dmg = unit.experience / 100
             damage += operator_dmg
         return 0.1 + damage
 
@@ -46,8 +47,9 @@ class BaseVehicle(BaseUnit):
         Vehicle itself does not gets any additional bonuses from winning a battle
         But operators receive exp as a default infantry unit
         """
-        for operator in self.sub_units:
-            operator.attack_won()
+        alive_units = [unit for unit in self.sub_units if unit.is_alive]
+        for unit in alive_units:
+            unit.attack_won()
 
     def attack_lost(self, damage):
         self.damage_receive(damage)
@@ -61,11 +63,13 @@ class BaseVehicle(BaseUnit):
         Other operators takes 10% of total damage
         """
         self.hp = self.hp - damage * 0.6
-        for unit in self.sub_units:
-            unit.damage_receive(damage * 0.1)
+        alive_units = [unit for unit in self.sub_units if unit.is_alive]
+        if len(alive_units):
+            for unit in alive_units:
+                unit.damage_receive(damage * (0.3 / len(alive_units)))
 
-        lucky_one = random.choice(self.sub_units)
-        lucky_one.damage_receive(damage * 0.1)
+            lucky_one = random.choice(alive_units)
+            lucky_one.damage_receive(damage * 0.1)
 
     def reload(self):
         self._last_attack_timestamp = self.scheduler()
@@ -113,16 +117,16 @@ class BaseVehicle(BaseUnit):
     def ready_to_attack(self):
         current_time = self.scheduler()
         is_ready = True if current_time - self.last_attack_timestamp >= self.recharge_time else False
-        return is_ready
+        return is_ready if self.is_alive else False
 
     @property
     def hp(self):
-        return super().hp
+        return self._hp
 
     @hp.setter
     def hp(self, value):
         self._hp = value
-        if self.hp <= 0:
+        if self._hp <= 0:
             self._hp = 0
             for unit in self.sub_units:
                 unit.hp = 0
@@ -138,3 +142,8 @@ class BaseVehicle(BaseUnit):
             return False
         else:
             return True
+
+
+if __name__ == '__main__':
+    vehicle = get_unit_from_json('tests/test_vehicle.json')
+    print(vehicle)

@@ -1,53 +1,5 @@
 from models.units.base_unit import BaseUnit
 
-#
-# @BaseUnit.register_group('formations', 'squad, 7000)
-# class Squad(BaseUnit):
-#
-#     def __init__(self, addit_dict=None):
-#         super().__init__(units=addit_dict)
-#
-#     def __repr__(self):
-#         string = '\n--------------\nsquad'  \
-#                  + ' num '                  \
-#                  + ':\n'
-#         for unit in self.sub_units:
-#             string = string + '\n' + str(unit)
-#         string = string + '\n--------------\n'
-#         return string
-#
-#     @property
-#     def attack_damage(self):
-#         attack_damage = 0
-#         if self.is_alive:
-#             attack_damage = 0.05 + self.experience / 100
-#         return attack_damage
-#
-#     def damage_receive(self, damage):
-#         self.hp = self.hp - damage
-#
-#     @property
-#     def attack_chance(self):
-#         return 0.5 * (1 + self.hp/100) * random.randint(50 + self.experience, 100) / 100
-#
-#     def is_ready_to_attack_at_the_moment(self, time):
-#         return True if time - self.last_attack_timestamp >= self.recharge_time else False
-#
-#     @property
-#     def hp(self):
-#         return super().hp
-#
-#     @hp.setter
-#     def hp(self, value):
-#         self._hp = value
-#         if self.hp < 0:
-#             self._hp = 0
-#         return
-#
-#     @property
-#     def is_alive(self):
-#         return True if self.hp > 0 else False
-
 
 @BaseUnit.register_group('formation', 'squad', 7000)
 class BaseFormation(BaseUnit):
@@ -75,47 +27,80 @@ class BaseFormation(BaseUnit):
         super().__init__(**kwargs)
 
     def __repr__(self):
-        string = super().__repr__()
+        type_of = self.__class__.__name__
+        chance = '{0:.3f}'.format(self.attack_chance) if self.attack_chance is not None else '0'
+        ready_to_attack = str(self.ready_to_attack()) if self.ready_to_attack() is not None else '0'
+        stats_string = ' | Chance: ' + chance \
+                       + ' | rdy: ' + ready_to_attack
+        if not self.is_alive:
+            stats_string = ' | DECEASED '
+        repr_string = type_of + ' | ID :' + str(self.id) \
+                              + stats_string
         sub_unit_hp = ' | '
         for unit in self.sub_units:
-            sub_unit_hp += '{0:.3f}'.format(unit.hp) + ' | '
-        return string + sub_unit_hp
+            if unit.is_alive:
+                sub_unit_hp += '{0:.3f}'.format(unit.hp) + ' ' + str(unit.ready_to_attack()) + ' | '
+            else:
+                sub_unit_hp += 'DECEASED | '
+        return repr_string + sub_unit_hp
 
     def engage(self, defending_unit):
-        return super().engage(defending_unit)
+        if self.ready_to_attack():
+            defending_unit = self.opponent_select(defending_unit)
+            self.attack_chance_calculate()
+            defending_unit.attack_chance_calculate()
+            atk_side_chance = self.attack_chance
+            def_side_chance = defending_unit.attack_chance
+            if atk_side_chance > def_side_chance:
+                self.attack_won()
+                defending_unit.damage_receive(self.attack_damage)
+                return True
+            else:
+                return False
+        else:
+            return False
 
     @property
     def attack_damage(self):
-        return None
+        """
+        As squad itself attacks with its subunits, we consider the fact of summoning attack
+        damage getter as if unit attacks, and attack should be followed by calling to reload()
+        """
+        acc_damage = 0
+        for unit in self.sub_units:
+            if unit.ready_to_attack():
+                acc_damage += unit.attack_damage
+                unit.reload()
+        return acc_damage
 
     def attack_won(self):
         """
-        Vehicle itself does not gets any additional bonuses from winning a battle
-        But operators receive exp as a default infantry unit
+        Squad units operates as coherent group, so winning a battle provides bonuses for
+        all units in a squad
         """
-        pass
-        # for unit in self.sub_units:
-        #     unit.attack_won()
+        for unit in self.sub_units:
+            unit.attack_won()
 
     def attack_lost(self, damage):
-        pass
-        # self.damage_receive(damage)
+        self.damage_receive(damage)
 
     def damage_receive(self, damage):
         """
-        Deal equal damage to all subunits of a squad
+        Squad units operates as coherent group, so losing a battle affects all units inside
+        of a formation (with a same amount of damage)
         """
-        damage_to_each = damage / len(self.sub_units)
-        for unit in self.sub_units:
-            unit.damage_receive(damage_to_each)
+        alive_units = [unit for unit in self.sub_units if unit.is_alive]
+        damage_to_each = damage / len(alive_units)
+        print('dealing ', damage_to_each, ' to ', len(alive_units), ' units')
+        if len(alive_units):
+            for unit in alive_units:
+                unit.damage_receive(damage_to_each)
 
     def reload(self):
-        self._last_attack_timestamp = self.scheduler()
+        pass
 
     @property
     def attack_chance(self):
-        """
-        """
         return self._attack_chance
 
     @attack_chance.setter
@@ -137,25 +122,28 @@ class BaseFormation(BaseUnit):
         :param initial:
         :return:
         """
-        if self.ready_to_attack() or (initial and not self.is_prepared):
-            self.is_prepared = True
+        if self.ready_to_attack() or initial:
             average_atk_success = 1
             # print(self.sub_units)
-            for operator in self.sub_units:
-                operator.attack_chance_calculate()
-                average_atk_success = average_atk_success * operator.attack_chance
+            for unit in self.sub_units:
+                if unit.ready_to_attack():
+                    unit.attack_chance_calculate()
+                    average_atk_success = average_atk_success * unit.attack_chance
             average_atk_success = average_atk_success ** (1/len(self.sub_units))
-            self.attack_chance = 0.5 * (1 + self.hp / 100) * average_atk_success
+            self.attack_chance = average_atk_success
 
-    def ready_to_attack(self, current_time=None):
+    def ready_to_attack(self):
         """
         A formation is ready to attack if at least one unit in a formation is ready
         to attack
         """
-        for unit in self.sub_units:
-            if unit.ready_to_attack():
-                return True
-        return False
+        if self.is_alive:
+            for unit in self.sub_units:
+                if unit.ready_to_attack():
+                    return True
+            return False
+        else:
+            return False
 
     @property
     def hp(self):
@@ -174,7 +162,7 @@ class BaseFormation(BaseUnit):
         for unit in self.sub_units:
             if not unit.is_alive:
                 units_dead += 1
-        if self.hp <= 0 and units_dead == len(self.sub_units):
+        if units_dead == len(self.sub_units):
             return False
         else:
             return True
@@ -293,3 +281,18 @@ class BaseFormation(BaseUnit):
         else:
             return True
 """
+
+
+if __name__ == '__main__':
+    group_one = get_unit_from_json('tests/test_squad.json')
+    group_two = get_unit_from_json('tests/test_squad.json')
+    vice_versa = 0
+    for i in range(50000000):
+        if vice_versa:
+            attack = group_one.engage(group_two)
+        else:
+            attack = group_two.engage(group_one)
+        vice_versa = not vice_versa
+        # if attack:
+        #     print('round result: \n', str(group_one), '\n', str(group_two), '\n', '_'*80)
+

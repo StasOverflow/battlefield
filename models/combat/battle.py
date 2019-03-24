@@ -5,12 +5,10 @@ import time
 
 def get_unit_from_json(json_file):
     if json_file is None:
-        raise Exception('Missing config file for soldier!')
+        raise Exception('Missing config file for unit!')
     else:
         with open(json_file) as conf:
             data = json.load(conf)
-            # print(data)
-            # type_of = data.pop('type')
             unit_instance = BaseUnit.new(**data)
     return unit_instance
 
@@ -50,10 +48,13 @@ class Battle:
         soldja_uno = get_unit_from_json('tests/test_soldier.json')
         soldja_two = get_unit_from_json('tests/test_soldier.json')
 
-        unit1 = vehicle_1
-        unit2 = vehicle_2
+        group_one = get_unit_from_json('tests/test_squad.json')
+        group_two = get_unit_from_json('tests/test_squad.json')
 
-        for i in range(5000000):
+        unit1 = group_one
+        unit2 = group_two
+
+        for i in range(9000*9000):
             if self.vice_versa:
                 attack = unit1.engage(unit2)
             else:

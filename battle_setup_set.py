@@ -43,7 +43,7 @@ class ConfigSetup:
 
     def random_squad_config(self):
         depth = BaseUnit.GROUPS['formation']['depth']
-        squad_string = {'type': 'squad',
+        squad_string = {'klass': 'formation', 'type': 'squad',
                         'units': [self.random_unit_config(depth) for _ in range(self.units_per_squad)]}
         return squad_string
 
