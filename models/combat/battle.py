@@ -1,6 +1,7 @@
 from models.units.base_unit import BaseUnit
 import json
 import time
+from models.combat.logging_cfg import battle_logger
 
 
 def get_unit_from_json(json_file):
@@ -34,8 +35,10 @@ class Battle:
         self.current_attacker_index = 0
         self._log_timestamp = time.monotonic()
 
+        battle_logger.info('Initiating new battle')
+        battle_logger.info('Participating units:')
         for unit in self._participants:
-            print(unit)
+            battle_logger.info('%s' % unit)
 
     def next_alive_unit(self, index):
         next_alive_unit_index = index + 1
@@ -63,6 +66,7 @@ class Battle:
                 alive_unit_count += 1
                 alive_index = index
         if alive_unit_count == 1:
+            battle_logger.info('WE HAVE A WINNER %s \n' % self._participants[alive_index])
             return self._participants[alive_index]
         else:
             return False
@@ -71,7 +75,7 @@ class Battle:
         cur_time = time.monotonic()
         if cur_time - self._log_timestamp >= every:
             self._log_timestamp = cur_time
-            print(self.battle_log_get())
+            battle_logger.info(self.battle_log_get())
 
     def battle_log_get(self):
         string = 'battle_status: \n'

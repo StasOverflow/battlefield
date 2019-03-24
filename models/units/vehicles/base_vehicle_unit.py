@@ -1,7 +1,5 @@
 from models.units.base_unit import BaseUnit
 import random
-from models.combat.logging_cfg import battle_logger
-import time
 
 
 @BaseUnit.register_group('vehicle', 'dpv', 8000)
@@ -64,7 +62,6 @@ class BaseVehicle(BaseUnit):
         Luckiest operator gets 20% of total damage (receives 10% of damage twice)
         Other operators takes 10% of total damage
         """
-        battle_logger.info(time.monotonic(), self, 'receiving damage')
         self.hp = self.hp - damage * 0.6
         alive_units = [unit for unit in self.sub_units if unit.is_alive]
         if len(alive_units):
@@ -145,8 +142,3 @@ class BaseVehicle(BaseUnit):
             return False
         else:
             return True
-
-
-if __name__ == '__main__':
-    vehicle = get_unit_from_json('tests/test_vehicle.json')
-    print(vehicle)

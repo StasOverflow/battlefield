@@ -1,6 +1,6 @@
 import logging
 
-LOG_FORMAT = '%(levelname)s %(time)s - %(unit)s, %(action)s'
+LOG_FORMAT = '%(levelname)s %(asctime)-12s - %(message)s'
 
 logging.basicConfig(filename='battle.log',
                     level=logging.INFO,
@@ -8,3 +8,4 @@ logging.basicConfig(filename='battle.log',
                     filemode='w')
 
 battle_logger = logging.getLogger('logging.basicConfig')
+battle_logger.addHandler(logging.StreamHandler())

@@ -1,0 +1,234 @@
+INFO 2019-03-24 22:04:44,065 - created  BaseInfantry with id 1
+INFO 2019-03-24 22:04:44,065 - created  BaseInfantry with id 2
+INFO 2019-03-24 22:04:44,065 - created  BaseInfantry with id 3
+INFO 2019-03-24 22:04:44,065 - created  BaseVehicle with id 1
+INFO 2019-03-24 22:04:44,065 - created  BaseInfantry with id 4
+INFO 2019-03-24 22:04:44,065 - created  BaseInfantry with id 5
+INFO 2019-03-24 22:04:44,065 - created  BaseInfantry with id 6
+INFO 2019-03-24 22:04:44,066 - created  BaseVehicle with id 2
+INFO 2019-03-24 22:04:44,066 - created  BaseInfantry with id 7
+INFO 2019-03-24 22:04:44,066 - created  BaseInfantry with id 8
+INFO 2019-03-24 22:04:44,066 - created  BaseInfantry with id 9
+INFO 2019-03-24 22:04:44,066 - created  BaseFormation with id 1
+INFO 2019-03-24 22:04:44,066 - created  BaseInfantry with id 10
+INFO 2019-03-24 22:04:44,066 - created  BaseInfantry with id 11
+INFO 2019-03-24 22:04:44,066 - created  BaseInfantry with id 12
+INFO 2019-03-24 22:04:44,066 - created  BaseVehicle with id 3
+INFO 2019-03-24 22:04:44,067 - created  BaseInfantry with id 13
+INFO 2019-03-24 22:04:44,067 - created  BaseInfantry with id 14
+INFO 2019-03-24 22:04:44,067 - created  BaseInfantry with id 15
+INFO 2019-03-24 22:04:44,067 - created  BaseInfantry with id 16
+INFO 2019-03-24 22:04:44,067 - created  BaseVehicle with id 4
+INFO 2019-03-24 22:04:44,067 - created  BaseInfantry with id 17
+INFO 2019-03-24 22:04:44,067 - created  BaseInfantry with id 18
+INFO 2019-03-24 22:04:44,067 - created  BaseInfantry with id 19
+INFO 2019-03-24 22:04:44,067 - created  BaseInfantry with id 20
+INFO 2019-03-24 22:04:44,067 - created  BaseVehicle with id 5
+INFO 2019-03-24 22:04:44,068 - created  BaseFormation with id 2
+INFO 2019-03-24 22:04:44,068 - created  BaseInfantry with id 21
+INFO 2019-03-24 22:04:44,068 - created  BaseInfantry with id 22
+INFO 2019-03-24 22:04:44,068 - created  BaseInfantry with id 23
+INFO 2019-03-24 22:04:44,068 - created  BaseInfantry with id 24
+INFO 2019-03-24 22:04:44,068 - created  BaseVehicle with id 6
+INFO 2019-03-24 22:04:44,068 - created  BaseInfantry with id 25
+INFO 2019-03-24 22:04:44,068 - created  BaseInfantry with id 26
+INFO 2019-03-24 22:04:44,069 - created  BaseInfantry with id 27
+INFO 2019-03-24 22:04:44,069 - created  BaseVehicle with id 7
+INFO 2019-03-24 22:04:44,069 - created  BaseInfantry with id 28
+INFO 2019-03-24 22:04:44,069 - created  BaseInfantry with id 29
+INFO 2019-03-24 22:04:44,069 - created  BaseFormation with id 3
+INFO 2019-03-24 22:04:44,070 - created  BaseArmy with id 1
+INFO 2019-03-24 22:04:44,070 - created  BaseInfantry with id 30
+INFO 2019-03-24 22:04:44,070 - created  BaseInfantry with id 31
+INFO 2019-03-24 22:04:44,070 - created  BaseInfantry with id 32
+INFO 2019-03-24 22:04:44,070 - created  BaseVehicle with id 8
+INFO 2019-03-24 22:04:44,070 - created  BaseInfantry with id 33
+INFO 2019-03-24 22:04:44,070 - created  BaseInfantry with id 34
+INFO 2019-03-24 22:04:44,070 - created  BaseInfantry with id 35
+INFO 2019-03-24 22:04:44,071 - created  BaseVehicle with id 9
+INFO 2019-03-24 22:04:44,071 - created  BaseInfantry with id 36
+INFO 2019-03-24 22:04:44,071 - created  BaseInfantry with id 37
+INFO 2019-03-24 22:04:44,071 - created  BaseInfantry with id 38
+INFO 2019-03-24 22:04:44,071 - created  BaseInfantry with id 39
+INFO 2019-03-24 22:04:44,071 - created  BaseInfantry with id 40
+INFO 2019-03-24 22:04:44,071 - created  BaseVehicle with id 10
+INFO 2019-03-24 22:04:44,071 - created  BaseFormation with id 4
+INFO 2019-03-24 22:04:44,072 - created  BaseInfantry with id 41
+INFO 2019-03-24 22:04:44,072 - created  BaseInfantry with id 42
+INFO 2019-03-24 22:04:44,072 - created  BaseInfantry with id 43
+INFO 2019-03-24 22:04:44,072 - created  BaseInfantry with id 44
+INFO 2019-03-24 22:04:44,072 - created  BaseVehicle with id 11
+INFO 2019-03-24 22:04:44,072 - created  BaseInfantry with id 45
+INFO 2019-03-24 22:04:44,072 - created  BaseInfantry with id 46
+INFO 2019-03-24 22:04:44,072 - created  BaseInfantry with id 47
+INFO 2019-03-24 22:04:44,072 - created  BaseVehicle with id 12
+INFO 2019-03-24 22:04:44,072 - created  BaseInfantry with id 48
+INFO 2019-03-24 22:04:44,073 - created  BaseInfantry with id 49
+INFO 2019-03-24 22:04:44,073 - created  BaseInfantry with id 50
+INFO 2019-03-24 22:04:44,073 - created  BaseVehicle with id 13
+INFO 2019-03-24 22:04:44,073 - created  BaseInfantry with id 51
+INFO 2019-03-24 22:04:44,073 - created  BaseFormation with id 5
+INFO 2019-03-24 22:04:44,073 - created  BaseInfantry with id 52
+INFO 2019-03-24 22:04:44,074 - created  BaseInfantry with id 53
+INFO 2019-03-24 22:04:44,074 - created  BaseInfantry with id 54
+INFO 2019-03-24 22:04:44,074 - created  BaseVehicle with id 14
+INFO 2019-03-24 22:04:44,074 - created  BaseInfantry with id 55
+INFO 2019-03-24 22:04:44,074 - created  BaseInfantry with id 56
+INFO 2019-03-24 22:04:44,075 - created  BaseInfantry with id 57
+INFO 2019-03-24 22:04:44,076 - created  BaseVehicle with id 15
+INFO 2019-03-24 22:04:44,076 - created  BaseInfantry with id 58
+INFO 2019-03-24 22:04:44,077 - created  BaseInfantry with id 59
+INFO 2019-03-24 22:04:44,077 - created  BaseInfantry with id 60
+INFO 2019-03-24 22:04:44,077 - created  BaseVehicle with id 16
+INFO 2019-03-24 22:04:44,077 - created  BaseInfantry with id 61
+INFO 2019-03-24 22:04:44,077 - created  BaseInfantry with id 62
+INFO 2019-03-24 22:04:44,078 - created  BaseInfantry with id 63
+INFO 2019-03-24 22:04:44,078 - created  BaseInfantry with id 64
+INFO 2019-03-24 22:04:44,078 - created  BaseVehicle with id 17
+INFO 2019-03-24 22:04:44,078 - created  BaseFormation with id 6
+INFO 2019-03-24 22:04:44,078 - created  BaseArmy with id 2
+INFO 2019-03-24 22:04:44,079 - created  BaseInfantry with id 65
+INFO 2019-03-24 22:04:44,079 - created  BaseInfantry with id 66
+INFO 2019-03-24 22:04:44,079 - created  BaseInfantry with id 67
+INFO 2019-03-24 22:04:44,079 - created  BaseVehicle with id 18
+INFO 2019-03-24 22:04:44,079 - created  BaseInfantry with id 68
+INFO 2019-03-24 22:04:44,079 - created  BaseInfantry with id 69
+INFO 2019-03-24 22:04:44,079 - created  BaseInfantry with id 70
+INFO 2019-03-24 22:04:44,079 - created  BaseInfantry with id 71
+INFO 2019-03-24 22:04:44,079 - created  BaseInfantry with id 72
+INFO 2019-03-24 22:04:44,080 - created  BaseVehicle with id 19
+INFO 2019-03-24 22:04:44,080 - created  BaseInfantry with id 73
+INFO 2019-03-24 22:04:44,080 - created  BaseFormation with id 7
+INFO 2019-03-24 22:04:44,080 - created  BaseInfantry with id 74
+INFO 2019-03-24 22:04:44,080 - created  BaseInfantry with id 75
+INFO 2019-03-24 22:04:44,080 - created  BaseInfantry with id 76
+INFO 2019-03-24 22:04:44,080 - created  BaseInfantry with id 77
+INFO 2019-03-24 22:04:44,080 - created  BaseVehicle with id 20
+INFO 2019-03-24 22:04:44,080 - created  BaseInfantry with id 78
+INFO 2019-03-24 22:04:44,081 - created  BaseInfantry with id 79
+INFO 2019-03-24 22:04:44,081 - created  BaseInfantry with id 80
+INFO 2019-03-24 22:04:44,081 - created  BaseInfantry with id 81
+INFO 2019-03-24 22:04:44,081 - created  BaseVehicle with id 21
+INFO 2019-03-24 22:04:44,081 - created  BaseInfantry with id 82
+INFO 2019-03-24 22:04:44,081 - created  BaseFormation with id 8
+INFO 2019-03-24 22:04:44,081 - created  BaseInfantry with id 83
+INFO 2019-03-24 22:04:44,081 - created  BaseInfantry with id 84
+INFO 2019-03-24 22:04:44,082 - created  BaseInfantry with id 85
+INFO 2019-03-24 22:04:44,082 - created  BaseVehicle with id 22
+INFO 2019-03-24 22:04:44,082 - created  BaseInfantry with id 86
+INFO 2019-03-24 22:04:44,082 - created  BaseInfantry with id 87
+INFO 2019-03-24 22:04:44,082 - created  BaseInfantry with id 88
+INFO 2019-03-24 22:04:44,082 - created  BaseVehicle with id 23
+INFO 2019-03-24 22:04:44,082 - created  BaseInfantry with id 89
+INFO 2019-03-24 22:04:44,082 - created  BaseInfantry with id 90
+INFO 2019-03-24 22:04:44,082 - created  BaseInfantry with id 91
+INFO 2019-03-24 22:04:44,082 - created  BaseVehicle with id 24
+INFO 2019-03-24 22:04:44,083 - created  BaseInfantry with id 92
+INFO 2019-03-24 22:04:44,083 - created  BaseInfantry with id 93
+INFO 2019-03-24 22:04:44,083 - created  BaseInfantry with id 94
+INFO 2019-03-24 22:04:44,083 - created  BaseVehicle with id 25
+INFO 2019-03-24 22:04:44,083 - created  BaseInfantry with id 95
+INFO 2019-03-24 22:04:44,083 - created  BaseFormation with id 9
+INFO 2019-03-24 22:04:44,084 - created  BaseArmy with id 3
+INFO 2019-03-24 22:04:44,084 - Initiating new battle
+INFO 2019-03-24 22:04:44,084 - Participating units:
+INFO 2019-03-24 22:04:44,084 - BaseArmy | ID :1 | Chance: 1.299 | rdy: True |  id: 1__hp: 1300.000 |  id: 2__hp: 1700.000 |  id: 3__hp: 1300.000 | 
+INFO 2019-03-24 22:04:44,084 - BaseArmy | ID :2 | Chance: 1.554 | rdy: True |  id: 4__hp: 1700.000 |  id: 5__hp: 1700.000 |  id: 6__hp: 2100.000 | 
+INFO 2019-03-24 22:04:44,084 - BaseArmy | ID :3 | Chance: 1.328 | rdy: True |  id: 7__hp: 1300.000 |  id: 8__hp: 1300.000 |  id: 9__hp: 2100.000 | 
+INFO 2019-03-24 22:04:47,086 - battle_status: 
+BaseArmy | ID :1 | Chance: 1.299 | rdy: True |  id: 1__hp: 1111.017 |  id: 2__hp: 1460.015 |  id: 3__hp: 1104.356 | 
+BaseArmy | ID :2 | Chance: 1.554 | rdy: False |  id: 4__hp: 1266.331 |  id: 5__hp: 1296.005 |  id: 6__hp: 1732.424 | 
+BaseArmy | ID :3 | Chance: 1.328 | rdy: False |  id: 7__hp: 558.792 |  id: 8__hp: 879.012 |  id: 9__hp: 1698.358 | 
+________________________________________________________________________________
+INFO 2019-03-24 22:04:50,085 - battle_status: 
+BaseArmy | ID :1 | Chance: 1.299 | rdy: True |  id: 1__hp: 1020.969 |  id: 2__hp: 1354.223 |  id: 3__hp: 1019.684 | 
+BaseArmy | ID :2 | Chance: 1.554 | rdy: False |  id: 4__hp: 1158.991 |  id: 5__hp: 1106.765 |  id: 6__hp: 1552.424 | 
+BaseArmy | ID :3 | Chance: 1.328 | rdy: False |  id: 7__hp: 214.152 |  id: 8__hp: 879.012 |  id: 9__hp: 1698.358 | 
+________________________________________________________________________________
+INFO 2019-03-24 22:04:53,085 - battle_status: 
+BaseArmy | ID :1 | Chance: 1.299 | rdy: True |  id: 1__hp: 988.713 |  id: 2__hp: 1247.507 |  id: 3__hp: 988.772 | 
+BaseArmy | ID :2 | Chance: 1.554 | rdy: False |  id: 4__hp: 1103.611 |  id: 5__hp: 852.185 |  id: 6__hp: 1517.624 | 
+BaseArmy | ID :3 | Chance: 1.328 | rdy: True |  id: 7__hp: 113.352 |  id: 8__hp: 825.252 |  id: 9__hp: 1551.478 | 
+________________________________________________________________________________
+INFO 2019-03-24 22:04:56,086 - battle_status: 
+BaseArmy | ID :1 | Chance: 1.299 | rdy: True |  id: 1__hp: 988.713 |  id: 2__hp: 1112.147 |  id: 3__hp: 988.772 | 
+BaseArmy | ID :2 | Chance: 1.554 | rdy: True |  id: 4__hp: 1068.091 |  id: 5__hp: 696.005 |  id: 6__hp: 1492.664 | 
+BaseArmy | ID :3 | Chance: 1.328 | rdy: True |  id: 7__hp: 113.352 |  id: 8__hp: 748.452 |  id: 9__hp: 1376.758 | 
+________________________________________________________________________________
+INFO 2019-03-24 22:04:59,087 - battle_status: 
+BaseArmy | ID :1 | Chance: 1.299 | rdy: True |  id: 1__hp: 987.369 |  id: 2__hp: 978.707 |  id: 3__hp: 986.084 | 
+BaseArmy | ID :2 | Chance: 1.554 | rdy: True |  id: 4__hp: 1047.931 |  id: 5__DECEASED |  id: 6__hp: 1479.224 | 
+BaseArmy | ID :3 | Chance: 1.328 | rdy: True |  id: 7__hp: 113.352 |  id: 8__hp: 646.692 |  id: 9__hp: 1235.638 | 
+________________________________________________________________________________
+INFO 2019-03-24 22:05:02,087 - battle_status: 
+BaseArmy | ID :1 | Chance: 1.299 | rdy: True |  id: 1__hp: 968.553 |  id: 2__hp: 890.387 |  id: 3__hp: 969.956 | 
+BaseArmy | ID :2 | Chance: 1.554 | rdy: True |  id: 4__hp: 1007.611 |  id: 5__DECEASED |  id: 6__hp: 1425.464 | 
+BaseArmy | ID :3 | Chance: 1.328 | rdy: True |  id: 7__hp: 113.352 |  id: 8__hp: 578.532 |  id: 9__hp: 1063.798 | 
+________________________________________________________________________________
+INFO 2019-03-24 22:05:05,088 - battle_status: 
+BaseArmy | ID :1 | Chance: 1.299 | rdy: True |  id: 1__hp: 949.737 |  id: 2__hp: 811.667 |  id: 3__hp: 953.828 | 
+BaseArmy | ID :2 | Chance: 1.554 | rdy: False |  id: 4__hp: 953.851 |  id: 5__DECEASED |  id: 6__hp: 1385.144 | 
+BaseArmy | ID :3 | Chance: 1.328 | rdy: True |  id: 7__hp: 113.352 |  id: 8__hp: 514.212 |  id: 9__hp: 881.398 | 
+________________________________________________________________________________
+INFO 2019-03-24 22:05:08,088 - battle_status: 
+BaseArmy | ID :1 | Chance: 1.299 | rdy: True |  id: 1__hp: 944.361 |  id: 2__hp: 769.427 |  id: 3__hp: 945.764 | 
+BaseArmy | ID :2 | Chance: 1.554 | rdy: False |  id: 4__hp: 875.131 |  id: 5__DECEASED |  id: 6__hp: 1371.704 | 
+BaseArmy | ID :3 | Chance: 1.328 | rdy: True |  id: 7__hp: 113.352 |  id: 8__hp: 495.972 |  id: 9__hp: 651.958 | 
+________________________________________________________________________________
+INFO 2019-03-24 22:05:11,089 - battle_status: 
+BaseArmy | ID :1 | Chance: 1.299 | rdy: True |  id: 1__hp: 938.985 |  id: 2__hp: 733.907 |  id: 3__hp: 936.356 | 
+BaseArmy | ID :2 | Chance: 1.554 | rdy: True |  id: 4__hp: 792.571 |  id: 5__DECEASED |  id: 6__hp: 1365.944 | 
+BaseArmy | ID :3 | Chance: 1.328 | rdy: True |  id: 7__hp: 113.352 |  id: 8__hp: 495.972 |  id: 9__hp: 403.318 | 
+________________________________________________________________________________
+INFO 2019-03-24 22:05:14,090 - battle_status: 
+BaseArmy | ID :1 | Chance: 1.299 | rdy: True |  id: 1__hp: 928.233 |  id: 2__hp: 682.067 |  id: 3__hp: 928.292 | 
+BaseArmy | ID :2 | Chance: 1.554 | rdy: False |  id: 4__hp: 705.211 |  id: 5__DECEASED |  id: 6__hp: 1365.944 | 
+BaseArmy | ID :3 | Chance: 1.328 | rdy: True |  id: 7__hp: 113.352 |  id: 8__hp: 456.612 |  id: 9__DECEASED | 
+________________________________________________________________________________
+INFO 2019-03-24 22:05:17,090 - battle_status: 
+BaseArmy | ID :1 | Chance: 1.299 | rdy: True |  id: 1__hp: 925.545 |  id: 2__hp: 680.147 |  id: 3__hp: 925.604 | 
+BaseArmy | ID :2 | Chance: 1.554 | rdy: False |  id: 4__hp: 413.461 |  id: 5__DECEASED |  id: 6__hp: 1365.944 | 
+BaseArmy | ID :3 | Chance: 1.328 | rdy: True |  id: 7__hp: 113.352 |  id: 8__hp: 207.972 |  id: 9__DECEASED | 
+________________________________________________________________________________
+INFO 2019-03-24 22:05:20,090 - battle_status: 
+BaseArmy | ID :1 | Chance: 1.299 | rdy: True |  id: 1__hp: 879.957 |  id: 2__hp: 659.027 |  id: 3__hp: 879.974 | 
+BaseArmy | ID :2 | Chance: 1.554 | rdy: False |  id: 4__DECEASED |  id: 5__DECEASED |  id: 6__hp: 1327.544 | 
+BaseArmy | ID :3 | DECEASED  |  id: 7__DECEASED |  id: 8__DECEASED |  id: 9__DECEASED | 
+________________________________________________________________________________
+INFO 2019-03-24 22:05:23,091 - battle_status: 
+BaseArmy | ID :1 | Chance: 1.299 | rdy: True |  id: 1__hp: 879.957 |  id: 2__hp: 492.947 |  id: 3__hp: 879.974 | 
+BaseArmy | ID :2 | Chance: 1.554 | rdy: False |  id: 4__DECEASED |  id: 5__DECEASED |  id: 6__hp: 1170.104 | 
+BaseArmy | ID :3 | DECEASED  |  id: 7__DECEASED |  id: 8__DECEASED |  id: 9__DECEASED | 
+________________________________________________________________________________
+INFO 2019-03-24 22:05:26,091 - battle_status: 
+BaseArmy | ID :1 | Chance: 1.299 | rdy: True |  id: 1__hp: 879.957 |  id: 2__hp: 328.787 |  id: 3__hp: 879.974 | 
+BaseArmy | ID :2 | Chance: 1.554 | rdy: False |  id: 4__DECEASED |  id: 5__DECEASED |  id: 6__hp: 1011.704 | 
+BaseArmy | ID :3 | DECEASED  |  id: 7__DECEASED |  id: 8__DECEASED |  id: 9__DECEASED | 
+________________________________________________________________________________
+INFO 2019-03-24 22:05:29,091 - battle_status: 
+BaseArmy | ID :1 | Chance: 1.299 | rdy: True |  id: 1__hp: 879.957 |  id: 2__hp: 179.987 |  id: 3__hp: 879.974 | 
+BaseArmy | ID :2 | Chance: 1.554 | rdy: True |  id: 4__DECEASED |  id: 5__DECEASED |  id: 6__hp: 853.304 | 
+BaseArmy | ID :3 | DECEASED  |  id: 7__DECEASED |  id: 8__DECEASED |  id: 9__DECEASED | 
+________________________________________________________________________________
+INFO 2019-03-24 22:05:32,092 - battle_status: 
+BaseArmy | ID :1 | Chance: 1.299 | rdy: True |  id: 1__hp: 879.957 |  id: 2__hp: 179.987 |  id: 3__hp: 879.974 | 
+BaseArmy | ID :2 | Chance: 1.554 | rdy: True |  id: 4__DECEASED |  id: 5__DECEASED |  id: 6__hp: 694.904 | 
+BaseArmy | ID :3 | DECEASED  |  id: 7__DECEASED |  id: 8__DECEASED |  id: 9__DECEASED | 
+________________________________________________________________________________
+INFO 2019-03-24 22:05:35,093 - battle_status: 
+BaseArmy | ID :1 | Chance: 1.299 | rdy: True |  id: 1__hp: 879.957 |  id: 2__hp: 179.987 |  id: 3__hp: 879.974 | 
+BaseArmy | ID :2 | Chance: 1.554 | rdy: True |  id: 4__DECEASED |  id: 5__DECEASED |  id: 6__hp: 539.384 | 
+BaseArmy | ID :3 | DECEASED  |  id: 7__DECEASED |  id: 8__DECEASED |  id: 9__DECEASED | 
+________________________________________________________________________________
+INFO 2019-03-24 22:05:38,093 - battle_status: 
+BaseArmy | ID :1 | Chance: 1.299 | rdy: True |  id: 1__hp: 879.957 |  id: 2__hp: 179.987 |  id: 3__hp: 879.974 | 
+BaseArmy | ID :2 | Chance: 1.554 | rdy: True |  id: 4__DECEASED |  id: 5__DECEASED |  id: 6__hp: 380.984 | 
+BaseArmy | ID :3 | DECEASED  |  id: 7__DECEASED |  id: 8__DECEASED |  id: 9__DECEASED | 
+________________________________________________________________________________
+INFO 2019-03-24 22:05:41,093 - battle_status: 
+BaseArmy | ID :1 | Chance: 1.299 | rdy: True |  id: 1__hp: 879.957 |  id: 2__hp: 179.987 |  id: 3__hp: 879.974 | 
+BaseArmy | ID :2 | Chance: 1.554 | rdy: True |  id: 4__DECEASED |  id: 5__DECEASED |  id: 6__hp: 223.544 | 
+BaseArmy | ID :3 | DECEASED  |  id: 7__DECEASED |  id: 8__DECEASED |  id: 9__DECEASED | 
+________________________________________________________________________________
+INFO 2019-03-24 22:05:41,559 - WE HAVE A WINNER BaseArmy | ID :1 | Chance: 1.299 | rdy: True |  id: 1__hp: 879.957 |  id: 2__hp: 179.987 |  id: 3__hp: 879.974 |  
+

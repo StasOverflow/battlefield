@@ -173,7 +173,7 @@ class BaseUnit(ABC):
         self.attack_chance = None
         self.is_prepared = False
         self.attack_chance_calculate(initial=True)
-        battle_logger.info(time.monotonic(), self, 'created')
+        battle_logger.info('created  {} with id {}'.format(self.__class__.__name__,self.id))
 
     def __repr__(self):
         type_of = self.__class__.__name__
@@ -210,7 +210,6 @@ class BaseUnit(ABC):
         :return: True if attack performed, False otherwise
         """
         if self.ready_to_attack():
-            battle_logger.info(time.monotonic(), self, 'is ready to attack')
             defending_unit = self.opponent_select(defending_unit)
             self.attack_chance_calculate()
             defending_unit.attack_chance_calculate()
@@ -219,7 +218,6 @@ class BaseUnit(ABC):
             def_side_chance = defending_unit.attack_chance
             self.is_prepared = False
             if atk_side_chance > def_side_chance:
-                battle_logger.info(time.monotonic(), self, 'delaing damage')
                 self.attack_won()
                 defending_unit.attack_lost(self.attack_damage)
                 return True
