@@ -39,20 +39,23 @@ class BaseArmy(BaseUnit):
         sub_unit_hp = ' | '
         for unit in self.sub_units:
             if unit.is_alive:
-                sub_unit_hp += '{0:.3f}'.format(unit.hp) + ' ' + str(unit.ready_to_attack()) + ' | '
+                sub_unit_hp += ' id: ' + str(unit.id) + '__hp: ' + '{0:.3f}'.format(unit.hp) + ' | '
             else:
-                sub_unit_hp += 'DECEASED | '
+                sub_unit_hp += ' id: ' + str(unit.id) + '__DECEASED | '
         return repr_string + sub_unit_hp
 
     def engage(self, defending_unit):
         if self.ready_to_attack():
-            for unit in self.sub_units:
-                defending_unit = self.opponent_select(defending_unit)
+            alive_sub_units = [unit for unit in self.sub_units if unit.is_alive]
+            successful_atks = 0
+            for unit in alive_sub_units:
+                chosen_unit = self.opponent_select(defending_unit.sub_units)
                 if defending_unit:
                     if unit.ready_to_attack():
-                        return unit.engage(defending_unit)
-                else:
-                    return False
+                        # print('Attacker:', unit.id, unit.attack_chance,
+                        #       'deffender ', chosen_unit.id, chosen_unit.attack_chance)
+                        successful_atks += unit.engage(chosen_unit)
+            return bool(successful_atks)
         else:
             return False
 
@@ -106,7 +109,7 @@ class BaseArmy(BaseUnit):
 
     def opponent_select(self, given_oponent=None):
         if given_oponent is not None:
-            given_oponent = self.STRATEGIES[self.chosen_strategy](self, given_oponent.sub_units)
+            given_oponent = self.STRATEGIES[self.chosen_strategy](self, given_oponent)
             return given_oponent
         else:
             return False

@@ -13,67 +13,71 @@ def get_unit_from_json(json_file):
     return unit_instance
 
 
-class BattleTimer:
-
-    def __init__(self, multiplier, battle_timer_getter_func=time.monotonic):
-        print(battle_timer_getter_func)
-        self._start_time = battle_timer_getter_func()
-        self._timer_func = battle_timer_getter_func
-        self._timer_multiplier = multiplier
-
-    @property
-    def time(self):
-        return round((self._timer_func() - self._start_time)*self._timer_multiplier, 3)
+def get_cfg_from_json(json_file):
+    if json_file is None:
+        raise Exception('Missing config file for unit!')
+    else:
+        with open(json_file) as conf:
+            armies = list()
+            data = json.load(conf)
+            for unit_data in data['armies']:
+                unit = BaseUnit.new(**unit_data)
+                armies.append(unit)
+            return armies
 
 
 class Battle:
     setup = {}
-    army_count = 0
-    squads_per_army_count = 0
-    units_per_squad_count = 0
-
-    def incoming_config_parse(self, config):
-        self.army_count = 2
-        self.squads_per_army_count = 4
-        self.units_per_squad_count = 1
 
     def __init__(self, incoming_config=None):
-        self._participants = list()
+        self._participants = get_cfg_from_json(incoming_config)
+        self.current_attacker_index = 0
+        self._log_timestamp = time.monotonic()
 
-        self.vice_versa = False
+        for unit in self._participants:
+            print(unit)
 
-        vehicle_1 = get_unit_from_json('tests/test_vehicle.json')
-        vehicle_2 = get_unit_from_json('tests/test_vehicle.json')
-
-        soldja_uno = get_unit_from_json('tests/test_soldier.json')
-        soldja_two = get_unit_from_json('tests/test_soldier.json')
-
-        group_one = get_unit_from_json('tests/test_squad.json')
-        group_two = get_unit_from_json('tests/test_squad.json')
-
-        army_one = get_unit_from_json('tests/test_army.json')
-        army_two = get_unit_from_json('tests/test_army.json')
-
-        unit1 = army_one
-        unit2 = army_two
-
-        for i in range(9000*9000*9000):
-            if unit1 is not None and unit2 is not None:
-                if self.vice_versa:
-                    attack = unit1.engage(unit2)
-                else:
-                    attack = unit2.engage(unit1)
-                self.vice_versa = not self.vice_versa
-                if attack:
-                    print('round result: \n', str(unit1), '\n', str(unit2), '\n', '_'*80)
+    def next_alive_unit(self, index):
+        defending_unit_index = index + 1
+        if defending_unit_index > (len(self._participants) - 1):
+            defending_unit_index = 0
+        print('attacker is ', self.current_attacker_index, ' on', defending_unit_index)
+        if self._participants[defending_unit_index].is_alive:
+            return defending_unit_index
+        else:
+            if defending_unit_index != self.current_attacker_index:
+                return False
             else:
-                print("SOMETHING WENT WRONG")
+                return self.next_alive_unit(defending_unit_index)
 
-    # def battle_vehicles(self):
+    def clockwise_attack(self):
+        defending_unit_index = self.next_alive_unit(self.current_attacker_index)
+        if defending_unit_index:
+            # print(
+            self._participants[self.current_attacker_index].engage(self._participants[defending_unit_index])
+            self.current_attacker_index = self.next_alive_unit(self.current_attacker_index)
 
-    def setup_set(self, setup):
-        data = json.load(setup)
-        print(data)
+    def winner_get(self):
+        alive_unit_count = 0
+        for index, unit in enumerate(self._participants):
+            if unit.is_alive:
+                alive_unit_count += 1
+                alive_index = index
+        if alive_unit_count == 1:
+            return self._participants[alive_index]
+        else:
+            return False
 
-    def setup_create(self, randomly=0):
-        print("Da")
+    def battle_log_schedule(self, every):
+        cur_time = time.monotonic()
+        if cur_time - self._log_timestamp >= every:
+            self._log_timestamp = cur_time
+            print(self.battle_log_get())
+
+    def battle_log_get(self):
+        string = 'battle_status: \n'
+        for unit in self._participants:
+            string += str(unit) + '\n'
+        string += '_' * 80
+        return string
+

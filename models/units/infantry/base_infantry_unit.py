@@ -34,7 +34,7 @@ class BaseInfantry(BaseUnit):
     def attack_damage(self):
         attack_damage = 0
         if self.is_alive:
-            attack_damage = 0.05 + self.experience / 100
+            attack_damage = 0.95 + self.experience / 100
         return attack_damage
 
     def attack_won(self):

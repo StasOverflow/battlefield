@@ -6,9 +6,9 @@ from models.units.base_unit import BaseUnit
 class ConfigSetup:
 
     def __init__(self, random=True, armies=None, formations=None, units_per_formation=None):
-        self.army_count = randint(2, 5) if random else armies
-        self.squads_per_army = randint(4, 15) if random else formations
-        self.units_per_squad = randint(5, 12) if random else units_per_formation
+        self.army_count = randint(2, 3) if random else armies
+        self.squads_per_army = randint(2, 5) if random else formations
+        self.units_per_squad = randint(2, 5) if random else units_per_formation
 
     def randomize_value(self, value):
         """

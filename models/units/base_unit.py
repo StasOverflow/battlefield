@@ -50,34 +50,46 @@ class BaseUnit(ABC):
     """
     def _attack_random(self, opponents_sub_units):
         # print('attacking random')
-        if len(opponents_sub_units):
-            return choice(opponents_sub_units)
+        alive_opponnent_list = [unit for unit in opponents_sub_units if unit.is_alive]
+        if len(alive_opponnent_list):
+            return choice(alive_opponnent_list)
+        else:
+            return False
 
     def _attack_weakest(self, opponents_sub_units):
         # print('attacking weakest')
         index_of_the_lowest = 0
         lowest_attack_chance = 0
-        for index, unit in enumerate(opponents_sub_units):
-            unit.attack_chance_calculate()
-            atk = unit.attack_chance
-            if lowest_attack_chance == 0:
-                lowest_attack_chance = atk
-            elif atk <= lowest_attack_chance:
-                lowest_attack_chance = atk
-                index_of_the_lowest = index
-        return opponents_sub_units[index_of_the_lowest]
+        if len(opponents_sub_units):
+            for index, unit in enumerate(opponents_sub_units):
+                if unit.is_alive:
+                    unit.attack_chance_calculate()
+                    atk = unit.attack_chance
+                    if lowest_attack_chance == 0:
+                        lowest_attack_chance = atk
+                        index_of_the_lowest = index
+                    elif atk <= lowest_attack_chance:
+                        lowest_attack_chance = atk
+                        index_of_the_lowest = index
+            return opponents_sub_units[index_of_the_lowest]
+        else:
+            return False
 
     def _attack_strongest(self, opponents_sub_units):
         # print('attacking strongest')
         index_of_the_highest = 0
         highest_attack_chance = 0
-        for index, unit in enumerate(opponents_sub_units):
-            unit.attack_chance_calculate()
-            atk = unit.attack_chance
-            if atk >= highest_attack_chance:
-                highest_attack_chance = atk
-                index_of_the_highest = index
-        return opponents_sub_units[index_of_the_highest]
+        if len(opponents_sub_units):
+            for index, unit in enumerate(opponents_sub_units):
+                if unit.is_alive:
+                    unit.attack_chance_calculate()
+                    atk = unit.attack_chance
+                    if atk >= highest_attack_chance:
+                        highest_attack_chance = atk
+                        index_of_the_highest = index
+            return opponents_sub_units[index_of_the_highest]
+        else:
+            return False
 
     STRATEGIES = {
         0: _attack_random,

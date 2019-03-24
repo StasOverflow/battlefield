@@ -1,733 +1,13 @@
 {
     "klass": "army",
     "type": "squad_army",
-    "strategy": 0,
+    "strategy": 1,
     "units": [
         {
             "klass": "formation",
             "type": "squad",
             "units": [
                 {
-                    "klass": "vehicle",
-                    "type": "dpv",
-                    "hp": 500,
-                    "cd": 0.051,
-                    "units": [
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.003
-                        },
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.003
-                        },
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.001
-                        }
-                    ]
-                },
-                {
-                    "klass": "infantry",
-                    "type": "soldier",
-                    "hp": 100,
-                    "cd": 0.002
-                },
-                {
-                    "klass": "infantry",
-                    "type": "soldier",
-                    "hp": 100,
-                    "cd": 0.001
-                },
-                {
-                    "klass": "infantry",
-                    "type": "soldier",
-                    "hp": 100,
-                    "cd": 0.002
-                },
-                {
-                    "klass": "infantry",
-                    "type": "soldier",
-                    "hp": 100,
-                    "cd": 0.003
-                },
-                {
-                    "klass": "vehicle",
-                    "type": "dpv",
-                    "hp": 500,
-                    "cd": 0.133,
-                    "units": [
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.003
-                        },
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.003
-                        },
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.002
-                        }
-                    ]
-                },
-                {
-                    "klass": "infantry",
-                    "type": "soldier",
-                    "hp": 100,
-                    "cd": 0.002
-                }
-            ]
-        },
-        {
-            "klass": "formation",
-            "type": "squad",
-            "units": [
-                {
-                    "klass": "infantry",
-                    "type": "soldier",
-                    "hp": 100,
-                    "cd": 0.001
-                },
-                {
-                    "klass": "vehicle",
-                    "type": "dpv",
-                    "hp": 500,
-                    "cd": 0.141,
-                    "units": [
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.001
-                        },
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.002
-                        },
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.002
-                        }
-                    ]
-                },
-                {
-                    "klass": "vehicle",
-                    "type": "dpv",
-                    "hp": 500,
-                    "cd": 0.071,
-                    "units": [
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.003
-                        },
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.002
-                        },
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.001
-                        }
-                    ]
-                },
-                {
-                    "klass": "vehicle",
-                    "type": "dpv",
-                    "hp": 500,
-                    "cd": 0.113,
-                    "units": [
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.003
-                        },
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.003
-                        },
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.003
-                        }
-                    ]
-                },
-                {
-                    "klass": "infantry",
-                    "type": "soldier",
-                    "hp": 100,
-                    "cd": 0.002
-                },
-                {
-                    "klass": "vehicle",
-                    "type": "dpv",
-                    "hp": 500,
-                    "cd": 0.109,
-                    "units": [
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.002
-                        },
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.001
-                        },
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.002
-                        }
-                    ]
-                },
-                {
-                    "klass": "infantry",
-                    "type": "soldier",
-                    "hp": 100,
-                    "cd": 0.002
-                }
-            ]
-        },
-        {
-            "klass": "formation",
-            "type": "squad",
-            "units": [
-                {
-                    "klass": "vehicle",
-                    "type": "dpv",
-                    "hp": 500,
-                    "cd": 0.14,
-                    "units": [
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.002
-                        },
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.002
-                        },
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.002
-                        }
-                    ]
-                },
-                {
-                    "klass": "vehicle",
-                    "type": "dpv",
-                    "hp": 500,
-                    "cd": 0.15,
-                    "units": [
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.001
-                        },
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.002
-                        },
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.002
-                        }
-                    ]
-                },
-                {
-                    "klass": "infantry",
-                    "type": "soldier",
-                    "hp": 100,
-                    "cd": 0.003
-                },
-                {
-                    "klass": "vehicle",
-                    "type": "dpv",
-                    "hp": 500,
-                    "cd": 0.138,
-                    "units": [
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.001
-                        },
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.003
-                        },
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.002
-                        }
-                    ]
-                },
-                {
-                    "klass": "vehicle",
-                    "type": "dpv",
-                    "hp": 500,
-                    "cd": 0.133,
-                    "units": [
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.002
-                        },
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.002
-                        },
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.002
-                        }
-                    ]
-                },
-                {
-                    "klass": "infantry",
-                    "type": "soldier",
-                    "hp": 100,
-                    "cd": 0.002
-                },
-                {
-                    "klass": "vehicle",
-                    "type": "dpv",
-                    "hp": 500,
-                    "cd": 0.06,
-                    "units": [
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.001
-                        },
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.003
-                        },
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.002
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "klass": "formation",
-            "type": "squad",
-            "units": [
-                {
-                    "klass": "vehicle",
-                    "type": "dpv",
-                    "hp": 500,
-                    "cd": 0.057,
-                    "units": [
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.003
-                        },
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.001
-                        },
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.002
-                        }
-                    ]
-                },
-                {
-                    "klass": "infantry",
-                    "type": "soldier",
-                    "hp": 100,
-                    "cd": 0.002
-                },
-                {
-                    "klass": "infantry",
-                    "type": "soldier",
-                    "hp": 100,
-                    "cd": 0.002
-                },
-                {
-                    "klass": "vehicle",
-                    "type": "dpv",
-                    "hp": 500,
-                    "cd": 0.086,
-                    "units": [
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.002
-                        },
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.002
-                        },
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.002
-                        }
-                    ]
-                },
-                {
-                    "klass": "infantry",
-                    "type": "soldier",
-                    "hp": 100,
-                    "cd": 0.003
-                },
-                {
-                    "klass": "vehicle",
-                    "type": "dpv",
-                    "hp": 500,
-                    "cd": 0.06,
-                    "units": [
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.002
-                        },
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.002
-                        },
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.003
-                        }
-                    ]
-                },
-                {
-                    "klass": "infantry",
-                    "type": "soldier",
-                    "hp": 100,
-                    "cd": 0.002
-                }
-            ]
-        },
-        {
-            "klass": "formation",
-            "type": "squad",
-            "units": [
-                {
-                    "klass": "infantry",
-                    "type": "soldier",
-                    "hp": 100,
-                    "cd": 0.002
-                },
-                {
-                    "klass": "infantry",
-                    "type": "soldier",
-                    "hp": 100,
-                    "cd": 0.002
-                },
-                {
-                    "klass": "vehicle",
-                    "type": "dpv",
-                    "hp": 500,
-                    "cd": 0.07,
-                    "units": [
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.003
-                        },
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.002
-                        },
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.002
-                        }
-                    ]
-                },
-                {
-                    "klass": "infantry",
-                    "type": "soldier",
-                    "hp": 100,
-                    "cd": 0.002
-                },
-                {
-                    "klass": "infantry",
-                    "type": "soldier",
-                    "hp": 100,
-                    "cd": 0.001
-                },
-                {
-                    "klass": "vehicle",
-                    "type": "dpv",
-                    "hp": 500,
-                    "cd": 0.061,
-                    "units": [
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.003
-                        },
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.001
-                        },
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.002
-                        }
-                    ]
-                },
-                {
-                    "klass": "infantry",
-                    "type": "soldier",
-                    "hp": 100,
-                    "cd": 0.002
-                }
-            ]
-        },
-        {
-            "klass": "formation",
-            "type": "squad",
-            "units": [
-                {
-                    "klass": "vehicle",
-                    "type": "dpv",
-                    "hp": 500,
-                    "cd": 0.123,
-                    "units": [
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.001
-                        },
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.003
-                        },
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.002
-                        }
-                    ]
-                },
-                {
-                    "klass": "vehicle",
-                    "type": "dpv",
-                    "hp": 500,
-                    "cd": 0.065,
-                    "units": [
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.001
-                        },
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.002
-                        },
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.002
-                        }
-                    ]
-                },
-                {
-                    "klass": "infantry",
-                    "type": "soldier",
-                    "hp": 100,
-                    "cd": 0.002
-                },
-                {
-                    "klass": "infantry",
-                    "type": "soldier",
-                    "hp": 100,
-                    "cd": 0.002
-                },
-                {
-                    "klass": "infantry",
-                    "type": "soldier",
-                    "hp": 100,
-                    "cd": 0.002
-                },
-                {
-                    "klass": "vehicle",
-                    "type": "dpv",
-                    "hp": 500,
-                    "cd": 0.091,
-                    "units": [
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.003
-                        },
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.002
-                        },
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.002
-                        }
-                    ]
-                },
-                {
-                    "klass": "infantry",
-                    "type": "soldier",
-                    "hp": 100,
-                    "cd": 0.002
-                }
-            ]
-        },
-        {
-            "klass": "formation",
-            "type": "squad",
-            "units": [
-                {
-                    "klass": "vehicle",
-                    "type": "dpv",
-                    "hp": 500,
-                    "cd": 0.127,
-                    "units": [
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.002
-                        },
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.002
-                        },
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.001
-                        }
-                    ]
-                },
-                {
-                    "klass": "vehicle",
-                    "type": "dpv",
-                    "hp": 500,
-                    "cd": 0.123,
-                    "units": [
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.003
-                        },
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.002
-                        },
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.002
-                        }
-                    ]
-                },
-                {
                     "klass": "infantry",
                     "type": "soldier",
                     "hp": 100,
@@ -737,155 +17,13 @@
                     "klass": "infantry",
                     "type": "soldier",
                     "hp": 100,
-                    "cd": 0.003
-                },
-                {
-                    "klass": "vehicle",
-                    "type": "dpv",
-                    "hp": 500,
-                    "cd": 0.136,
-                    "units": [
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.003
-                        },
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.002
-                        },
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.002
-                        }
-                    ]
-                },
-                {
-                    "klass": "vehicle",
-                    "type": "dpv",
-                    "hp": 500,
-                    "cd": 0.149,
-                    "units": [
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.002
-                        },
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.003
-                        },
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.002
-                        }
-                    ]
+                    "cd": 0.002
                 },
                 {
                     "klass": "infantry",
                     "type": "soldier",
                     "hp": 100,
-                    "cd": 0.003
-                }
-            ]
-        },
-        {
-            "klass": "formation",
-            "type": "squad",
-            "units": [
-                {
-                    "klass": "vehicle",
-                    "type": "dpv",
-                    "hp": 500,
-                    "cd": 0.144,
-                    "units": [
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.002
-                        },
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.001
-                        },
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.001
-                        }
-                    ]
-                },
-                {
-                    "klass": "vehicle",
-                    "type": "dpv",
-                    "hp": 500,
-                    "cd": 0.117,
-                    "units": [
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.001
-                        },
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.002
-                        },
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.002
-                        }
-                    ]
-                },
-                {
-                    "klass": "infantry",
-                    "type": "soldier",
-                    "hp": 100,
-                    "cd": 0.003
-                },
-                {
-                    "klass": "vehicle",
-                    "type": "dpv",
-                    "hp": 500,
-                    "cd": 0.086,
-                    "units": [
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.002
-                        },
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.002
-                        },
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.003
-                        }
-                    ]
+                    "cd": 0.002
                 },
                 {
                     "klass": "vehicle",
@@ -897,7 +35,7 @@
                             "klass": "infantry",
                             "type": "soldier",
                             "hp": 100,
-                            "cd": 0.002
+                            "cd": 0.003
                         },
                         {
                             "klass": "infantry",
@@ -909,15 +47,33 @@
                             "klass": "infantry",
                             "type": "soldier",
                             "hp": 100,
-                            "cd": 0.001
+                            "cd": 0.003
                         }
                     ]
+                },
+                {
+                    "klass": "infantry",
+                    "type": "soldier",
+                    "hp": 100,
+                    "cd": 0.002
+                },
+                {
+                    "klass": "infantry",
+                    "type": "soldier",
+                    "hp": 100,
+                    "cd": 0.003
+                },
+                {
+                    "klass": "infantry",
+                    "type": "soldier",
+                    "hp": 100,
+                    "cd": 0.003
                 },
                 {
                     "klass": "vehicle",
                     "type": "dpv",
                     "hp": 500,
-                    "cd": 0.128,
+                    "cd": 0.052,
                     "units": [
                         {
                             "klass": "infantry",
@@ -929,7 +85,7 @@
                             "klass": "infantry",
                             "type": "soldier",
                             "hp": 100,
-                            "cd": 0.001
+                            "cd": 0.002
                         },
                         {
                             "klass": "infantry",
@@ -944,6 +100,32 @@
                     "type": "soldier",
                     "hp": 100,
                     "cd": 0.001
+                },
+                {
+                    "klass": "vehicle",
+                    "type": "dpv",
+                    "hp": 500,
+                    "cd": 0.067,
+                    "units": [
+                        {
+                            "klass": "infantry",
+                            "type": "soldier",
+                            "hp": 100,
+                            "cd": 0.002
+                        },
+                        {
+                            "klass": "infantry",
+                            "type": "soldier",
+                            "hp": 100,
+                            "cd": 0.003
+                        },
+                        {
+                            "klass": "infantry",
+                            "type": "soldier",
+                            "hp": 100,
+                            "cd": 0.002
+                        }
+                    ]
                 }
             ]
         },
@@ -957,88 +139,6 @@
                     "hp": 100,
                     "cd": 0.003
                 },
-                {
-                    "klass": "vehicle",
-                    "type": "dpv",
-                    "hp": 500,
-                    "cd": 0.069,
-                    "units": [
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.002
-                        },
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.001
-                        },
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.001
-                        }
-                    ]
-                },
-                {
-                    "klass": "infantry",
-                    "type": "soldier",
-                    "hp": 100,
-                    "cd": 0.001
-                },
-                {
-                    "klass": "infantry",
-                    "type": "soldier",
-                    "hp": 100,
-                    "cd": 0.001
-                },
-                {
-                    "klass": "infantry",
-                    "type": "soldier",
-                    "hp": 100,
-                    "cd": 0.001
-                },
-                {
-                    "klass": "vehicle",
-                    "type": "dpv",
-                    "hp": 500,
-                    "cd": 0.078,
-                    "units": [
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.002
-                        },
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.003
-                        },
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.002
-                        }
-                    ]
-                },
-                {
-                    "klass": "infantry",
-                    "type": "soldier",
-                    "hp": 100,
-                    "cd": 0.001
-                }
-            ]
-        },
-        {
-            "klass": "formation",
-            "type": "squad",
-            "units": [
                 {
                     "klass": "infantry",
                     "type": "soldier",
@@ -1067,82 +167,6 @@
                             "klass": "infantry",
                             "type": "soldier",
                             "hp": 100,
-                            "cd": 0.003
-                        },
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.002
-                        }
-                    ]
-                },
-                {
-                    "klass": "infantry",
-                    "type": "soldier",
-                    "hp": 100,
-                    "cd": 0.003
-                },
-                {
-                    "klass": "vehicle",
-                    "type": "dpv",
-                    "hp": 500,
-                    "cd": 0.125,
-                    "units": [
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.003
-                        },
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.002
-                        },
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.003
-                        }
-                    ]
-                },
-                {
-                    "klass": "infantry",
-                    "type": "soldier",
-                    "hp": 100,
-                    "cd": 0.001
-                },
-                {
-                    "klass": "infantry",
-                    "type": "soldier",
-                    "hp": 100,
-                    "cd": 0.001
-                }
-            ]
-        },
-        {
-            "klass": "formation",
-            "type": "squad",
-            "units": [
-                {
-                    "klass": "infantry",
-                    "type": "soldier",
-                    "hp": 100,
-                    "cd": 0.001
-                },
-                {
-                    "klass": "vehicle",
-                    "type": "dpv",
-                    "hp": 500,
-                    "cd": 0.146,
-                    "units": [
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
                             "cd": 0.002
                         },
                         {
@@ -1150,12 +174,6 @@
                             "type": "soldier",
                             "hp": 100,
                             "cd": 0.001
-                        },
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.002
                         }
                     ]
                 },
@@ -1169,7 +187,7 @@
                     "klass": "vehicle",
                     "type": "dpv",
                     "hp": 500,
-                    "cd": 0.063,
+                    "cd": 0.069,
                     "units": [
                         {
                             "klass": "infantry",
@@ -1181,13 +199,13 @@
                             "klass": "infantry",
                             "type": "soldier",
                             "hp": 100,
-                            "cd": 0.002
+                            "cd": 0.003
                         },
                         {
                             "klass": "infantry",
                             "type": "soldier",
                             "hp": 100,
-                            "cd": 0.002
+                            "cd": 0.003
                         }
                     ]
                 },
@@ -1195,39 +213,109 @@
                     "klass": "vehicle",
                     "type": "dpv",
                     "hp": 500,
-                    "cd": 0.067,
-                    "units": [
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.002
-                        },
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.002
-                        },
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.002
-                        }
-                    ]
-                },
-                {
-                    "klass": "vehicle",
-                    "type": "dpv",
-                    "hp": 500,
-                    "cd": 0.066,
+                    "cd": 0.057,
                     "units": [
                         {
                             "klass": "infantry",
                             "type": "soldier",
                             "hp": 100,
                             "cd": 0.001
+                        },
+                        {
+                            "klass": "infantry",
+                            "type": "soldier",
+                            "hp": 100,
+                            "cd": 0.002
+                        },
+                        {
+                            "klass": "infantry",
+                            "type": "soldier",
+                            "hp": 100,
+                            "cd": 0.002
+                        }
+                    ]
+                },
+                {
+                    "klass": "vehicle",
+                    "type": "dpv",
+                    "hp": 500,
+                    "cd": 0.139,
+                    "units": [
+                        {
+                            "klass": "infantry",
+                            "type": "soldier",
+                            "hp": 100,
+                            "cd": 0.001
+                        },
+                        {
+                            "klass": "infantry",
+                            "type": "soldier",
+                            "hp": 100,
+                            "cd": 0.001
+                        },
+                        {
+                            "klass": "infantry",
+                            "type": "soldier",
+                            "hp": 100,
+                            "cd": 0.001
+                        }
+                    ]
+                },
+                {
+                    "klass": "infantry",
+                    "type": "soldier",
+                    "hp": 100,
+                    "cd": 0.001
+                },
+                {
+                    "klass": "vehicle",
+                    "type": "dpv",
+                    "hp": 500,
+                    "cd": 0.053,
+                    "units": [
+                        {
+                            "klass": "infantry",
+                            "type": "soldier",
+                            "hp": 100,
+                            "cd": 0.002
+                        },
+                        {
+                            "klass": "infantry",
+                            "type": "soldier",
+                            "hp": 100,
+                            "cd": 0.002
+                        },
+                        {
+                            "klass": "infantry",
+                            "type": "soldier",
+                            "hp": 100,
+                            "cd": 0.003
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "klass": "formation",
+            "type": "squad",
+            "units": [
+                {
+                    "klass": "infantry",
+                    "type": "soldier",
+                    "hp": 100,
+                    "cd": 0.002
+                },
+                {
+                    "klass": "vehicle",
+                    "type": "dpv",
+                    "hp": 500,
+                    "cd": 0.114,
+                    "units": [
+                        {
+                            "klass": "infantry",
+                            "type": "soldier",
+                            "hp": 100,
+                            "cd": 0.003
                         },
                         {
                             "klass": "infantry",
@@ -1253,45 +341,13 @@
                             "klass": "infantry",
                             "type": "soldier",
                             "hp": 100,
-                            "cd": 0.003
-                        },
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.001
+                            "cd": 0.002
                         },
                         {
                             "klass": "infantry",
                             "type": "soldier",
                             "hp": 100,
                             "cd": 0.002
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "klass": "formation",
-            "type": "squad",
-            "units": [
-                {
-                    "klass": "vehicle",
-                    "type": "dpv",
-                    "hp": 500,
-                    "cd": 0.105,
-                    "units": [
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.003
-                        },
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.001
                         },
                         {
                             "klass": "infantry",
@@ -1305,8 +361,14 @@
                     "klass": "vehicle",
                     "type": "dpv",
                     "hp": 500,
-                    "cd": 0.121,
+                    "cd": 0.122,
                     "units": [
+                        {
+                            "klass": "infantry",
+                            "type": "soldier",
+                            "hp": 100,
+                            "cd": 0.001
+                        },
                         {
                             "klass": "infantry",
                             "type": "soldier",
@@ -1318,14 +380,114 @@
                             "type": "soldier",
                             "hp": 100,
                             "cd": 0.002
+                        }
+                    ]
+                },
+                {
+                    "klass": "vehicle",
+                    "type": "dpv",
+                    "hp": 500,
+                    "cd": 0.091,
+                    "units": [
+                        {
+                            "klass": "infantry",
+                            "type": "soldier",
+                            "hp": 100,
+                            "cd": 0.001
                         },
                         {
                             "klass": "infantry",
                             "type": "soldier",
                             "hp": 100,
-                            "cd": 0.003
+                            "cd": 0.001
+                        },
+                        {
+                            "klass": "infantry",
+                            "type": "soldier",
+                            "hp": 100,
+                            "cd": 0.001
                         }
                     ]
+                },
+                {
+                    "klass": "infantry",
+                    "type": "soldier",
+                    "hp": 100,
+                    "cd": 0.002
+                },
+                {
+                    "klass": "infantry",
+                    "type": "soldier",
+                    "hp": 100,
+                    "cd": 0.002
+                },
+                {
+                    "klass": "vehicle",
+                    "type": "dpv",
+                    "hp": 500,
+                    "cd": 0.132,
+                    "units": [
+                        {
+                            "klass": "infantry",
+                            "type": "soldier",
+                            "hp": 100,
+                            "cd": 0.002
+                        },
+                        {
+                            "klass": "infantry",
+                            "type": "soldier",
+                            "hp": 100,
+                            "cd": 0.002
+                        },
+                        {
+                            "klass": "infantry",
+                            "type": "soldier",
+                            "hp": 100,
+                            "cd": 0.001
+                        }
+                    ]
+                },
+                {
+                    "klass": "infantry",
+                    "type": "soldier",
+                    "hp": 100,
+                    "cd": 0.002
+                },
+                {
+                    "klass": "infantry",
+                    "type": "soldier",
+                    "hp": 100,
+                    "cd": 0.003
+                }
+            ]
+        },
+        {
+            "klass": "formation",
+            "type": "squad",
+            "units": [
+                {
+                    "klass": "infantry",
+                    "type": "soldier",
+                    "hp": 100,
+                    "cd": 0.002
+                },
+                {
+                    "klass": "infantry",
+                    "type": "soldier",
+                    "hp": 100,
+                    "cd": 0.002
+                },
+                {
+                    "klass": "infantry",
+                    "type": "soldier",
+                    "hp": 100,
+                    "cd": 0.002
+                },
+                {
+                    "klass": "infantry",
+                    "type": "soldier",
+                    "hp": 100,
+                    "cd": 0.002
                 },
                 {
                     "klass": "infantry",
@@ -1334,116 +496,6 @@
                     "cd": 0.003
                 },
                 {
-                    "klass": "vehicle",
-                    "type": "dpv",
-                    "hp": 500,
-                    "cd": 0.072,
-                    "units": [
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.001
-                        },
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.002
-                        },
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.002
-                        }
-                    ]
-                },
-                {
-                    "klass": "vehicle",
-                    "type": "dpv",
-                    "hp": 500,
-                    "cd": 0.078,
-                    "units": [
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.001
-                        },
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.001
-                        },
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.003
-                        }
-                    ]
-                },
-                {
-                    "klass": "vehicle",
-                    "type": "dpv",
-                    "hp": 500,
-                    "cd": 0.107,
-                    "units": [
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.002
-                        },
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.002
-                        },
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.002
-                        }
-                    ]
-                },
-                {
-                    "klass": "vehicle",
-                    "type": "dpv",
-                    "hp": 500,
-                    "cd": 0.083,
-                    "units": [
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.001
-                        },
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.003
-                        },
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.001
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "klass": "formation",
-            "type": "squad",
-            "units": [
-                {
                     "klass": "infantry",
                     "type": "soldier",
                     "hp": 100,
@@ -1453,7 +505,7 @@
                     "klass": "vehicle",
                     "type": "dpv",
                     "hp": 500,
-                    "cd": 0.142,
+                    "cd": 0.081,
                     "units": [
                         {
                             "klass": "infantry",
@@ -1471,27 +523,21 @@
                             "klass": "infantry",
                             "type": "soldier",
                             "hp": 100,
-                            "cd": 0.002
+                            "cd": 0.001
                         }
                     ]
-                },
-                {
-                    "klass": "infantry",
-                    "type": "soldier",
-                    "hp": 100,
-                    "cd": 0.002
                 },
                 {
                     "klass": "vehicle",
                     "type": "dpv",
                     "hp": 500,
-                    "cd": 0.082,
+                    "cd": 0.071,
                     "units": [
                         {
                             "klass": "infantry",
                             "type": "soldier",
                             "hp": 100,
-                            "cd": 0.003
+                            "cd": 0.002
                         },
                         {
                             "klass": "infantry",
@@ -1517,59 +563,7 @@
                             "klass": "infantry",
                             "type": "soldier",
                             "hp": 100,
-                            "cd": 0.003
-                        },
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.001
-                        },
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.003
-                        }
-                    ]
-                },
-                {
-                    "klass": "vehicle",
-                    "type": "dpv",
-                    "hp": 500,
-                    "cd": 0.134,
-                    "units": [
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.001
-                        },
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.003
-                        },
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
                             "cd": 0.002
-                        }
-                    ]
-                },
-                {
-                    "klass": "vehicle",
-                    "type": "dpv",
-                    "hp": 500,
-                    "cd": 0.06,
-                    "units": [
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.003
                         },
                         {
                             "klass": "infantry",
@@ -1581,9 +575,15 @@
                             "klass": "infantry",
                             "type": "soldier",
                             "hp": 100,
-                            "cd": 0.003
+                            "cd": 0.002
                         }
                     ]
+                },
+                {
+                    "klass": "infantry",
+                    "type": "soldier",
+                    "hp": 100,
+                    "cd": 0.002
                 }
             ]
         },
@@ -1592,54 +592,10 @@
             "type": "squad",
             "units": [
                 {
-                    "klass": "infantry",
-                    "type": "soldier",
-                    "hp": 100,
-                    "cd": 0.001
-                },
-                {
                     "klass": "vehicle",
                     "type": "dpv",
                     "hp": 500,
-                    "cd": 0.109,
-                    "units": [
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.001
-                        },
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.002
-                        },
-                        {
-                            "klass": "infantry",
-                            "type": "soldier",
-                            "hp": 100,
-                            "cd": 0.003
-                        }
-                    ]
-                },
-                {
-                    "klass": "infantry",
-                    "type": "soldier",
-                    "hp": 100,
-                    "cd": 0.003
-                },
-                {
-                    "klass": "infantry",
-                    "type": "soldier",
-                    "hp": 100,
-                    "cd": 0.003
-                },
-                {
-                    "klass": "vehicle",
-                    "type": "dpv",
-                    "hp": 500,
-                    "cd": 0.065,
+                    "cd": 0.13,
                     "units": [
                         {
                             "klass": "infantry",
@@ -1665,7 +621,7 @@
                     "klass": "vehicle",
                     "type": "dpv",
                     "hp": 500,
-                    "cd": 0.068,
+                    "cd": 0.054,
                     "units": [
                         {
                             "klass": "infantry",
@@ -1692,6 +648,88 @@
                     "type": "soldier",
                     "hp": 100,
                     "cd": 0.002
+                },
+                {
+                    "klass": "vehicle",
+                    "type": "dpv",
+                    "hp": 500,
+                    "cd": 0.085,
+                    "units": [
+                        {
+                            "klass": "infantry",
+                            "type": "soldier",
+                            "hp": 100,
+                            "cd": 0.002
+                        },
+                        {
+                            "klass": "infantry",
+                            "type": "soldier",
+                            "hp": 100,
+                            "cd": 0.003
+                        },
+                        {
+                            "klass": "infantry",
+                            "type": "soldier",
+                            "hp": 100,
+                            "cd": 0.003
+                        }
+                    ]
+                },
+                {
+                    "klass": "infantry",
+                    "type": "soldier",
+                    "hp": 100,
+                    "cd": 0.001
+                },
+                {
+                    "klass": "infantry",
+                    "type": "soldier",
+                    "hp": 100,
+                    "cd": 0.003
+                },
+                {
+                    "klass": "infantry",
+                    "type": "soldier",
+                    "hp": 100,
+                    "cd": 0.002
+                },
+                {
+                    "klass": "vehicle",
+                    "type": "dpv",
+                    "hp": 500,
+                    "cd": 0.108,
+                    "units": [
+                        {
+                            "klass": "infantry",
+                            "type": "soldier",
+                            "hp": 100,
+                            "cd": 0.002
+                        },
+                        {
+                            "klass": "infantry",
+                            "type": "soldier",
+                            "hp": 100,
+                            "cd": 0.002
+                        },
+                        {
+                            "klass": "infantry",
+                            "type": "soldier",
+                            "hp": 100,
+                            "cd": 0.002
+                        }
+                    ]
+                },
+                {
+                    "klass": "infantry",
+                    "type": "soldier",
+                    "hp": 100,
+                    "cd": 0.001
+                },
+                {
+                    "klass": "infantry",
+                    "type": "soldier",
+                    "hp": 100,
+                    "cd": 0.003
                 }
             ]
         }
