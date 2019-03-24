@@ -90,11 +90,12 @@ class BaseFormation(BaseUnit):
         of a formation (with a same amount of damage)
         """
         alive_units = [unit for unit in self.sub_units if unit.is_alive]
-        damage_to_each = damage / len(alive_units)
-        print('dealing ', damage_to_each, ' to ', len(alive_units), ' units')
         if len(alive_units):
-            for unit in alive_units:
-                unit.damage_receive(damage_to_each)
+            damage_to_each = damage / len(alive_units)
+            # print('dealing ', damage_to_each, ' to ', len(alive_units), ' units')
+            if len(alive_units):
+                for unit in alive_units:
+                    unit.damage_receive(damage_to_each)
 
     def reload(self):
         pass
@@ -147,13 +148,22 @@ class BaseFormation(BaseUnit):
 
     @property
     def hp(self):
-        return super().hp
+        """
+        :return: Sum of sub-units hps
+        """
+        hp = 0
+        for unit in self.sub_units:
+            hp += unit.hp
+        return hp
 
     @hp.setter
     def hp(self, value):
-        self._hp = value
-        if self.hp < 0:
-            self._hp = 0
+        """
+        Accepts only zero value, meaning unit is dead
+        """
+        if value == 0:
+            for unit in self.sub_units:
+                unit.hp = 0
         return
 
     @property
@@ -162,137 +172,8 @@ class BaseFormation(BaseUnit):
         for unit in self.sub_units:
             if not unit.is_alive:
                 units_dead += 1
+        # print(units_dead, len(self.sub_units))
         if units_dead == len(self.sub_units):
             return False
         else:
             return True
-
-
-"""
-
-    def __repr__(self):
-        string = super().__repr__()
-        oper_hp = ' | '
-        for operator in self.sub_units:
-            oper_hp += '{0:.3f}'.format(operator.hp) + ' | '
-        return string + oper_hp
-
-    def engage(self, defending_unit):
-        return super().engage(defending_unit)
-
-    @property
-    def attack_damage(self):
-        damage = 0
-        for operator in self.sub_units:
-            operator_dmg = operator.experience / 100
-            damage += operator_dmg
-        return 0.1 + damage
-
-    def attack_won(self):
-        Vehicle itself does not gets any additional bonuses from winning a battle
-        But operators receive exp as a default infantry unit
-        
-        for operator in self.sub_units:
-            operator.attack_won()
-
-    def attack_lost(self, damage):
-        self.damage_receive(damage)
-
-    def damage_receive(self, damage):
-        Damage received applies not only to vehicle, but spread among operators as well
-
-        Vehicle gets 60% of total damage
-        Luckiest operator gets 20% of total damage (receives 10% of damage twice)
-        Other operators takes 10% of total damage
-        
-        self.hp = self.hp - damage * 0.6
-        for operator in self.sub_units:
-            operator.damage_receive(damage * 0.1)
-
-        lucky_one = random.choice(self.sub_units)
-        lucky_one.damage_receive(damage * 0.1)
-
-    def reload(self):
-        self._last_attack_timestamp = self.scheduler()
-
-    @property
-    def attack_chance(self):
-    
-        Soldiers attack success probability is calculated with following formula:
-                    0.5 * (1 + health/100) * random(50 + experience, 100) / 100
-
-        Note: because every unit has cooldown on attack, calculations performs only
-        once per move
-        
-        return self._attack_chance
-
-    @attack_chance.setter
-    def attack_chance(self, value):
-        self._attack_chance = value
-
-    def opponent_select(self, given_opponent=None):
-        return given_opponent
-
-    def attack_chance_calculate(self, initial=False):
-        Calculate a chance of a successful attack for a particular turn.
-        'ready_to_attack_property' should be set to false explicitly, after calling this method
-        (except if called in __init__)
-
-        calculated by formula: 0.5 * (1 + vehicle.health / 100) * gavg(operators.attack_success),
-                where gavg is geometric mean ((x1*x2*x3)^(1/3))
-
-        :param initial:
-        :return:
-
-        if self.ready_to_attack() or (initial and not self.is_prepared):
-            self.is_prepared = True
-            average_atk_success = 1
-            # print(self.sub_units)
-            for operator in self.sub_units:
-                operator.attack_chance_calculate()
-                average_atk_success = average_atk_success * operator.attack_chance
-            average_atk_success = average_atk_success ** (1/len(self.sub_units))
-            self.attack_chance = 0.5 * (1 + self.hp / 100) * average_atk_success
-
-    def ready_to_attack(self):
-        current_time = self.scheduler()
-        is_ready = True if current_time - self.last_attack_timestamp >= self.recharge_time else False
-        return is_ready
-
-    @property
-    def hp(self):
-        return super().hp
-
-    @hp.setter
-    def hp(self, value):
-        self._hp = value
-        if self.hp < 0:
-            self._hp = 0
-        return
-
-    @property
-    def is_alive(self):
-        operators_dead = 0
-        for operator in self.sub_units:
-            if not operator.is_alive:
-                operators_dead += 1
-        if self.hp <= 0 or operators_dead == len(self.sub_units):
-            return False
-        else:
-            return True
-"""
-
-
-if __name__ == '__main__':
-    group_one = get_unit_from_json('tests/test_squad.json')
-    group_two = get_unit_from_json('tests/test_squad.json')
-    vice_versa = 0
-    for i in range(50000000):
-        if vice_versa:
-            attack = group_one.engage(group_two)
-        else:
-            attack = group_two.engage(group_one)
-        vice_versa = not vice_versa
-        # if attack:
-        #     print('round result: \n', str(group_one), '\n', str(group_two), '\n', '_'*80)
-

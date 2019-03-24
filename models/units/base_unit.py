@@ -110,7 +110,7 @@ class BaseUnit(ABC):
         return factory_class(aydi=aydi, **kwargs)
 
     @abstractmethod
-    def __init__(self, hp=0, cd=0, aydi=None, units=None, klass=None):
+    def __init__(self, hp=None, cd=None, aydi=None, units=None, klass=None):
         self.id = aydi
         self._hp = 0
         self.depth = self.GROUPS[klass]['depth']
@@ -121,7 +121,10 @@ class BaseUnit(ABC):
         self.hp = self.initial_hp
         self._recharge_time = cd
         # very cool workaround to attack instantly (kostil')
-        self._last_attack_timestamp = self.scheduler()-self.recharge_time
+        if cd is not None:
+            self._last_attack_timestamp = self.scheduler()-self.recharge_time
+        else:
+            self._last_attack_timestamp = None
         self.attack_chance = None
         self.is_prepared = False
         self.attack_chance_calculate(initial=True)
