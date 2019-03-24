@@ -1,4 +1,5 @@
 from abc import ABC, abstractmethod
+from random import choice
 import inspect
 import time
 
@@ -47,11 +48,41 @@ class BaseUnit(ABC):
         (unit with lower (say 2000) depth can contain a unit, which belongs to a
         deeper group (say 2001)).
     """
+    def _attack_random(self, opponents_sub_units):
+        # print('attacking random')
+        if len(opponents_sub_units):
+            return choice(opponents_sub_units)
+
+    def _attack_weakest(self, opponents_sub_units):
+        # print('attacking weakest')
+        index_of_the_lowest = 0
+        lowest_attack_chance = 0
+        for index, unit in enumerate(opponents_sub_units):
+            unit.attack_chance_calculate()
+            atk = unit.attack_chance
+            if lowest_attack_chance == 0:
+                lowest_attack_chance = atk
+            elif atk <= lowest_attack_chance:
+                lowest_attack_chance = atk
+                index_of_the_lowest = index
+        return opponents_sub_units[index_of_the_lowest]
+
+    def _attack_strongest(self, opponents_sub_units):
+        # print('attacking strongest')
+        index_of_the_highest = 0
+        highest_attack_chance = 0
+        for index, unit in enumerate(opponents_sub_units):
+            unit.attack_chance_calculate()
+            atk = unit.attack_chance
+            if atk >= highest_attack_chance:
+                highest_attack_chance = atk
+                index_of_the_highest = index
+        return opponents_sub_units[index_of_the_highest]
 
     STRATEGIES = {
-        0: 'Attack Random',
-        1: 'Attack Weakest',
-        2: 'Attack Strongest',
+        0: _attack_random,
+        1: _attack_weakest,
+        2: _attack_strongest,
     }
 
     GROUPS = {}
@@ -60,6 +91,7 @@ class BaseUnit(ABC):
     infantry_id = 0
     vehicle_id = 0
     squad_id = 0
+    army_id = 0
 
     @classmethod
     def register_group(cls, group_name, unit_type, depth):
@@ -72,7 +104,6 @@ class BaseUnit(ABC):
             e.g.: unit with 9k depth can't contain unit with 8k depth,
         """
         def decorator(unit_cls):
-            print(unit_cls)
             cls.GROUPS[group_name] = dict()
             cls.GROUPS[group_name]['units'] = dict()
             cls.GROUPS[group_name]['units'][unit_type] = unit_cls
@@ -104,6 +135,9 @@ class BaseUnit(ABC):
                     elif key == 'formation':
                         cls.squad_id += 1
                         aydi = cls.squad_id
+                    elif key == 'army':
+                        cls.army_id += 1
+                        aydi = cls.army_id
                     break
         if factory_class is None:
             raise AttributeError

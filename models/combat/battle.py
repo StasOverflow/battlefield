@@ -51,17 +51,23 @@ class Battle:
         group_one = get_unit_from_json('tests/test_squad.json')
         group_two = get_unit_from_json('tests/test_squad.json')
 
-        unit1 = group_one
-        unit2 = group_two
+        army_one = get_unit_from_json('tests/test_army.json')
+        army_two = get_unit_from_json('tests/test_army.json')
 
-        for i in range(9000*9000):
-            if self.vice_versa:
-                attack = unit1.engage(unit2)
+        unit1 = army_one
+        unit2 = army_two
+
+        for i in range(9000*9000*9000):
+            if unit1 is not None and unit2 is not None:
+                if self.vice_versa:
+                    attack = unit1.engage(unit2)
+                else:
+                    attack = unit2.engage(unit1)
+                self.vice_versa = not self.vice_versa
+                if attack:
+                    print('round result: \n', str(unit1), '\n', str(unit2), '\n', '_'*80)
             else:
-                attack = unit2.engage(unit1)
-            self.vice_versa = not self.vice_versa
-            if attack:
-                print('round result: \n', str(unit1), '\n', str(unit2), '\n', '_'*80)
+                print("SOMETHING WENT WRONG")
 
     # def battle_vehicles(self):
 

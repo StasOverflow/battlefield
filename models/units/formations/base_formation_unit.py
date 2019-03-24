@@ -30,8 +30,8 @@ class BaseFormation(BaseUnit):
         type_of = self.__class__.__name__
         chance = '{0:.3f}'.format(self.attack_chance) if self.attack_chance is not None else '0'
         ready_to_attack = str(self.ready_to_attack()) if self.ready_to_attack() is not None else '0'
-        stats_string = ' | Chance: ' + chance \
-                       + ' | rdy: ' + ready_to_attack
+        hp = '{0:.3f}'.format(self.hp)
+        stats_string = ' | HP: ' + str(hp) + ' | Chance: ' + chance + ' | rdy: ' + ready_to_attack
         if not self.is_alive:
             stats_string = ' | DECEASED '
         repr_string = type_of + ' | ID :' + str(self.id) \
@@ -48,13 +48,16 @@ class BaseFormation(BaseUnit):
         if self.ready_to_attack():
             defending_unit = self.opponent_select(defending_unit)
             self.attack_chance_calculate()
-            defending_unit.attack_chance_calculate()
-            atk_side_chance = self.attack_chance
-            def_side_chance = defending_unit.attack_chance
-            if atk_side_chance > def_side_chance:
-                self.attack_won()
-                defending_unit.damage_receive(self.attack_damage)
-                return True
+            if defending_unit is not None:
+                defending_unit.attack_chance_calculate()
+                atk_side_chance = self.attack_chance
+                def_side_chance = defending_unit.attack_chance
+                if atk_side_chance > def_side_chance:
+                    self.attack_won()
+                    defending_unit.damage_receive(self.attack_damage)
+                    return True
+                else:
+                    return False
             else:
                 return False
         else:

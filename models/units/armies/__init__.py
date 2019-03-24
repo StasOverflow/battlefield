@@ -1,1 +1,1 @@
-print('imported army')
+from .base_army_unit import BaseArmy

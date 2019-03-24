@@ -18,10 +18,9 @@ class TestVehicleMethods(unittest.TestCase):
         for unit in self.squad.sub_units:
             self.assertTrue(unit.is_alive)
 
-    def test_squad_sub_units_almost_dead(self):
+    def test_squad_sub_units_dead(self):
         for unit in self.squad.sub_units:
             unit.hp = 0
-
         self.assertFalse(self.squad.is_alive)
 
     def test_squad_is_dead_or_almost_dead(self):

@@ -47,15 +47,19 @@ class ConfigSetup:
                         'units': [self.random_unit_config(depth) for _ in range(self.units_per_squad)]}
         return squad_string
 
-    def random_army_config(self):
+    def army_config(self, random=True, strategy=None, army_count=None):
         army_string = dict()
-        army_string['type'] = 'army'
-        army_string['strategy'] = randint(0, 2)
-        army_string['squads'] = [self.random_squad_config() for _ in range(self.squads_per_army)]
+        army_string['klass'] = 'army'
+        army_string['type'] = 'squad_army'
+        if random:
+            army_string['strategy'] = choice(list(BaseUnit.STRATEGIES.keys()))
+            army_string['units'] = [self.random_squad_config() for _ in range(self.squads_per_army)]
+
         return army_string
 
     def random_battle_config(self):
-        battle_setup = {'armies': [self.random_army_config() for _ in range(self.army_count)]}
+        battle_setup = {'armies': [self.army_config() for _ in range(self.army_count)]}
+        print('created ', self.army_count, ' armies')
         return battle_setup
 
     def setup_create(self, setup=None, to_json=True, path_to_output_file='combat_setup.json'):

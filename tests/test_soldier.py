@@ -41,8 +41,9 @@ class TestSoldierMethods(unittest.TestCase):
         self.assertTrue(enemy.ready_to_attack())
 
     def test_soldier_attack_chance_when_dead(self):
-        self.soldier.hp = 0
         self.soldier.attack_chance_calculate()
+        self.assertNotEqual(self.soldier.attack_chance, 0)
+        self.soldier.hp = 0
         self.assertFalse(self.soldier.is_alive)
         self.assertEqual(self.soldier.attack_chance, 0)
 
