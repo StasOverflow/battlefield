@@ -38,22 +38,21 @@ class Battle:
             print(unit)
 
     def next_alive_unit(self, index):
-        defending_unit_index = index + 1
-        if defending_unit_index > (len(self._participants) - 1):
-            defending_unit_index = 0
-        print('attacker is ', self.current_attacker_index, ' on', defending_unit_index)
-        if self._participants[defending_unit_index].is_alive:
-            return defending_unit_index
+        next_alive_unit_index = index + 1
+        if next_alive_unit_index > (len(self._participants) - 1):
+            next_alive_unit_index = 0
+        if self._participants[next_alive_unit_index].is_alive:
+            return next_alive_unit_index
         else:
-            if defending_unit_index != self.current_attacker_index:
-                return False
+            if next_alive_unit_index == self.current_attacker_index:
+                return self.current_attacker_index
             else:
-                return self.next_alive_unit(defending_unit_index)
+                return self.next_alive_unit(next_alive_unit_index)
 
     def clockwise_attack(self):
         defending_unit_index = self.next_alive_unit(self.current_attacker_index)
-        if defending_unit_index:
-            # print(
+        if defending_unit_index is not None:
+            # print('attacker is ', self.current_attacker_index, ' on', defending_unit_index)
             self._participants[self.current_attacker_index].engage(self._participants[defending_unit_index])
             self.current_attacker_index = self.next_alive_unit(self.current_attacker_index)
 
